@@ -1,8 +1,10 @@
 class Car:
-    def __init__(self, brand= '', price=0, seats=0, transmission='', doors=0):
-        
+    PRICE_PER_DAY = 5000
+    TAX = 1.11
+    INSURANCE = 30000
+    def __init__(self, brand='', days=1, seats=0, transmission='', doors=0):
         self.__brand = brand
-        self.__price = price
+        self.__price = self.PRICE_PER_DAY * days
         self.__seats = seats
         self.__transmission = transmission
         self.__doors = doors
