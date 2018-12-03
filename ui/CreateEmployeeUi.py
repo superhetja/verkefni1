@@ -1,8 +1,11 @@
-       
-class Bossman:
-    def __init__():
-            pass
-        fullname = input('Full nafn: ')
+from models.Employee import Employee
+class CreateEmployeeUi:
+
+    def __init__(self):
+        
+
+    def create_empoyee():
+        fullname = input('Fullt nafn: ')
         while True:
             try:
             ssn = int(input(ssn)).strip()
@@ -23,3 +26,4 @@ class Bossman:
                 admin = False
                 break
             print('Veldu rétt')
+        new_employee = Employee(fullname, ssn, password, email, admin)
