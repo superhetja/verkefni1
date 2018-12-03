@@ -1,15 +1,15 @@
 from services.CarService import CarService
 import HeaderUi 
 
+print_header()
+ACTION_CHOICES = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 class Bossman: 
 
     def __init__(slef):
-        self.__car_services = CarService()
+        self.__car_service = CarService()
 
     def main_menu(self):
-        print_header()
-        action = True
-        while (action == True):
+        while True:
             print((Color.BOLD + "Útleiga"+ Color.END))
             print("1. Skrá nýja útleigu")
             print("2. Fletta upp útleigu")
@@ -31,4 +31,9 @@ class Bossman:
             print("12. Fletta upp starfsmanni")
             print("13. Birta starfsmann")
 
-            action = input()
+            action = int(input())
+
+            if action in ACTION_CHOICES:
+                break
+            else:
+                print("Vinsamlegast veldu gildan valmöguleika")
