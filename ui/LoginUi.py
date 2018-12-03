@@ -8,7 +8,7 @@ class Login:
     def login_menu(self):
         while True:
             while True:
-                username = input('Notendanafn: ')
+                username = input('Kennitala: ')
                 password_from_file = self.__login_service.check_username(username)
                 if password_from_file:
                     break
