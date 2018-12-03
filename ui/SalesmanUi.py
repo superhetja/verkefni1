@@ -10,26 +10,18 @@ class Salesman:
         print_header()
         action = True
         while (action == True):
-            print("Útleiga")
+            print(Color.BOLD + "Útleiga"+ Color.END)
             print("1. Skrá nýja útleigu")
             print("2. Fletta upp útleigu")
             print("3. Ská skil")
             print("4. Skoða verðskrá")
 
-
-            print("Bílar")
+            print(Color.BOLD + "Bílar"+ Color.END)
             print("5. Skoða bíla")
 
-            print("Viðskiptavinur")
-            print("7. Skrá nýjan viðskiptavin")
-            print("8. Fletta upp viðskiptavini ")
-            print("9. Viðskiptavinalisti")
+            print(Color.BOLD + "Viðskiptavinur"+ Color.END)
+            print("6. Skrá nýjan viðskiptavin")
+            print("7. Fletta upp viðskiptavini ")
+            print("8. Viðskiptavinalisti")
 
             action = input()
-
-
-def main():
-    man = Salesman()
-    print(man)
-main()
-
