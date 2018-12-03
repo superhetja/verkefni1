@@ -1,5 +1,6 @@
 class Car:
-    def __init__(self, brand='', price=0, seats=0, transmission='', doors=0):
+    def __init__(self, brand= '', price=0, seats=0, transmission='', doors=0):
+        
         self.__brand = brand
         self.__price = price
         self.__seats = seats
