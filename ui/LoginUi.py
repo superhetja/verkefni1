@@ -1,4 +1,4 @@
-from services import LoginService
+from services.LoginService import LoginService
 
 class Login:
 
@@ -7,12 +7,15 @@ class Login:
 
     def login_menu(self):
         while True:
-            username = input('Notendanafn: ')
-            try: 
-                self.__login_service.__check_username(username)
-
-        while True:       
-            password = input('Lykilorð: ')
-            if password:
+            while True:
+                username = input('Notendanafn: ')
+                password_from_file = self.__login_service.check_username(username)
+                if password_from_file:
+                    break
+            password = input('Password:')
+            if password == password_from_file:
                 break
+
+a = Login()
+a.login_menu()
 

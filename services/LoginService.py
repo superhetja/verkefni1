@@ -1,13 +1,16 @@
-from repositories import LoginRepository
+from repositories.LoginRepository import LoginRepository
 
-class LoginRepository():
+class LoginService(object):
 
     def __init__(self):
         self.__login_repo = LoginRepository()
 
     def check_username(self, username):
         if self.is_valid(username):
-            self.__login_repo.get_username(username)
+            password = self.__login_repo.get_password(username)
+        else:
+            return password
+            
 
     def is_valid(self, string):
         #Vantar koda
