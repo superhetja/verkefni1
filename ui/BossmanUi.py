@@ -1,32 +1,5 @@
-<<<<<<< HEAD
-       
-class Bossman:
-    def __init__():
-            pass
-        fullname = input('Full nafn: ')
-        while True:
-            try:
-            ssn = int(input(ssn)).strip()
-            if len(ssn) == 10:
-                break
-            else:
-                print('Sláðu inn gilt lykilorð!')
-            except ValueError:
-                print('Sláðu inn eingöngu tölur')
-        password = input('Lykilorð: ')
-        email = input('Email: ')
-        while True:
-            admin = input('Admin y/n: ').lower()
-            if admin == 'y'
-                admin = True
-                break
-            elif admin == 'n'
-                admin = False
-                break
-            print('Veldu rétt')
-=======
 from services.CarService import CarService
-import HeaderUi 
+from HeaderUi import Color
 
 print_header()
 ACTION_CHOICES = [1,2,3,4,5,6,7,8,9,10,11,12,13]
@@ -69,3 +42,30 @@ class Bossman:
             action = input()
 >>>>>>> c7e7b707e2d354e8af6968e90948ecbee72eeaaf
 >>>>>>> c19cc99e4d836fca2e967be8b5a4afd58cee3d3c
+
+# <<<<<<< HEAD
+# class Bossman:
+#     def __init__():
+#             pass
+#         fullname = input('Full nafn: ')
+#         while True:
+#             try:
+#             ssn = int(input(ssn)).strip()
+#             if len(ssn) == 10:
+#                 break
+#             else:
+#                 print('Sláðu inn gilt lykilorð!')
+#             except ValueError:
+#                 print('Sláðu inn eingöngu tölur')
+#         password = input('Lykilorð: ')
+#         email = input('Email: ')
+#         while True:
+#             admin = input('Admin y/n: ').lower()
+#             if admin == 'y'
+#                 admin = True
+#                 break
+#             elif admin == 'n'
+#                 admin = False
+#                 break
+#             print('Veldu rétt')
+# =======

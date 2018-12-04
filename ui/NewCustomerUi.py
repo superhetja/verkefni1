@@ -1,5 +1,5 @@
 from services.CustomerService import CustomerService
-import HeaderUi
+from HeaderUi import Color
 
 print_header()
 class NewCustomer:
