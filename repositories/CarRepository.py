@@ -1,4 +1,5 @@
 from models.Car import Car
+
 class CarRepository:
 
     def __init__(self):
@@ -6,13 +7,14 @@ class CarRepository:
 
     def add_car(self, car):
         with open('./data/cars.txt', 'a+') as aFile:
-            aFile.write(Car.__repr__()+ '\n')
+            aFile.write(Car.__repr__(car)+ '\n')
 
-    def get_car(self): 
+    def get_car(self):
+        cars = [] 
         with open('data/cars.txt') as aFile:
             for line in aFile.readlines():
                 Car = eval(line.strip())
-                Car.append(Car)
-            return Car
+                cars.append(Car)
+            return cars
 
       

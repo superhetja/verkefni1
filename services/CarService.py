@@ -1,28 +1,26 @@
 from repositories.CarRepository import CarRepository
 from models.Car import Car
-from ui.AddCarUi import AddCar
-
-
+from ui import AddCarUi
 class CarService:
-    VALID_BRANDS = [Honda, Skoda Civic]
+    VAlID_BRANDS  = ['Honda', 'Skoda']
     VALID_GROUP = [1,2,3,4,5,6]
     def __init__(self):
         self.__car_repo = CarRepository()
-        self.__addcar_ui = AddCar()
+#        self.__addcar_ui = AddCarUi.AddCarUi()
 
     def add_car(self, car):
-        if self.is_valid_car(car):
-            self.__car_repo.add_car(car)
+        car = self.get_valid_car(car)
+        self.__car_repo.add_car(car)
 
-    def is_valid_car(self,car):
-        doors = check_doors(car)
-        brand = check_brand(car)
-        seats = check_seats(car)
-        transmission = check_transmission(car)
-        group = check_group(car)
-
-        return True
-
+    def get_valid_car(self,car):
+        doors = self.check_doors(car)
+        brand = self.check_brand(car)
+        seats = self.check_seats(car)
+        transmission = self.check_transmission(car)
+        group = self.check_group(car)
+        valid_car = Car(group,brand,seats,transmission,doors)
+        return valid_car
+        
     def check_doors(self, car):
         doors = Car.get_doors(car)
         inputprompt = 'Fjöldi dyra: '
@@ -33,20 +31,20 @@ class CarService:
                 if 5 < doors < 3:
                     errorprompt = 'Rangur fjöldi hurða.'
                     raise ValueError
-                break
+                return doors
             except ValueError:
                 errorprompt = 'Rangur innsláttur/hurðir\nSláðu inn heiltölu.'
-                self.__addcar_ui.get_another_input(errorprompt,inputprompt)
+#                AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
 
-    def check_valid(self, car):
+    def check_brand(self, car):
         brand = Car.get_brand(car)
         inputprompt = 'Tegund: '
         errorprompt = 'Ekki rétt tegund.'
         while True:
             brand = brand.capitalize()
-            if brand in self.VALID_BRANDS:
-                break
-            self.__addcar_ui.get_another_input(errorprompt,inputprompt)
+            if brand in self.VAlID_BRANDS:
+                return brand
+ #           AddCarUi.AddCarUi.get_another_input(errorprompt, inputprompt)
 
     def check_seats(self,car):
         seats = Car.get_seats(car)
@@ -58,15 +56,34 @@ class CarService:
                 if 9 < seats < 2:
                     errorprompt = 'Rangur innsláttur, of mörg sæti'
                     raise ValueError
-                break
+                return seats
             except ValueError:
-                self.__addcar_ui.get_another_input(errorprompt,inputprompt)
+                pass
+ #               AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
 
     def check_transmission(self,car):
         transmission = Car.get_transmission(car)
         inputprompt = 'Skipting b/s: '
         errorprompt = 'Rangur innsláttur.'
         while True:
+            transmission = transmission.lower()
+            if transmission == 'b' or 's':
+                return transmission
+    #        AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
             
+    def check_group(self, car):
+        group = Car.get_group(car)
+        inputprompt = 'Flokkur: '
+        errorprompt = 'Rangur innsláttur, sláðu inn heiltölu'
+        try:
+            group = int(group)
+            if 7 < group < 1:
+                errorprompt = 'Rangur innsláttur.'
+                raise ValueError
+            return group
+        except ValueError:
+            pass
+    #        AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
+
         
         

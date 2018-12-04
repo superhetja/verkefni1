@@ -1,12 +1,12 @@
 from services.CarService import CarService
 from models.Car import Car
 
-class AddCar:
+class AddCarUi:
 
     def __init__(self):
         self.__car_service = CarService()
 
-    def add_car(self):
+    def add_car_menu(self):
         self.car_group_menu()
         group = input('Flokkur: ')
         brand = input('Tegund: ')

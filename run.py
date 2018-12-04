@@ -1,4 +1,5 @@
-from ui.OrderUi import Order
+from ui import AddCarUi
 
-ui = Order()
-ui.add_order()
+ui =AddCarUi.AddCarUi()
+
+ui.add_car_menu()

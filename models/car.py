@@ -16,22 +16,25 @@ class Car:
         self.__doors = doors
         
     def set_price(self):
+        self.__price = 0
         if self.__group == 1:
-            self.__price == STANDART
+            self.__price == self.STANDART
         elif self.__group == 2:
-            self.__price == LUXURY
+            self.__price == self.LUXURY
         elif self.__group == 3:
-            self.__price == ELECTRIC
+            self.__price == self.ELECTRIC
         elif self.__group == 4:
-            self.__price == SMALLSUV
+            self.__price == self.SMALLSUV
         elif self.__group == 5:
-            self.__price == SUV
+            self.__price == self.SUV
         elif self.__group == 6:
-            self.__price == VAN
+            self.__price == self.VAN
         
     def __str__(self):
         return "Bíll: {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}".format(self.__brand, self.__price, self.__doors, self.__seats, self.__transmission)
-        return "Car('{}','{}','{}')".format(self.__group,self.__brand,self.__seats,self.__transmission,self.__doors)
+    
+    def __repr__(self):
+        return "Car('{}','{}','{}','{}','{}')".format(self.__group,self.__brand,self.__seats,self.__transmission,self.__doors)
     
     def get_price(self):
         self.set_price()
