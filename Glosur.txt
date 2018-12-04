@@ -1,1 +1,7 @@
 esc = \x1b
+for line in videofiles.readlines()
+eval()
+import csv
+csv_reader = csv.reader(videos_files)
+    csv.DictReader()
+    csv.writer()
