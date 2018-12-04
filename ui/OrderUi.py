@@ -10,7 +10,7 @@ class Order():
     
     def add_order(self):
         date1 = input("Sláðu inn úttektardag: ")
-        dat2 = input("Sláðu inn skiladag: ")
+        date2 = input("Sláðu inn skiladag: ")
 
         group = input("Bílflokkur: ")
         brand = input("Tegund Bíls: ")
