@@ -11,7 +11,7 @@ class van(Car):
         return self.__price.get_price()
 
     def Van_print(self):
-        Van.Van_print(self)
+        Van_print(self)
         print("price: ")
 
    
