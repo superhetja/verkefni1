@@ -37,7 +37,6 @@ class Bossman:
                 break
             else:
                 print("Vinsamlegast veldu gildan valmöguleika")
->>>>>>> c19cc99e4d836fca2e967be8b5a4afd58cee3d3c
 
 # <<<<<<< HEAD
 # class Bossman:
@@ -65,3 +64,4 @@ class Bossman:
 #                 break
 #             print('Veldu rétt')
 # =======
+>>>>>>> 598fea71ae8155241a1bf3939d9423281e8acea5
