@@ -16,6 +16,5 @@ class Login:
             if password == password_from_file:
                 break
 
-a = Login()
-a.login_menu()
+
 

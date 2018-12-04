@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+       
+class Bossman:
+    def __init__():
+            pass
+        fullname = input('Full nafn: ')
+        while True:
+            try:
+            ssn = int(input(ssn)).strip()
+            if len(ssn) == 10:
+                break
+            else:
+                print('Sláðu inn gilt lykilorð!')
+            except ValueError:
+                print('Sláðu inn eingöngu tölur')
+        password = input('Lykilorð: ')
+        email = input('Email: ')
+        while True:
+            admin = input('Admin y/n: ').lower()
+            if admin == 'y'
+                admin = True
+                break
+            elif admin == 'n'
+                admin = False
+                break
+            print('Veldu rétt')
+=======
 from services.CarService import CarService
 import HeaderUi 
 
@@ -31,9 +58,14 @@ class Bossman:
             print("12. Fletta upp starfsmanni")
             print("13. Birta starfsmann")
 
+<<<<<<< HEAD
             action = int(input())
 
             if action in ACTION_CHOICES:
                 break
             else:
                 print("Vinsamlegast veldu gildan valmöguleika")
+=======
+            action = input()
+>>>>>>> c7e7b707e2d354e8af6968e90948ecbee72eeaaf
+>>>>>>> c19cc99e4d836fca2e967be8b5a4afd58cee3d3c
