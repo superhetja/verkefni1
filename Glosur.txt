@@ -1,2 +1,11 @@
 esc = \x1b
+<<<<<<< HEAD
 Halló stelpur
+=======
+for line in videofiles.readlines()
+eval()
+import csv
+csv_reader = csv.reader(videos_files)
+    csv.DictReader()
+    csv.writer()
+>>>>>>> d564dd24914681901eea54b6cc3d5877564336f2
