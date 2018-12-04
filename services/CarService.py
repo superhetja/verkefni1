@@ -1,9 +1,13 @@
+from repositories.CarRepository import CarRepository
 
 class CarService:
 
     def __init__(self):
-        pass
+        self.__car_repo = CarRepository()
 
-    def get_groupname(self,group):
+    def add_car(self, car):
+        if self.is_valid_car(car):
+            self.__car_repo.add_car(car)
+
         
         

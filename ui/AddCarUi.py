@@ -1,4 +1,5 @@
 from services.CarService import CarService
+from models.car import Car
 
 class AddCar:
 
@@ -8,14 +9,12 @@ class AddCar:
     def add_car(self):
         self.car_group_menu()
         group = input('Flokkur: ')
-        group = self.__car_service.get_groupname(group)
         brand = input('Tegund: ')
         seats = input('Fjöldi sæta: ')
         transmission = input('Skipting b/s: ')
         doors = input('Fjöldi dyra: ')
-
-
-
+        new_car = Car(group, brand, seats, transmission, doors)
+        self.__car_service.add_car(new_car)
 
 
     def car_group_menu(self):
