@@ -20,15 +20,7 @@ class CarService:
         seats = check_seats(car)
         transmission = check_transmission(car)
         group = check_group(car)
-        
-        if Car.get_brand(car) not in self.VALID_BRANDS:
-            return False
-        if 7 < Car.get_seats(car) < 2:
-            return False 
-        if Car.get_transmission(car) != ('b' or 's'):
-            return False
-        if int(Car.get_group(car)) not in VALID_GROUP:
-            return False
+
         return True
 
     def check_doors(self, car):
@@ -48,10 +40,33 @@ class CarService:
 
     def check_valid(self, car):
         brand = Car.get_brand(car)
-        while True
-        brand = brand.capitalize()
-        if brand 
+        inputprompt = 'Tegund: '
+        errorprompt = 'Ekki rétt tegund.'
+        while True:
+            brand = brand.capitalize()
+            if brand in self.VALID_BRANDS:
+                break
+            self.__addcar_ui.get_another_input(errorprompt,inputprompt)
 
+    def check_seats(self,car):
+        seats = Car.get_seats(car)
+        inputprompt = 'Fjöldi sæta: '
+        errorprompt = 'Rangur innsláttur, sláðu inn heiltölu.'
+        while True:
+            try:
+                seats = int(seats)
+                if 9 < seats < 2:
+                    errorprompt = 'Rangur innsláttur, of mörg sæti'
+                    raise ValueError
+                break
+            except ValueError:
+                self.__addcar_ui.get_another_input(errorprompt,inputprompt)
 
+    def check_transmission(self,car):
+        transmission = Car.get_transmission(car)
+        inputprompt = 'Skipting b/s: '
+        errorprompt = 'Rangur innsláttur.'
+        while True:
+            
         
         
