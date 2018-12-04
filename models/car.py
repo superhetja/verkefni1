@@ -31,7 +31,8 @@ class Car:
         
     def __str__(self):
         return "Bíll: {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}".format(self.__brand, self.__price, self.__doors, self.__seats, self.__transmission)
-
+        return "Car('{}','{}','{}')".format(self.__group,self.__brand,self.__seats,self.__transmission,self.__doors)
+    
     def get_price(self):
         self.set_price()
         return self.__price
@@ -47,3 +48,6 @@ class Car:
 
     def get_doors(self):
         return self.__doors
+
+    def get_group(self):
+        return self.__group
