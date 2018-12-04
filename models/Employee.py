@@ -11,7 +11,7 @@ class Employee:
         return self.__fullname
 
     def get_password(self):
-        return self.__username
+        return self.__password
 
     def get_email(self):
         return self.__email
