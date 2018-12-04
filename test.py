@@ -1,6 +1,8 @@
-from validate_email import validate_email
+email = 'alli.r@ru.is'
 
-is_valid = validate_email('example@example.com')
-
-if is_valid == True:
-    print("halla")
+try:
+    atsymble = email.index('@')
+    dot = email.index('.', atsymble)
+    print('Rétt')
+except ValueError:
+    print('Rangur innsláttur')

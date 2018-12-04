@@ -19,6 +19,7 @@ class AddCar:
     def get_another_input(self, errorpromt, inputprompt):
         print(errorpromt)
         new_input = input()
+        return new_input
 
     def car_group_menu(self):
         print('Bílaflokkar')
