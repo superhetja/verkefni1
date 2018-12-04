@@ -1,5 +1,5 @@
 from repositories.CustomerRepository import CustomerRepository
-from ui.NewCustomerUi import NewCustomer
+#from ui.CustomerUi import CustomerUi
 from models.Customer import Customer
 
 class CustomerService:
@@ -12,24 +12,25 @@ class CustomerService:
             self.__customer_repo.add_customer(customer)
     
     def is_valid_customer(self, customer):
-        name = is_valid_name(customer)
-        email = is_valid_email(customer)
-        ssn = is_valid_ssn(customer)
-        phoneNr = is_valid_phoneNr(customer)
+        # name = is_valid_name(customer)
+        # email = is_valid_email(customer)
+        # ssn = is_valid_ssn(customer)
+        # phoneNr = is_valid_phoneNr(customer)
         return True
     
     def is_valid_name(self, customer):
-        name = Costumer.get_name(costumer)
+        name = Customer.get_name(customer)
         inputprompt = 'Nafn: '
         errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
         while True:
             if name.isalpha():
                 return name
             else:
-                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
+                pass
+#                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
 
     def is_valid_email(self, customer):
-        email = Costumer.get_name(customer)
+        email = Customer.get_name(customer)
         try:
             atsymbol = email.index('@')
             dot = email.index('.', atsymbol)
@@ -38,7 +39,7 @@ class CustomerService:
             return False
 
     def is_valid_ssn(self, customer):
-        ssn = Costumer.get_name(customer)
+        ssn = Customer.get_name(customer)
         inputprompt = 'Kennitala: '
         while True:
             errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
@@ -50,10 +51,10 @@ class CustomerService:
                 return ssn
             except ValueError:
                 errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
-                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
+#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def is_valid_phoneNr(self, customer):
-        phoneNr = Costumer.get_phoneNr(customer)
+        phoneNr = Customer.get_phoneNr(customer)
         inputprompt = 'Símanúmer: '
         while True:
             errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
@@ -65,7 +66,7 @@ class CustomerService:
                 return phoneNr
             except ValueError:
                 errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
-                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
+#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def get_customers(self):
         return self.__customer_repo.get_customers()

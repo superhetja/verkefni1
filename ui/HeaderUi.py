@@ -1,16 +1,12 @@
-class Color:
-    PURPLE = '\033[95m'
-    CYAN = '\033[96m'
-    DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    END = '\033[0m'
+from models.Color import Color
 
-def print_header():
-    print(Color.BOLD + 'Bílaleiga ehf.' + Color.END)
+class Header:
 
-print_header()
+    def __init__(self):
+        pass
+    
+    def __str__(self):
+        return Color.BOLD + 'Bílaleiga ehf.' + Color.END
+
+    # def print_header(self):
+    #     print(Color.BOLD + 'Bílaleiga ehf.' + Color.END)
