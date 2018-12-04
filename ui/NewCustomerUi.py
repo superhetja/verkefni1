@@ -1,4 +1,5 @@
 from services.CustomerService import CustomerService
+from models.Customer import Customer
 from HeaderUi import Color
 
 print_header()
@@ -11,5 +12,9 @@ class NewCustomer:
         print("Upplýsingar um viðskiptavin:")
 
         name = input("Nafn: ")
-        SSN = input("Kennitala: ")
+        ssn = input("Kennitala: ")
         email = input("Netfang: ")
+        phoneNr = input("Símanúmer: ")
+
+        NewCustomer = Customer(name, ssn, email, phoneNr)
+        self.__customer_service.add_customer(NewCustomer)
