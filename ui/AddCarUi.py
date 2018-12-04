@@ -9,7 +9,7 @@ class AddCar:
     def add_car(self):
         self.car_group_menu()
         group = input('Flokkur: ')
-        brand = input('Tegund: ').capitalized()
+        brand = input('Tegund: ')
         seats = input('Fjöldi sæta: ')
         transmission = input('Skipting b/s: ').lower()
         doors = input('Fjöldi dyra: ')

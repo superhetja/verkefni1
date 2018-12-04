@@ -17,6 +17,10 @@ class CarService:
     def is_valid_car(self,car):
         doors = check_doors(car)
         brand = check_brand(car)
+        seats = check_seats(car)
+        transmission = check_transmission(car)
+        group = check_group(car)
+        
         if Car.get_brand(car) not in self.VALID_BRANDS:
             return False
         if 7 < Car.get_seats(car) < 2:
@@ -42,7 +46,11 @@ class CarService:
                 errorprompt = 'Rangur innsláttur/hurðir\nSláðu inn heiltölu.'
                 self.__addcar_ui.get_another_input(errorprompt,inputprompt)
 
-    def check_valid(brand)
+    def check_valid(self, car):
+        brand = Car.get_brand(car)
+        while True
+        brand = brand.capitalize()
+        if brand 
 
 
         
