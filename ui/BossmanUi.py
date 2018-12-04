@@ -31,16 +31,12 @@ class Bossman:
             print("12. Fletta upp starfsmanni")
             print("13. Birta starfsmann")
 
-<<<<<<< HEAD
             action = int(input())
 
             if action in ACTION_CHOICES:
                 break
             else:
                 print("Vinsamlegast veldu gildan valmöguleika")
-=======
-            action = input()
->>>>>>> c7e7b707e2d354e8af6968e90948ecbee72eeaaf
 >>>>>>> c19cc99e4d836fca2e967be8b5a4afd58cee3d3c
 
 # <<<<<<< HEAD
