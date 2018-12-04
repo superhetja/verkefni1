@@ -1,5 +1,5 @@
-from ui import AddCarUi
+from ui.ShowCarsUi import ShowCars
 
-ui =AddCarUi.AddCarUi()
+a = ShowCars()
 
-ui.add_car_menu()
+a.print_all_cars()

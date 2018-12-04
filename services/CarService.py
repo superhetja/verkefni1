@@ -1,6 +1,6 @@
 from repositories.CarRepository import CarRepository
 from models.Car import Car
-from ui import AddCarUi
+#from ui import AddCarUi
 class CarService:
     VAlID_BRANDS  = ['Honda', 'Skoda']
     VALID_GROUP = [1,2,3,4,5,6]
@@ -13,15 +13,15 @@ class CarService:
         self.__car_repo.add_car(car)
 
     def get_valid_car(self,car):
-        doors = self.check_doors(car)
-        brand = self.check_brand(car)
-        seats = self.check_seats(car)
-        transmission = self.check_transmission(car)
-        group = self.check_group(car)
+        doors = self.get_doors(car)
+        brand = self.get_brand(car)
+        seats = self.get_seats(car)
+        transmission = self.get_transmission(car)
+        group = self.get_group(car)
         valid_car = Car(group,brand,seats,transmission,doors)
         return valid_car
         
-    def check_doors(self, car):
+    def get_doors(self, car):
         doors = Car.get_doors(car)
         inputprompt = 'Fjöldi dyra: '
         while True:
@@ -34,9 +34,9 @@ class CarService:
                 return doors
             except ValueError:
                 errorprompt = 'Rangur innsláttur/hurðir\nSláðu inn heiltölu.'
-#                AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
+#                AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
-    def check_brand(self, car):
+    def get_brand(self, car):
         brand = Car.get_brand(car)
         inputprompt = 'Tegund: '
         errorprompt = 'Ekki rétt tegund.'
@@ -44,9 +44,9 @@ class CarService:
             brand = brand.capitalize()
             if brand in self.VAlID_BRANDS:
                 return brand
- #           AddCarUi.AddCarUi.get_another_input(errorprompt, inputprompt)
+ #           AddCarUi.AddCarUi.get_input(errorprompt, inputprompt)
 
-    def check_seats(self,car):
+    def get_seats(self,car):
         seats = Car.get_seats(car)
         inputprompt = 'Fjöldi sæta: '
         errorprompt = 'Rangur innsláttur, sláðu inn heiltölu.'
@@ -59,9 +59,9 @@ class CarService:
                 return seats
             except ValueError:
                 pass
- #               AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
+ #               AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
-    def check_transmission(self,car):
+    def get_transmission(self,car):
         transmission = Car.get_transmission(car)
         inputprompt = 'Skipting b/s: '
         errorprompt = 'Rangur innsláttur.'
@@ -69,9 +69,9 @@ class CarService:
             transmission = transmission.lower()
             if transmission == 'b' or 's':
                 return transmission
-    #        AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
+    #        AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
             
-    def check_group(self, car):
+    def get_group(self, car):
         group = Car.get_group(car)
         inputprompt = 'Flokkur: '
         errorprompt = 'Rangur innsláttur, sláðu inn heiltölu'
@@ -83,7 +83,9 @@ class CarService:
             return group
         except ValueError:
             pass
-    #        AddCarUi.AddCarUi.get_another_input(errorprompt,inputprompt)
+    #        AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
+    def get_cars(self):
+        return self.__car_repo.get_cars()
         
         
