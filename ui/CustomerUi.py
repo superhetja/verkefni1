@@ -32,10 +32,6 @@ class CustomerUi:
                 break
             else:
                 print(errorprompt)
-            # if self.__service.is_valid_ssn(ssn) == False:
-            #     print('Rangur insláttur\nSláðu inn eingöngu tölustafi.')
-            # else:
-            #     break
         while True:
             email = input("Netfang: ")
             if self.__service.is_valid_email(email) == False:
@@ -44,10 +40,11 @@ class CustomerUi:
                 break
         while True:
             phoneNr = input("Símanúmer: ")
-            if self.__service.is_valid_phoneNr(phoneNr) == False:
-                print('Rangur insláttur\nSláðu inn eingöngu tölustafi.')
-            else:
+            errorprompt = self.__service.is_valid_phoneNr(phoneNr)
+            if not errorprompt:
                 break
+            else:
+                print(errorprompt)
 
         NewCustomer = Customer(name, ssn, email, phoneNr)
         self.__service.add_customer(NewCustomer)
