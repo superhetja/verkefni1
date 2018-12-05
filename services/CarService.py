@@ -2,7 +2,9 @@ from repositories.CarRepository import CarRepository
 from models.Car import Car
 #from ui import AddCarUi
 class CarService:
-    VAlID_BRANDS  = ['Honda', 'Skoda', 'Nissan']
+    VAlID_BRANDS = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault",
+    "Mazda","Kia","Opel","Ford","Skoda","Mercedez Benz","Nissan","Jeep","Land Rover",+
+    "Mitsubishi","Volvo","Citroen","VW","Audi","BMW","Chevrolet","Mini"]
     VALID_GROUP = [1,2,3,4,5,6]
     def __init__(self):
         self.__car_repo = CarRepository()

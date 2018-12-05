@@ -8,10 +8,12 @@ class Car:
     VAN = 9000
     TAX = 1.11
     INSURANCE = 30000
-    def __init__(self, group=0, brand='', seats=0, transmission='', doors=0):
+    def __init__(self, group=0, brand='', subbrand='', seats= 0, transmission='', doors=0,booked=False):
         self.__group = int(group)
         self.__brand = brand
+        self.__subbrand=subbrand
         self.__seats = seats
+        self.__booked=booked
         if transmission == 'b':
             self.__transmission = 'beinskiptur'
         else:
@@ -35,10 +37,10 @@ class Car:
         return price
         
     def __str__(self):
-        return "Bíll: {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}".format(self.__brand, self.__price, self.__doors, self.__seats, self.__transmission)
+        return "Bíll: {} {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}".format(self.__brand,self.__subbrand, self.__price, self.__doors, self.__seats, self.__transmission)
     
     def __repr__(self):
-        return "Car('{}','{}','{}','{}','{}')".format(self.__group,self.__brand,self.__seats,self.__transmission,self.__doors)
+        return "Car('{}','{}','{}','{}',{}','{}')".format(self.__group,self.__brand,self.__subbrand,self.__seats,self.__transmission,self.__doors)
     
     def get_price(self):
         self.set_price()
