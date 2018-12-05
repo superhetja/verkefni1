@@ -20,12 +20,12 @@ class CustomerService:
     
     def is_valid_name(self, name):
         errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
-        name.replace(" ", "")
-        if name.isalpha():
-            return True
-        else:
-            print(errorprompt)
-            return False
+        name = name.split()
+        for i in name:
+            if i.isalpha() == False:
+                print(errorprompt)
+                return False
+        return True
 #                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
 
     def is_valid_email(self, email):
