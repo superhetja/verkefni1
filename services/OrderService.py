@@ -3,101 +3,88 @@ from repositories.OrderRepository import OrderRepository
 class OrderService(self):
     def __init__(self):
         self.__order_repo = OrderRepository()
-
+    #   self.__newOrder_ui = NewOrder()
     def add_order(self, order): 
         if self.is_valid_order(order):
             self.__order_repo.add_order(order)
     
     def is_valid_order(self, order): 
-        date = check_date(order)
-        group = check_group(order)
-        brand = check_brand(order)
-        user_choice = check_user_choice(order)
-        costumer = check_costumer(order)
-        payment = check_payment(order)
-        card_number = check_card_number(order)
-
+    #    date = is_valid_date(order)
+    #    group = is_valid_group(order)
+    #    brand = is_valid_brand(order)
+    #    user_choice = is_valid_user_choice(order)
+    #    costumer = is_valid_costumer(order)
+    #    payment = is_valid_payment(order)
+    #    card_number = is_valid_card_number(order)
         return True
-
-    def check_date(self, order)
-        date = date.get_date(date)
-        inputprompt = 'Sláðu inn úttektardag: '
-        while True:
-            errorpromt = 'Rangur innsláttur/date\nSláðu inn aftur.'
-            try:
-                date = int(date)
-                if 7 < date < 1:
-                    errorpromt = 'Röng dagsetning.'
-                    raise ValueError
-                break
-            except ValueError
-                errorpromt = 'Rangur innsláttur/date\nSláðu inn aftur.'
-     #           self.__addorder_ui.get_another_input(errorpromt,inputprompt)
-
-    def check_group(self, order)
-        group = group.get_group(group)
-        inputprompt = 'Bílaflokkur: '
-        errorpromt = 'Rangur innsláttur '
+#búið
+    def is_valid_date(self, date):
+        errorprompt = 'Rangur innsláttur\nSláðu inn einungis tölustafi.'
+        try:
+            date = int(date)
+            if 7 < date < 1:
+                errorprompt = 'Ógild dagsetning dagsetning.'
+                raise ValueError
+            return None
+        except ValueError:
+            return errorprompt     
+#búið
+    def is_valid_group(self, group):
+        errorprompt = 'Ógildur hópur\nSláðu inn tölustaf.'
         try:
             group = int(group)
             if 7 < group <1:
-                errorpromt = 'Rangur innsláttur!'
+                errorprompt = 'Sláðu inn gildan hóp.'
                 raise ValueError
-            return group
+            return None
         except ValueError:
-            pass
-     #  self.__addorder_ui.get_another_input(errorpromt,inputprompt)
-    
-
-    def check_brand(self, order):
-        brand = brand.get_brand(brand)
-        inputprompt = 'Tegund: '
-        errorprompt = 'Ekki rétt tegund.'
-        while True:
-            brand = brand.capitalize()
-            if brand in self.VALID_BRANDS:
-                break
-         #   self.__addorder_ui.get_another_input(errorprompt,inputprompt)
-    
-    def check_user_choice(self, order):
-        user_choice = user_choice.get_user_choice(user_choice)
-        inputprompt = 'Valinn bíll: '
-        errorprompt = 'Rangur innsláttur. '
-        while True:
+            return errorprompt   
+#búið
+    def is_valid_brand(self, brand):
+        errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
+        brand = brand.capitalize()
+        if brand in self.VALID_BRANDS:
+            return None
+        else:
+            return errorprompt
+#eftir    
+    def ia_valid_user_choice(self, user_choice):
+        errorprompt = 'Rangur innsláttur.'
+        try:
             user_choice = user_choice.capitalize()
             if user_choice in self.VALID_BRANDS:
                 break
-       # self.__addorder_ui.get_another_input(errorprompt,inputprompt)
-
-
-    def check_costumer(self, order):
-        costumer = costumer.get_costumer(costumer)
-        inputprompt = 'Viðskiptavinur: '
-        errorprompt = 'Rangur viðskiptavinur! '
-        while True:
-            if costumer.isalpha():
-                return costumer
-            else: #self.__addorder_ui.get_another_input(errorprompt,inputprompt)
-
-    def check_payment(self, order):
-        payment = payment.get_payment(payment)
-        inputprompt = 'Greiðslumáti (k/kort, p/peningur): '
-        errorprompt = 'Rangur innsláttur! '
-        while True:
-            if payment == K():
-                return #vantar
-
-    def check_card_number(self, order):
-        card_number = card_number.get_card_number(card_number)
-        inputprompt = 'Kortanúmer: '
-        errorprompt = 'Rangt kortanúmer'
-        while True:
-            try:
-               card_number = int(card_number)
-                if 16 < card_number < 1: 
-                    errorpromt = 'Rangt kortanúmer reyndu aftur.'
-                    raise ValueError
-                return card_number
-            except ValueError:
-                pass
-                # self.__addorder_ui.get_another_input(errorprompt, inputprompt)
+#búið ????
+    def is_valid_costumer(self, costumer):
+        errorprompt = 'Rangur viðskiptavinur!'
+        for i in costumer:
+            if i in costumer:
+                if i.isalpha() == False:
+                    return False
+                else:
+                    return True
+#búið 
+    def is_valid_payment(self, payment):
+        errorprompt = 'Rangur innsláttur'
+        if payment == 'K' or payment == 'P':
+            return None
+        else:
+            return errorprompt
+#búið
+    def is_valid_card_number(self, card_number):
+        errorprompt = 'Rangt kortanúmer\Sláðu inn eingöngu tölustafi.'
+        try:
+            card_number = int(card_number)
+            if len(str(card_number)) != 16 : 
+                errorpromt = 'Of margir tölustafir\nSláðu inn réttan fjölda tölustafa.'
+                raise ValueError
+            return None
+        except ValueError:
+            return errorprompt
+#búið
+    def is_valid_info(self, info):
+        errorprompt = 'Rangur insláttur'
+        if info == 'J' og info == 'N':
+            return None
+        else:
+            return errorprompt

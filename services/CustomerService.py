@@ -19,50 +19,43 @@ class CustomerService:
         return True
     
     def is_valid_name(self, name):
-        errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
+        errorprompt = 'Rangar insláttur\nSláðu inn eingöngu bókstafi.'
         name = name.split()
         for i in name:
             if i.isalpha() == False:
-                print(errorprompt)
-                return False
-        return True
-#                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
+                return errorprompt
+        return None
 
     def is_valid_email(self, email):
-        errorprompt = 'Ógilt netfang\nSláðu inn gilt netfang.'
+        errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
         try:
             atsymbol = email.index('@')
             dot = email.index('.', atsymbol)
-            return True
+            return None
         except ValueError:
-            print(errorprompt)
-            return False
+            return errorprompt
 
     def is_valid_ssn(self, ssn):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
             ssn = int(ssn)
-            if ssn != 10:
-                print('Rangur fjöldi tölustafa')
+            if len(str(ssn)) != 10:
+                errorprompt = 'Rangur fjöldi tölustafa'
                 raise ValueError
-            return True
+            return None
         except ValueError:
-            print(errorprompt)
-            return False
-#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
+            return errorprompt
 
     def is_valid_phoneNr(self, phoneNr):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
             phoneNr = int(phoneNr)
-            if phoneNr != 7:
-                print('Rangur fjöldi tölustafa')
+            if len(str(phoneNr)) != 7:
+                errorprompt = 'Rangur fjöldi tölustafa'
                 raise ValueError
-            return True
+            return None
         except ValueError:
-            print(errorprompt)
-            return False
-#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
+            return errorprompt
 
     def get_customers(self):
         return self.__customer_repo.get_customers()

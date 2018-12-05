@@ -14,27 +14,54 @@ class CustomerUi:
         for customer in customers:
             print(customer)
 
+    def get_customer(self):
+        while True:
+            name = input("Nafn: ")
+            errorprompt = self.__service.is_valid_name(name)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+        while True:
+            ssn = input("Kennitala: ")
+            errorprompt = self.__service.is_valid_ssn(ssn)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+
     def new_customer(self):
         print(Header())
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
         while True:
             name = input("Nafn: ")
-            self.__service.is_valid_name(name)
+            errorprompt = self.__service.is_valid_name(name)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
         while True:
             ssn = input("Kennitala: ")
-            self.__service.is_valid_ssn(ssn)
+            errorprompt = self.__service.is_valid_ssn(ssn)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
         while True:
             email = input("Netfang: ")
-            self.__service.is_valid_email(email)
+            errorprompt = self.__service.is_valid_email(email)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
         while True:
             phoneNr = input("Símanúmer: ")
-            self.__service.is_valid_phoneNr(phoneNr)
+            errorprompt = self.__service.is_valid_phoneNr(phoneNr)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
 
         NewCustomer = Customer(name, ssn, email, phoneNr)
         self.__service.add_customer(NewCustomer)
-
-    def get_another_input(self, errorpromt, inputprompt):
-        print(errorpromt)
-        new_input = input()
-        return new_input
