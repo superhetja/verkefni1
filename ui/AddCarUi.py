@@ -15,7 +15,7 @@ class AddCarUi:
         transmission = input('Skipting b/s: ').lower()
         doors = input('Fjöldi dyra: ')
         new_car = Car(group, brand,subbrand seats, transmission, doors)
-        self.__car_service.add_car(new_car)
+        self.__service.add_car(new_car)
 
     def get_input(self, errorpromt, inputprompt):
         print(errorpromt)

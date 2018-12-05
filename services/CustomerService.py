@@ -18,54 +18,50 @@ class CustomerService:
         # phoneNr = is_valid_phoneNr(customer)
         return True
     
-    def is_valid_name(self, customer):
-        name = Customer.get_name(customer)
-        inputprompt = 'Nafn: '
+    def is_valid_name(self, name):
         errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
-        while True:
-            if name.isalpha():
-                return name
-            else:
-                pass
+        name.replace(" ", "")
+        if name.isalpha():
+            return True
+        else:
+            print(errorprompt)
+            return False
 #                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
 
-    def is_valid_email(self, customer):
-        email = Customer.get_name(customer)
+    def is_valid_email(self, email):
+        errorprompt = 'Ógilt netfang\nSláðu inn gilt netfang.'
         try:
             atsymbol = email.index('@')
             dot = email.index('.', atsymbol)
             return True
         except ValueError:
+            print(errorprompt)
             return False
 
-    def is_valid_ssn(self, customer):
-        ssn = Customer.get_name(customer)
-        inputprompt = 'Kennitala: '
-        while True:
-            errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
-            try:
-                ssn = int(ssn)
-                if ssn != 10:
-                    errorprompt = 'Rangur fjöldi tölustafa'
-                    raise ValueError
-                return ssn
-            except ValueError:
-                errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+    def is_valid_ssn(self, ssn):
+        errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+        try:
+            ssn = int(ssn)
+            if ssn != 10:
+                print('Rangur fjöldi tölustafa')
+                raise ValueError
+            return True
+        except ValueError:
+            print(errorprompt)
+            return False
 #                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
-    def is_valid_phoneNr(self, customer):
-        phoneNr = Customer.get_phoneNr(customer)
-        inputprompt = 'Símanúmer: '
-        while True:
-            errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
-            try:
-                phoneNr = int(phoneNr)
-                if phoneNr != 7:
-                    errorprompt = 'Rangur fjöldi tölustafa'
-                    raise ValueError
-                return phoneNr
-            except ValueError:
-                errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+    def is_valid_phoneNr(self, phoneNr):
+        errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+        try:
+            phoneNr = int(phoneNr)
+            if phoneNr != 7:
+                print('Rangur fjöldi tölustafa')
+                raise ValueError
+            return True
+        except ValueError:
+            print(errorprompt)
+            return False
 #                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def get_customers(self):
