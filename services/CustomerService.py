@@ -20,6 +20,7 @@ class CustomerService:
     
     def is_valid_name(self, name):
         errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
+        name.replace(" ", "")
         if name.isalpha():
             return True
         else:
