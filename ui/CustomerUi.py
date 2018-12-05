@@ -18,11 +18,19 @@ class CustomerUi:
         print(Header())
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
-        name = input("Nafn: ")
-        
-        ssn = input("Kennitala: ")
-        email = input("Netfang: ")
-        phoneNr = input("Símanúmer: ")
+        while True:
+            name = input("Nafn: ")
+            self.__service.is_valid_name(name)
+        while True:
+            ssn = input("Kennitala: ")
+            self.__service.is_valid_ssn(ssn)
+        while True:
+            email = input("Netfang: ")
+            self.__service.is_valid_email(email)
+        while True:
+            phoneNr = input("Símanúmer: ")
+            self.__service.is_valid_phoneNr(phoneNr)
+
         NewCustomer = Customer(name, ssn, email, phoneNr)
         self.__service.add_customer(NewCustomer)
 

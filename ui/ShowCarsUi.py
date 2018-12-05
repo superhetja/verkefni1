@@ -1,7 +1,6 @@
 from services.CarService import CarService
 
 class ShowCars:
-
     def __init__(self):
         self.__service = CarService()
 
