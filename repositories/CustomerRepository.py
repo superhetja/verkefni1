@@ -8,10 +8,10 @@ class CustomerRepository:
       with open('./data/costumers.txt', 'a+') as aFile:
          aFile.write(Customer.__repr__(costumer) + '\n')
 
-   def get_costumer(self):
+   def get_customers(self):
       customers = []
       with open("./data/costumers.txt", 'r') as aFile:
-         for line in aFile.readLines():
+         for line in aFile.readlines():
             customer = eval(line.strip())
             customers.append(customer)
          return customers

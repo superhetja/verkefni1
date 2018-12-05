@@ -10,11 +10,12 @@ class AddCarUi:
         self.car_group_menu()
         group = input('Flokkur: ')
         brand = input('Tegund: ')
+        subbrand=input('Undirtegund: ')
         seats = input('Fjöldi sæta: ')
         transmission = input('Skipting b/s: ').lower()
         doors = input('Fjöldi dyra: ')
-        new_car = Car(group, brand, seats, transmission, doors)
-        self.__car_service.add_car(new_car)
+        new_car = Car(group, brand,subbrand seats, transmission, doors)
+        self.__service.add_car(new_car)
 
     def get_input(self, errorpromt, inputprompt):
         print(errorpromt)
