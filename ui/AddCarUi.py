@@ -1,6 +1,6 @@
 from services.CarService import CarService
 from models.Car import Car
-from service.CheckInputService import CheckInput
+from services.CheckInputService import CheckInput
 from models.Clear import Clear
 
 class AddCarUi:
@@ -14,7 +14,7 @@ class AddCarUi:
         self.car_group_menu()
         while True:
             group = input('Flokkur: ')
-            errorprompt = self.__check_input.is_valid_num_between(num,1,6)
+            errorprompt = self.__check_input.is_valid_number_between(group,1,6)
             if errorprompt == None:
                 break
             print(errorprompt)
@@ -22,19 +22,19 @@ class AddCarUi:
         subbrand=input('Undirtegund: ').capitalize()
         while True:
             seats = input('Fjöldi sæta: ')
-            errorprompt = self.__check_input.is_valid_num_between(seats,2,7)
+            errorprompt = self.__check_input.is_valid_number_between(seats,2,7)
             if errorprompt == None:
                 break
             print(errorprompt)
         while True:
             transmission = input('Skipting b/s: ')
-            errorprompt = self.__check_input.is_valid_letter(transmission, [b,s])
+            errorprompt = self.__check_input.is_valid_letter(transmission, ['b','s'])
             if errorprompt == None:
                 break
             print(errorprompt)
         while True:
             doors = input('Fjöldi dyra: ')
-            errorprompt = self.__check_input.is_valid_num_between(doors,3,5)
+            errorprompt = self.__check_input.is_valid_number_between(doors,3,5)
             if errorprompt == None:
                 break
             print(errorprompt)

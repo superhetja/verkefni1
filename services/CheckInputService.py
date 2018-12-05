@@ -35,8 +35,8 @@ class CheckInput:
 
     def is_string(self, string):
         errorprompt = 'Rangar insláttur\nSláðu inn eingöngu bókstafi.'
-        name = name.split()
-        for i in name:
+        string = string.split()
+        for i in string:
             if i.isalpha() == False:
                 return errorprompt
         return None
@@ -44,8 +44,8 @@ class CheckInput:
     def is_valid_number_length(self, num, length):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
-            ssn = int(ssn)
-            if len(str(ssn)) != length:
+            num = int(num)
+            if len(str(num)) != length:
                 errorprompt = 'Rangur fjöldi tölustafa'
                 raise ValueError
             return None
