@@ -4,7 +4,7 @@ class Clear:
     def __init__(self):
         pass
 
-    def clear_screen():
+    def clear_screen(self):
         '''
         Clears the terminal screen.
         '''

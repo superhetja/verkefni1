@@ -37,9 +37,9 @@ class AddCarUi:
             errorprompt = self.__check_input.is_valid_num_between(doors,3,5)
             if errorprompt == None:
                 break
-            print(err)
+            print(errorprompt)
         new_car = Car(group, brand, subbrand, seats, transmission, doors)
-        self.__service.add_car(new_car)
+        self.__car.add_car(new_car)
 
     def car_group_menu(self):
         print('Bílaflokkar')
