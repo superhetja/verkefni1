@@ -23,7 +23,7 @@ class CarService:
         valid_car = Car(group,brand,seats,transmission,doors)
         return valid_car
         
-    def get_doors(self, car):
+    def is_valid_doors(self, car):
         doors = Car.get_doors(car)
         inputprompt = 'Fjöldi dyra: '
         while True:
@@ -38,8 +38,7 @@ class CarService:
                 errorprompt = 'Rangur innsláttur/hurðir\nSláðu inn heiltölu.'
 #                AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
-    def get_brand(self, car):
-        brand = Car.get_brand(car)
+    def is_valid_brand(self, brand):
         inputprompt = 'Tegund: '
         errorprompt = 'Ekki rétt tegund.'
         while True:
@@ -47,9 +46,18 @@ class CarService:
             if brand in self.VAlID_BRANDS:
                 return brand
  #           AddCarUi.AddCarUi.get_input(errorprompt, inputprompt)
+    def is_valid_subbrand(self,subbrand):
+        errorprompt = 'Rangur innsláttur\n Sláðu inn eingöngu bókstafi.'
+        subbrand=subbrand.split()
+        for i in subbrand:
+            if i.isalpha()==False:
+                print(errorprompt)
+                return False
+        return True
+        
+        
 
-    def get_seats(self,car):
-        seats = Car.get_seats(car)
+    def is_valid_seats(self,seats):
         inputprompt = 'Fjöldi sæta: '
         errorprompt = 'Rangur innsláttur, sláðu inn heiltölu.'
         while True:
@@ -63,8 +71,7 @@ class CarService:
                 pass
  #               AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
-    def get_transmission(self,car):
-        transmission = Car.get_transmission(car)
+    def is_valid_transmission(self,transmission):
         inputprompt = 'Skipting b/s: '
         errorprompt = 'Rangur innsláttur.'
         while True:
@@ -73,8 +80,7 @@ class CarService:
                 return transmission
     #        AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
             
-    def get_group(self, car):
-        group = Car.get_group(car)
+    def get_group(self, group):
         inputprompt = 'Flokkur: '
         errorprompt = 'Rangur innsláttur, sláðu inn heiltölu'
         try:
@@ -87,7 +93,7 @@ class CarService:
             pass
     #        AddCarUi.AddCarUi.get_input(errorprompt,inputprompt)
 
-    def get_cars(self):
+    def is_valid_cars(self):
         return self.__car_repo.get_cars()
         
         

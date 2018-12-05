@@ -37,7 +37,7 @@ class Car:
         return price
         
     def __str__(self):
-        return "Bíll: {} {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}".format(self.__brand,self.__subbrand, self.__price, self.__doors, self.__seats, self.__transmission)
+        return "Bíll: {} {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}, Í útleigu: {}".format(self.__brand,self.__subbrand, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
     
     def __repr__(self):
         return "Car('{}','{}','{}','{}',{}','{}')".format(self.__group,self.__brand,self.__subbrand,self.__seats,self.__transmission,self.__doors)
