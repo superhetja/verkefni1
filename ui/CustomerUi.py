@@ -19,6 +19,7 @@ class CustomerUi:
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
         name = input("Nafn: ")
+        
         ssn = input("Kennitala: ")
         email = input("Netfang: ")
         phoneNr = input("Símanúmer: ")
