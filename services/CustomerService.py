@@ -52,7 +52,7 @@ class CustomerService:
         try:
             phoneNr = int(phoneNr)
             if len(str(phoneNr)) != 7:
-                print('Rangur fjöldi tölustafa')
+                errorprompt = 'Rangur fjöldi tölustafa'
                 raise ValueError
             return None
         except ValueError:

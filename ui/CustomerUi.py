@@ -14,8 +14,10 @@ class CustomerUi:
         for customer in customers:
             print(customer)
 
-    def new_customer(self):
+    def get_customer(self):
         
+
+    def new_customer(self):
         print(Header())
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
@@ -48,8 +50,3 @@ class CustomerUi:
 
         NewCustomer = Customer(name, ssn, email, phoneNr)
         self.__service.add_customer(NewCustomer)
-
-    def get_another_input(self, errorpromt, inputprompt):
-        print(errorpromt)
-        new_input = input()
-        return new_input

@@ -8,3 +8,10 @@ class ShowCars:
         cars = self.__service.get_cars()
         for car in cars:
             print(car)
+
+    def print_available_cars(self):
+        pass
+    
+    def print_unavailable_cars(self):
+        pass
+
