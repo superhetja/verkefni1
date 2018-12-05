@@ -15,7 +15,20 @@ class CustomerUi:
             print(customer)
 
     def get_customer(self):
-        
+        while True:
+            name = input("Nafn: ")
+            errorprompt = self.__service.is_valid_name(name)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+        while True:
+            ssn = input("Kennitala: ")
+            errorprompt = self.__service.is_valid_ssn(ssn)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
 
     def new_customer(self):
         print(Header())
@@ -23,10 +36,11 @@ class CustomerUi:
         print("Sláðu inn upplýsingar um viðskiptavin:")
         while True:
             name = input("Nafn: ")
-            if self.__service.is_valid_name(name) == False:
-                print('Rangur insláttur\nSláðu inn eigöngu bókstafi.')
-            else:
+            errorprompt = self.__service.is_valid_name(name)
+            if not errorprompt:
                 break
+            else:
+                print(errorprompt)
         while True:
             ssn = input("Kennitala: ")
             errorprompt = self.__service.is_valid_ssn(ssn)
@@ -36,10 +50,11 @@ class CustomerUi:
                 print(errorprompt)
         while True:
             email = input("Netfang: ")
-            if self.__service.is_valid_email(email) == False:
-                print('Ógilt netfang\nSláðu inn gilt netfang.')
-            else:
+            errorprompt = self.__service.is_valid_email(email)
+            if not errorprompt:
                 break
+            else:
+                print(errorprompt)
         while True:
             phoneNr = input("Símanúmer: ")
             errorprompt = self.__service.is_valid_phoneNr(phoneNr)
