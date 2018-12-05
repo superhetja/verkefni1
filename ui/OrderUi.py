@@ -44,7 +44,7 @@ class Order():
             else:
                 print(errorprompt)
 
-        print("Lausir bíla á valdri dagsetningu: ")
+print("Lausir bíla á valdri dagsetningu: ")
         #listi yfir lausa bíla
 
         while True:
@@ -63,10 +63,22 @@ class Order():
             else:
                 print(errorprompt)
 
-        
-        payment=input("Greiðslumáti(k/kort,p/preningur):")
+        while True:
+            payment=input("Greiðslumáti(k/kort,p/preningur):")
+            errorprompt = self.__service.is_valis_payment(payment)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+            
         if payment == "k":
+            while True:
             card_number=input("Kortanúmer:")
+            errorprompt = self.__service.is_valid_card_number(card_number)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
         print("Yfirlit")
         
         #yfirlit yfir yfirlitið á pöntuninni
