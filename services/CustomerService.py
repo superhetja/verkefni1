@@ -5,7 +5,7 @@ from models.Customer import Customer
 class CustomerService:
     def __init__(self):
         self.__customer_repo = CustomerRepository()
-        self.__newCustomer_ui = NewCustomer()
+#        self.__newCustomer_ui = NewCustomer()
 
     def add_customer(self, customer):
         if self.is_valid_customer(customer):

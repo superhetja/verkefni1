@@ -1,14 +1,15 @@
 from services.CustomerService import CustomerService
 from models.Customer import Customer
 from HeaderUi import Color
+import HeaderUi
 
-print_header()
-class NewCustomer:
+HeaderUi.print_header()
+class Customer:
     def __init__(self):
         self.__customer_service = CustomerService()
 
     def new_customer(self):
-        print(color.BOLD + "Nýskráning viðskiptavina" + color.END)
+        print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Upplýsingar um viðskiptavin:")
         name = input("Nafn: ")
         ssn = input("Kennitala: ")
