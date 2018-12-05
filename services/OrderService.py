@@ -20,14 +20,14 @@ class OrderService(self):
 #búið
     def is_valid_date(self, date):
         errorprompt = 'Rangur innsláttur\nSláðu inn einungis tölustafi.'
-            try:
-                date = int(date)
-                if 7 < date < 1:
-                    errorprompt = 'Ógild dagsetning dagsetning.'
-                    raise ValueError
-                return None
-            except ValueError:
-                return errorprompt     
+        try:
+            date = int(date)
+            if 7 < date < 1:
+                errorprompt = 'Ógild dagsetning dagsetning.'
+                raise ValueError
+            return None
+        except ValueError:
+            return errorprompt     
 #búið
     def is_valid_group(self, group):
         errorprompt = 'Ógildur hópur\nSláðu inn tölustaf.'
@@ -65,8 +65,7 @@ class OrderService(self):
                     return True
 #búið 
     def is_valid_payment(self, payment):
-        errorprompt = 'Rangur innsláttur! '
-        payment.capitalize()
+        errorprompt = 'Rangur innsláttur'
         if payment == 'K' or payment == 'P':
             return None
         else:
@@ -82,6 +81,10 @@ class OrderService(self):
             return None
         except ValueError:
             return errorprompt
-# vantar info ; #vantar 
+#búið
     def is_valid_info(self, info):
-        errorprompt = 'Rangar upplýsingar '
+        errorprompt = 'Rangur insláttur'
+        if info == 'J' og info == 'N':
+            return None
+        else:
+            return errorprompt
