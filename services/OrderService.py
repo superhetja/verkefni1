@@ -20,7 +20,7 @@ class OrderService(self):
 
 #búið
     def is_valid_date(self, date):
-        errorpromt = 'Rangur innsláttur/date\nSláðu inn aftur.'
+        errorpromt = 'Rangur innsláttur\nSláðu inn aftur.'
             try:
                 date = int(date)
                 if 7 < date < 1:
@@ -94,3 +94,6 @@ class OrderService(self):
             except ValueError:
                 return errorprompt
                 # self.__addorder_ui.get_another_input(errorprompt, inputprompt)
+# vantar info ; #vantar 
+    def is_valid_info(self, info):
+        errorprompt = 'Rangar upplýsingar '

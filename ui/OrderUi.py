@@ -19,6 +19,8 @@ class Order():
                     break
                 else:
                     print(errorpromt)
+
+        while True:    
             date2 = input("Sláðu inn skiladag: ")
             errorpromt = self.__service.is_valid_date2(date2)
             if not errorpromt:
@@ -29,21 +31,54 @@ class Order():
         while True:        
             group = input("Bílflokkur: ")
             errorpromt = self.__service.is_valid_group(group)
-            if not 
+            if not errorpromt:
+                break
+            else:
+                print(errorpromt)
 
-        brand = input("Tegund Bíls: ")
+        while True:
+            brand = input("Tegund Bíls: ")
+            errorprompt = self.__service.is_valid_brand(brand)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+
         print("Lausir bíla á valdri dagsetningu: ")
         #listi yfir lausa bíla
-        user_choice= input("Valinn bíll: ")
-        customer= input("Viðskiptavinur: ")
+
+        while True:
+            user_choice= input("Valinn bíll: ")
+            errorprompt = self.__service.is_valid_user_choice(user_choice)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+
+        while True:
+            costomer= input("Viðskiptavinur: ")
+            errorprompt = self.__service.is_valid_costumer(costumer)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+
+        
         payment=input("Greiðslumáti(k/kort,p/preningur):")
         if payment == "k":
             card_number=input("Kortanúmer:")
         print("Yfirlit")
+        
         #yfirlit yfir yfirlitið á pöntuninni
-        info = input("Eru allar upplýsingar réttar? j/n")
-        if info== "j":
-            print("Útleiga bókuð")
+        while True:
+            info = input("Eru allar upplýsingar réttar? j/n")
+            errorprompt = self.__service.is_valid_info(info)
+            if info == "j":
+                print("Útleiga bókuð")
+            else:
+                print(errorprompt)
+
+
 
     def get_another_input(self, errorpromt, inputprompt):
         print(errorpromt)
