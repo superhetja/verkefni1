@@ -20,7 +20,7 @@ class CustomerService:
     
     def is_valid_name(self, name):
         errorprompt = 'Rangur insláttur\nSláðu inn eigöngu bókstafi.'
-        if self.__name.isalpha():
+        if name.isalpha():
             return True
         else:
             print(errorprompt)
@@ -30,8 +30,8 @@ class CustomerService:
     def is_valid_email(self, email):
         errorprompt = 'Ógilt netfang\nSláðu inn gilt netfang.'
         try:
-            atsymbol = self.__email.index('@')
-            dot = self.__email.index('.', atsymbol)
+            atsymbol = email.index('@')
+            dot = email.index('.', atsymbol)
             return True
         except ValueError:
             print(errorprompt)
@@ -40,8 +40,8 @@ class CustomerService:
     def is_valid_ssn(self, ssn):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
-            self.__ssn = int(self.__ssn)
-            if self.__ssn != 10:
+            ssn = int(ssn)
+            if ssn != 10:
                 print('Rangur fjöldi tölustafa')
                 raise ValueError
             return True
@@ -53,8 +53,8 @@ class CustomerService:
     def is_valid_phoneNr(self, phoneNr):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
-            self.__phoneNr = int(self.__phoneNr)
-            if self.__phoneNr != 7:
+            phoneNr = int(phoneNr)
+            if phoneNr != 7:
                 print('Rangur fjöldi tölustafa')
                 raise ValueError
             return True
