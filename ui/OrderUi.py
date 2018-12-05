@@ -27,6 +27,10 @@ class Order():
         if info== "j":
             print("Útleiga bókuð")
 
+    def get_another_input(self, errorpromt, inputprompt):
+        print(errorpromt)
+        new_input = input()
+        return new_input
     
     def car_order_menu(self):
             print("Bílflokkar ")

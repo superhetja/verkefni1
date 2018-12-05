@@ -16,6 +16,8 @@
 #             videos.append(video)
 #         return videos
 
+
+hallo aftur
 name = 'Marta Guðbertsdóttir'.split()
 for i in name:
         if i .isalpha() == False:
