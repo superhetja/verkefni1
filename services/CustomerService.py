@@ -32,14 +32,14 @@ class CustomerService:
             dot = email.index('.', atsymbol)
             return True
         except ValueError:
-            print(errorprompt)
+            #print(errorprompt)
             return False
 
     def is_valid_ssn(self, ssn):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
             ssn = int(ssn)
-            if ssn != 10:
+            if len(str(ssn)) != 10:
                 errorprompt = 'Rangur fjöldi tölustafa'
                 raise ValueError
             return None
@@ -48,15 +48,15 @@ class CustomerService:
 #                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def is_valid_phoneNr(self, phoneNr):
+        errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
         try:
             phoneNr = int(phoneNr)
-            if phoneNr != 7:
+            if len(str(phoneNr)) != 7:
                 print('Rangur fjöldi tölustafa')
                 raise ValueError
-            return True
+            return None
         except ValueError:
-            print(errorprompt)
-            return False
+            return errorprompt
 #                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def get_customers(self):
