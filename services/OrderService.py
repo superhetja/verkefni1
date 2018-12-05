@@ -4,6 +4,7 @@ class OrderService(self):
     def __init__(self):
         self.__order_repo = OrderRepository()
     #   self.__newOrder_ui = NewOrder()
+    
     def add_order(self, order): 
         if self.is_valid_order(order):
             self.__order_repo.add_order(order)
@@ -54,6 +55,8 @@ class OrderService(self):
             user_choice = user_choice.capitalize()
             if user_choice in self.VALID_BRANDS:
                 break
+        except ValueError:
+            return errorprompt
 #búið ????
     def is_valid_costumer(self, costumer):
         errorprompt = 'Rangur viðskiptavinur!'
@@ -75,7 +78,7 @@ class OrderService(self):
         errorprompt = 'Rangt kortanúmer\Sláðu inn eingöngu tölustafi.'
         try:
             card_number = int(card_number)
-            if len(str(card_number)) != 16 : 
+            if len(str(card_number)) != 16: 
                 errorpromt = 'Of margir tölustafir\nSláðu inn réttan fjölda tölustafa.'
                 raise ValueError
             return None

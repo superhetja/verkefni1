@@ -1,11 +1,12 @@
 from models.Color import Color
+from ui.HeaderUi import Header
 # from models.car import Car
 from models.Order import Order
-from services.OrderService import OrderRepository
+from services.OrderService import OrderService
 
 ACTION_CHOICES=[1,2,3,4,5,6,7,8]
 
-class Order():
+class OrderCar():
     def __init__(self):
         self.__service = OrderService
         self.__header = Header()
@@ -17,7 +18,7 @@ class Order():
             if not errorprompt:
                 break
             else:
-                print(errorpromtp)
+                print(errorprompt)
         while True:    
             date2 = input("Sláðu inn skiladag: ")
             errorprompt = self.__service.is_valid_date2(date2)
@@ -49,8 +50,8 @@ class Order():
             else:
                 print(errorprompt)
         while True:
-            costomer = input("Viðskiptavinur: ")
-            errorprompt = self.__service.is_valid_costumer(costumer)
+            customer = input("Viðskiptavinur: ")
+            errorprompt = self.__service.is_valid_costumer(customer)
             if not errorprompt:
                 break
             else:
