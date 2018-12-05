@@ -1,18 +1,36 @@
-from ui.HeaderUi import Color
-from models.car import Car
-
+from models.Color import Color
+# from models.car import Car
+from models.Order import Order
+from services.OrderService import OrderRepository
 
 ACTION_CHOICES=[1,2,3,4,5,6,7,8]
 
 class Order():
     def __init__(self):
-        pass
-    
-    def add_order(self):
-        date1 = input("Sláðu inn úttektardag: ")
-        date2 = input("Sláðu inn skiladag: ")
+        self.__service = OrderService
+        self.__header = Header()
 
-        group = input("Bílflokkur: ")
+
+    def add_order(self):
+        while True:
+            date1 = input("Sláðu inn úttektardag: ")
+            errorpromt = self.__service.is_valid_date1(date1)
+                if not errorpromt:
+                    break
+                else:
+                    print(errorpromt)
+            date2 = input("Sláðu inn skiladag: ")
+            errorpromt = self.__service.is_valid_date2(date2)
+            if not errorpromt:
+                break
+            else:
+                print(errorpromt)
+       
+        while True:        
+            group = input("Bílflokkur: ")
+            errorpromt = self.__service.is_valid_group(group)
+            if not 
+
         brand = input("Tegund Bíls: ")
         print("Lausir bíla á valdri dagsetningu: ")
         #listi yfir lausa bíla
