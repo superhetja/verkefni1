@@ -1,15 +1,17 @@
-form models.Costumer import Costumer
+from models.Customer import Customer
+
 class CustomerRepository:
    def __init__(self):
       pass
    
-   def add_costumer(self, costumer):
+   def add_customer(self, costumer):
       with open('./data/costumers.txt', 'a+') as aFile:
-         costumers.write(Costumer.__repr__() + '\n')
+         aFile.write(Customer.__repr__(costumer) + '\n')
 
    def get_costumer(self):
+      customers = []
       with open("./data/costumers.txt", 'r') as aFile:
-         for line in Costumers.readLines():
-            Customer = eval(line.strip())
-            Customer.append(Customer)
-         return self.__Customer
+         for line in aFile.readLines():
+            customer = eval(line.strip())
+            customers.append(customer)
+         return customers

@@ -5,6 +5,9 @@ class Customer:
         self.__ssn = ssn
         self.__phoneNr = phoneNr
     
+    def __repr__(self):
+        return "Costumer('{}','{}','{}','{}')".format(self.__name, self.__ssn, self.__email, self.__phoneNr)
+
     def get_name(self):
         return self.__name
 
@@ -14,5 +17,5 @@ class Customer:
     def get_ssn(self):
         return self.__ssn
 
-    def get_phoneNr(slef):
+    def get_phoneNr(self):
         return self.__phoneNr

@@ -1,4 +1,5 @@
-from ui.OrderUi import Order
+from ui.ShowCarsUi import ShowCars
 
-ui = Order()
-ui.add_order()
+a = ShowCars()
+
+a.print_all_cars()
