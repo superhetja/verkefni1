@@ -15,21 +15,39 @@ class CustomerUi:
             print(customer)
 
     def new_customer(self):
+        
         print(Header())
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
         while True:
             name = input("Nafn: ")
-            self.__service.is_valid_name(name)
+            if self.__service.is_valid_name(name) == False:
+                print('Rangur insláttur\nSláðu inn eigöngu bókstafi.')
+            else:
+                break
         while True:
             ssn = input("Kennitala: ")
-            self.__service.is_valid_ssn(ssn)
+            errorprompt = self.__service.is_valid_ssn(ssn)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+            # if self.__service.is_valid_ssn(ssn) == False:
+            #     print('Rangur insláttur\nSláðu inn eingöngu tölustafi.')
+            # else:
+            #     break
         while True:
             email = input("Netfang: ")
-            self.__service.is_valid_email(email)
+            if self.__service.is_valid_email(email) == False:
+                print('Ógilt netfang\nSláðu inn gilt netfang.')
+            else:
+                break
         while True:
             phoneNr = input("Símanúmer: ")
-            self.__service.is_valid_phoneNr(phoneNr)
+            if self.__service.is_valid_phoneNr(phoneNr) == False:
+                print('Rangur insláttur\nSláðu inn eingöngu tölustafi.')
+            else:
+                break
 
         NewCustomer = Customer(name, ssn, email, phoneNr)
         self.__service.add_customer(NewCustomer)

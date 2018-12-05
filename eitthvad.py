@@ -18,6 +18,7 @@
 
 
 hallo aftur
+hallo
 name = 'Marta Guðbertsdóttir'.split()
 for i in name:
         if i .isalpha() == False:
