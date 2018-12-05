@@ -1,0 +1,3 @@
+'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+'Rangur fjöldi tölustafa'
+'Rangar insláttur\nSláðu inn eingöngu bókstafi.'

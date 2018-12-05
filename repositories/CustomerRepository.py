@@ -4,9 +4,9 @@ class CustomerRepository:
    def __init__(self):
       pass
    
-   def add_customer(self, costumer):
+   def add_customer(self, customer):
       with open('data/customers.txt', 'a+') as aFile:
-         aFile.write(Customer.__repr__(costumer) + '\n')
+         aFile.write(Customer.__repr__(customer) + '\n')
 
    def get_customers(self):
       customers = []
