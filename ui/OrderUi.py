@@ -8,16 +8,17 @@ class OrderUi():
     def __init__(self):
         self.__service = OrderService()
         self.__header = Header()
-        self.__check_imput = CheckInput()
+        self.__check_input = CheckInput()
 
     def set_order(self):
-        while True:
-            date1 = input("Sláðu inn úttektardag: ")
-            errorprompt = self.__service.is_valid_date(date1)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
+        self.__check_input.eh_eh('Sláðu inn úttektardag: ', self.__service.is_valid_date())
+        # while True:
+        #     date1 = input("Sláðu inn úttektardag: ")
+        #     errorprompt = self.__service.is_valid_date(date1)
+        #     if not errorprompt:
+        #         break
+        #     else:
+        #         print(errorprompt)
         while True:    
             date2 = input("Sláðu inn skiladag: ")
             errorprompt = self.__service.is_valid_date(date2)

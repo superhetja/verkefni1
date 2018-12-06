@@ -63,3 +63,12 @@ class CheckInput:
             return None
         else:
             return errorprompt
+
+    def eh_eh(self, sentence_input, user_errorprompt):
+        while True:
+            user_input = input(sentence_input)
+            errorprompt = user_errorprompt(user_input)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
