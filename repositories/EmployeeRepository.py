@@ -1,7 +1,7 @@
 from models.Employee import Employee
 
 class EmployeeRepository:
-     def __init__(self):
+    def __init__(self):
         pass
 
     def add_employee(self, employee):
