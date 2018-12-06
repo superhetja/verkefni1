@@ -1,13 +1,16 @@
 from services.CarService import CarService
-from HeaderUi import Color
+from ui.HeaderUi import Header
+from models.Clear import Clear
+from models.Color import Color
+from services.CheckInputService import CheckInput
 
-print_header()
-ACTION_CHOICES = [1,2,3,4,5,6,7,8]
 class Salesman: 
-    def __init__(slef):
+    def __init__(self):
         self.__car_service = CarService()
+        self.__header = Header()
 
     def main_menu(self):
+        print(header)
         while True:
             print(Color.BOLD + "Útleiga"+ Color.END)
             print("1. Skrá nýja útleigu")
