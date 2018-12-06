@@ -2,13 +2,16 @@ from models.Employee import Employee
 from ui.HeaderUi import Header
 from services.EmployeeService import EmployeeService
 from models.Color import Color
+from models.Clear import Clear
+
 class CreateEmployeeUi:
     def __init__(self):
         self.__header = Header()
         self.__service = EmployeeService()
+        self.__clear = Clear()
         
-
     def create_empoyee(self):
+        self.__clear.clear_screen()
         print(self.__header)
         print(Color.BOLD + 'Nýskráning starfsmanna'+ Color.END)
         print('Sláðu inn upplýsingar um starfsmann')
