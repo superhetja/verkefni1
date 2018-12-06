@@ -26,7 +26,7 @@ class OrderUi():
             else:
                 print(errorprompt)
         while True:        
-            group = input("Bílflokkur: ")
+            group = input("Bílaflokkur: ")
             errorprompt = self.__service.is_valid_group(group)
             if not errorprompt:
                 break
@@ -57,7 +57,7 @@ class OrderUi():
                 print(errorprompt)
         while True:
             payment = input("Greiðslumáti(k/kort,p/preningur): ").capitalize()
-            errorprompt = self.__service.is_valis_payment(payment)
+            errorprompt = self.__service.is_valid_payment(payment)
             if not errorprompt:
                 break
             else:
@@ -77,6 +77,7 @@ class OrderUi():
             errorprompt = self.__service.is_valid_info(info)
             if info == "J":
                 new_order = Order(date1, date2, group, brand, user_choice, customer, payment, card_number)
+                self.__service.add_order(new_order)
                 print("Útleiga bókuð")
             else:
                 print(errorprompt)
