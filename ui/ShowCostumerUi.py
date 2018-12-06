@@ -25,7 +25,7 @@ class ShowCostumer:
         def get_customer(self):
             while True:
                 name = input("Nafn: ")
-                errorprompt = self.__service.is_valid_name(name)
+                errorprompt = self.__check_input.is_string(name)
                 if not errorprompt:
                     break
                 else:
@@ -35,7 +35,6 @@ class ShowCostumer:
             while True:
                 ssn = input("Kennitala: ")
                 errorprompt= self.__check_input.is__valid_number_lenght(ssn,10)
-                errorprompt = self.__service.is_valid_ssn(ssn)
                 if not errorprompt:
                     break
                 else:
