@@ -33,7 +33,7 @@ class ShowCostumer:
     def user_input_ssn(self):
         while True:
             ssn = input("Kennitala: ")
-            errorprompt = self.__check_input.is__valid_number_lenght(ssn,10)
+            errorprompt = self.__check_input.is_valid_number_length(ssn, 10)
             if not errorprompt:
                 break
             else:
