@@ -1,6 +1,6 @@
 from services.CostumerService import CostumerService
 from services.CheckInputService import CheckInput
-from models.costumer import costumer 
+from models.costumer import costumer
 
 class ShowCostumer:
     def __init__(self):
@@ -9,8 +9,8 @@ class ShowCostumer:
         self.__clear = Clear()
 
         def show_costumer_menu(self):
-            
-
+            pass
+        
         def get_customer(self):
             while True:
                 name = input("Nafn: ")

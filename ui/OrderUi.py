@@ -1,15 +1,15 @@
 from models.Color import Color
 # from models.car import Car
 from models.Order import Order
-from services.OrderService import OrderRepository
+from ui.HeaderUi import Header
+from services.OrderService import OrderService
 
 ACTION_CHOICES=[1,2,3,4,5,6,7,8]
 
-class Order():
+class OrderUi():
     def __init__(self):
         self.__service = OrderService
         self.__header = Header()
-
 
     def add_order(self):
         while True:
@@ -19,7 +19,6 @@ class Order():
                 break
             else:
                 print(errorpromt)
-
         while True:    
             date2 = input("Sláðu inn skiladag: ")
             errorpromt = self.__service.is_valid_date2(date2)
@@ -27,7 +26,6 @@ class Order():
                 break
             else:
                 print(errorpromt)
-       
         while True:        
             group = input("Bílflokkur: ")
             errorpromt = self.__service.is_valid_group(group)
@@ -35,7 +33,6 @@ class Order():
                 break
             else:
                 print(errorpromt)
-
         while True:
             brand = input("Tegund Bíls: ")
             errorprompt = self.__service.is_valid_brand(brand)
@@ -43,10 +40,8 @@ class Order():
                 break
             else:
                 print(errorprompt)
-
-#print("Lausir bíla á valdri dagsetningu: ")
         #listi yfir lausa bíla
-
+        print("Lausir bíla á valdri dagsetningu: ")
         while True:
             user_choice= input("Valinn bíll: ")
             errorprompt = self.__service.is_valid_user_choice(user_choice)
@@ -54,7 +49,6 @@ class Order():
                 break
             else:
                 print(errorprompt)
-
         while True:
             costomer= input("Viðskiptavinur: ")
             errorprompt = self.__service.is_valid_custumer(custumer)
@@ -62,41 +56,30 @@ class Order():
                 break
             else:
                 print(errorprompt)
-
         while True:
-            payment=input("Greiðslumáti(k/kort,p/preningur):")
+            payment = input("Greiðslumáti(k/kort,p/preningur): ").capitalize()
             errorprompt = self.__service.is_valis_payment(payment)
             if not errorprompt:
                 break
             else:
                 print(errorprompt)
-            
-        if payment == "k": # veit ekki hvað ég geri með þetta
-
-        while True:
-            card_number=input("Kortanúmer:")
-            errorprompt = self.__service.is_valid_card_number(card_number)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        print("Yfirlit")
-        
+        if payment == "K":
+            while True:
+                card_number = input("Kortanúmer: ")
+                errorprompt = self.__service.is_valid_card_number(card_number)
+                if not errorprompt:
+                    break
+                else:
+                    print(errorprompt)
         #yfirlit yfir yfirlitið á pöntuninni
+        print("Yfirlit")
         while True:
-            info = input("Eru allar upplýsingar réttar? j/n")
+            info = input("Eru allar upplýsingar réttar? j/n").capitalize()
             errorprompt = self.__service.is_valid_info(info)
-            if info == "j":
+            if info == "J":
                 print("Útleiga bókuð")
             else:
                 print(errorprompt)
-
-
-
-    def get_another_input(self, errorpromt, inputprompt):
-        print(errorpromt)
-        new_input = input()
-        return new_input
     
     def car_order_menu(self):
             print("Bílflokkar ")
