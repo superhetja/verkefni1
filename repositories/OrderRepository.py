@@ -9,7 +9,7 @@ class OrderRepository:
             aFile.write(Order.__repr__(order)+'\n')
 
     def get_order(self):
-        oders = []
+        orders = []
         with open('data/orders.txt') as aFile:
             for line in aFile.readlines():
                 order = eval(line.strip())

@@ -27,14 +27,11 @@ class Order:
     def get_group(self):
         return self.__group
 
-    def get_brand(self):
-        return self.__brand
+    def get_car(self):
+        return self.__car
 
-    def get_user_choice(self):
-        return self.__user_choice
-
-    def get_costumer(self):
-        return self.__costumer
+    def get_customer(self):
+        return self.__customer
 
     def get_payment(self):
         return self.__payment

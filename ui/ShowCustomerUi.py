@@ -7,7 +7,7 @@ from models.Color import Color
 from ui.InputUi import InputUi
 
 
-class ShowCustomer:
+class ShowCustomer(InputUi):
     def __init__(self):
         self.__service = CustomerService()
         self.__header = Header()
@@ -27,7 +27,7 @@ class ShowCustomer:
         '''Aðal fallið til að byrja klassan'''
         self.inpuut.clear_screen()
         self.print_menu()
-        action = self.inpuut.get_number_between(1,5)
+        action = self.inpuut.get_number_between(1,5) #self.get_number_between(1,5)
         if action == '1':
             self.print_customer_by_name()
         elif action == '2':
