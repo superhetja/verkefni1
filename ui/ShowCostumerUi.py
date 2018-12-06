@@ -1,14 +1,15 @@
-from services.CostumerService import CostumerService
+from services.CustomerService import CustomerService
 from services.CheckInputService import CheckInput
-from models.costumer import costumer
+from models.Customer import Customer
 from ui.HeaderUi import Header
+from models.Clear import Clear
 
 ACTION_CHOICES = [1,2,3,4,5]
 #aðgerðir sem notandinn getur notað til þess að velja e-h ákveðinn viðskiptavin
 
 class ShowCostumer:
     def __init__(self):
-        self.__service = CostumerService()
+        self.__service = CustomerService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
         self.__header = Header()

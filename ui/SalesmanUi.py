@@ -10,7 +10,7 @@ class Salesman:
         self.__header = Header()
 
     def main_menu(self):
-        print(header)
+        print(self.__header)
         while True:
             print(Color.BOLD + "Útleiga"+ Color.END)
             print("1. Skrá nýja útleigu")
