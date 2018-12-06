@@ -14,22 +14,6 @@ class CustomerUi:
         for customer in customers:
             print(customer)
 
-    def get_customer(self):
-        while True:
-            name = input("Nafn: ")
-            errorprompt = self.__service.is_valid_name(name)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            ssn = input("Kennitala: ")
-            errorprompt = self.__service.is_valid_ssn(ssn)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-
     def new_customer(self):
         print(Header())
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
