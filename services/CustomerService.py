@@ -24,7 +24,7 @@ class CustomerService:
         for i in name:
             if i.isalpha() == False:
                 return errorprompt
-        return None
+        return None 
 
     def is_valid_email(self, email):
         errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
