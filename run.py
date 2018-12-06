@@ -15,12 +15,13 @@
 
 '''keyrir bæta við bíl'''
 # from ui.AddCarUi import AddCarUi
-# a = AddCarUi()4
+# a = AddCarUi()
 # a.add_car_menu()
 
 '''Keyrir pöntun'''
-from ui.OrderUi import Order
+from ui.OrderUi import OrderUi
 a = OrderUi()
+a.set_order()
 
 
 
