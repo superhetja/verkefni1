@@ -48,11 +48,11 @@ class OrderService(self):
             return None
         else:
             return errorprompt
-# vantar eitthvað   
+# BÚið   
     def ia_valid_user_choice(self, user_choice):
         errorprompt = 'Rangur innsláttur.'
         user_choice = user_choice.capitalize()
-        if user_choice in self.VALID_BRANDS:
+        if user_choice in self.ACTION_CHOICES:
             return None
         else:
             return errorprompt
@@ -76,17 +76,17 @@ class OrderService(self):
     def is_valid_card_number(self, card_number):
         errorprompt = 'Rangt kortanúmer'
         try:
-           card_number = int(card_number)
+            card_number = int(card_number)
             if len(str(card_number)) != 16 : 
-                errorpromt = 'Rangt kortanúmer reyndu aftur.'
+                errorprompt = 'Rangt kortanúmer reyndu aftur.'
                 raise ValueError
             return None
         except ValueError:
             return errorprompt 
-#búið ? ? ?
+#búið
     def is_valid_info(self, info):
-        errorprompt = 'Rangar upplýsingar '
-        if info == 'j':
-            return "Útleiga bókuð"
+        errorprompt = 'Rangar upplýsingar'
+        if info == 'J':
+            return None
         else:
             return errorprompt
