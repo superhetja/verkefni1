@@ -71,7 +71,8 @@ class Order():
             else:
                 print(errorprompt)
             
-        if payment == "k":
+        if payment == "k": # veit ekki hvað ég geri með þetta
+
         while True:
             card_number=input("Kortanúmer:")
             errorprompt = self.__service.is_valid_card_number(card_number)

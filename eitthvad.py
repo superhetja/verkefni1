@@ -17,20 +17,8 @@
 #         return videos
 
 
-hallo aftur
-hallo
-name = 'Marta Guðbertsdóttir'.split()
-for i in name:
-        if i .isalpha() == False:
-                return False
-def get_videos(self):
-    video = []
-    with open('./data/videos.txt', 'r') as videos_file:
-        for line in videos_file.readlines():
-            video = eval(line.strip())
-            videos.append(video)
-        return videos
+a = 1000
+print(len(a))
 
-valid_brands = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault","Mazda",
-"Kia","Opel","Ford","Skoda","Mercedez Benz","Nissan","Jeep","Land Rover","Mitsubishi","Volvo", 
-"Citroen","VW","Audi","BMW","Chevrolet","Mini"]
+
+

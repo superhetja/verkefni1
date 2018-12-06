@@ -19,21 +19,21 @@ class CustomerService:
         return True
     
     def is_valid_name(self, name):
+        errorprompt = 'Rangar insláttur\nSláðu inn eingöngu bókstafi.'
         name = name.split()
         for i in name:
             if i.isalpha() == False:
-                return False
-        return True
-#                self.__newCustomer_ui.get_another_input(errorpromt, inputprompt)
+                return errorprompt
+        return None
 
     def is_valid_email(self, email):
+        errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
         try:
             atsymbol = email.index('@')
             dot = email.index('.', atsymbol)
-            return True
+            return None
         except ValueError:
-            #print(errorprompt)
-            return False
+            return errorprompt
 
     def is_valid_ssn(self, ssn):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
@@ -45,7 +45,6 @@ class CustomerService:
             return None
         except ValueError:
             return errorprompt
-#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def is_valid_phoneNr(self, phoneNr):
         errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
@@ -57,7 +56,6 @@ class CustomerService:
             return None
         except ValueError:
             return errorprompt
-#                self.__newCustomer_ui.get_another_input(errorprompt, inputprompt)
 
     def get_customers(self):
         return self.__customer_repo.get_customers()
