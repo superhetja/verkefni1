@@ -25,7 +25,7 @@ class OrderUi():
                 break
             else:
                 print(errorprompt)
-        while True:        
+        while True:
             group = input("Bílflokkur: ")
             errorprompt = self.__service.is_valid_group(group)
             if not errorprompt:
@@ -39,8 +39,8 @@ class OrderUi():
                 break
             else:
                 print(errorprompt)
-        #listi yfir lausa bíla
         print("Lausir bíla á valdri dagsetningu: ")
+        #Prenta út lista yfir alla lausa bíla á valdri dagsetninu
         while True:
             user_choice= input("Valinn bíll: ")
             errorprompt = self.__service.is_valid_user_choice(user_choice)
@@ -70,8 +70,8 @@ class OrderUi():
                     break
                 else:
                     print(errorprompt)
-        #yfirlit yfir yfirlitið á pöntuninni
         print("Yfirlit")
+        #Prenta yfirlit yfir pöntunina
         while True:
             info = input("Eru allar upplýsingar réttar? j/n").capitalize()
             errorprompt = self.__service.is_valid_info(info)
@@ -83,14 +83,14 @@ class OrderUi():
                 print(errorprompt)
     
     def car_order_menu(self):
-            print("Bílflokkar ")
-            print("1. Smá bíll ")
-            print("2. Lúxus bíll ")
-            print("3. Rafbíll ")
-            print("4. Jepplingur ")
-            print("5. Jeppi ")
-            print("6. Sendiferðabíll")
-            print("7. Allir flokkar ")
+        print("Bílflokkar")
+        print("1. Smá bíll")
+        print("2. Lúxus bíll")
+        print("3. Rafbíll")
+        print("4. Jepplingur")
+        print("5. Jeppi")
+        print("6. Sendiferðabíll")
+        print("7. Allir flokkar ")
     
     #def print_available_cars(self) 
     #prentar út lausa bíla
