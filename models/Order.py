@@ -4,7 +4,7 @@ class Order:
         self.__date2 = date2
         self.__group = group
         self.__brand = brand
-        self.__ucer_choice = ucer_choice
+        self.__user_choice = user_choice
         self.__costumer = costumer
         self.__payment = payment
         self.__card_number = card_number

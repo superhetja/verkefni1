@@ -15,10 +15,10 @@ class Order():
         while True:
             date1 = input("Sláðu inn úttektardag: ")
             errorpromt = self.__service.is_valid_date1(date1)
-                if not errorpromt:
-                    break
-                else:
-                    print(errorpromt)
+            if not errorpromt:
+                break
+            else:
+                print(errorpromt)
 
         while True:    
             date2 = input("Sláðu inn skiladag: ")
@@ -44,7 +44,7 @@ class Order():
             else:
                 print(errorprompt)
 
-print("Lausir bíla á valdri dagsetningu: ")
+#print("Lausir bíla á valdri dagsetningu: ")
         #listi yfir lausa bíla
 
         while True:
@@ -57,7 +57,7 @@ print("Lausir bíla á valdri dagsetningu: ")
 
         while True:
             costomer= input("Viðskiptavinur: ")
-            errorprompt = self.__service.is_valid_costumer(costumer)
+            errorprompt = self.__service.is_valid_custumer(custumer)
             if not errorprompt:
                 break
             else:
@@ -72,7 +72,7 @@ print("Lausir bíla á valdri dagsetningu: ")
                 print(errorprompt)
             
         if payment == "k":
-            while True:
+        while True:
             card_number=input("Kortanúmer:")
             errorprompt = self.__service.is_valid_card_number(card_number)
             if not errorprompt:

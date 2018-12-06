@@ -13,7 +13,7 @@ class OrderService(self):
     #    group = is_valid_group(order)
     #    brand = is_valid_brand(order)
     #    user_choice = is_valid_user_choice(order)
-    #    costumer = is_valid_costumer(order)
+    #    custumer = is_valid_custumer(order)
     #    payment = is_valid_payment(order)
     #    card_number = is_valid_card_number(order)
         return True
@@ -21,18 +21,19 @@ class OrderService(self):
 #búið
     def is_valid_date(self, date):
         errorpromt = 'Rangur innsláttur\nSláðu inn aftur.'
-            try:
-                date = int(date)
-                if 7 < date < 1:
-                    errorpromt = 'Röng dagsetning.'
-                    raise ValueError
-                return None
-            except ValueError:
-                return errorprompt     
+        try:
+            date = int(date)
+            if 7 < date < 1:
+                errorpromt = 'Röng dagsetning.'
+                raise ValueError
+            return None
+        except ValueError:
+            return errorprompt     
         #     self.__addorder_ui.get_another_input(errorpromt,inputprompt)
 
 #búið
-    def is_valid_group(self, group)
+    def is_valid_group(self, group):
+        errorprompt = 'Rangur innsláttur reyndu aftur!'
         try:
             group = int(group)
             if 7 < group <1:
@@ -53,7 +54,7 @@ class OrderService(self):
             return errorprompt
          #   self.__addorder_ui.get_another_input(errorprompt,inputprompt)
 
-#eftir    
+# vantar eitthvað   
     def ia_valid_user_choice(self, user_choice):
         errorprompt = 'Rangur innsláttur. '
         try:
@@ -63,11 +64,11 @@ class OrderService(self):
        # self.__addorder_ui.get_another_input(errorprompt,inputprompt)
 
 
-#búið ????
-    def is_valid_costumer(self, costumer):
+#búið 
+    def is_valid_custumer(self, custumer):
         errorprompt = 'Rangur viðskiptavinur! '
-        for i in costumer:
-            if i in costumer:
+        for i in custumer:
+            if i in custumer:
                 if i.isalpha() == False:
                     return False
                 else:
@@ -85,15 +86,21 @@ class OrderService(self):
 #búið
     def is_valid_card_number(self, card_number):
         errorprompt = 'Rangt kortanúmer'
-            try:
-               card_number = int(card_number)
-                if len(str(card_number)) != 16 : 
-                    errorpromt = 'Rangt kortanúmer reyndu aftur.'
-                    raise ValueError
-                return None
-            except ValueError:
-                return errorprompt
+        try:
+           card_number = int(card_number)
+            if len(str(card_number)) != 16 : 
+                errorpromt = 'Rangt kortanúmer reyndu aftur.'
+                raise ValueError
+            return None
+        except ValueError:
+            return errorprompt
                 # self.__addorder_ui.get_another_input(errorprompt, inputprompt)
-# vantar info ; #vantar 
+ 
+#búið ? ? ?
     def is_valid_info(self, info):
         errorprompt = 'Rangar upplýsingar '
+        if info == 'j':
+            return "Útleiga bókuð"
+        else:
+            return errorprompt
+
