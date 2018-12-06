@@ -29,8 +29,6 @@ class OrderService(self):
             return None
         except ValueError:
             return errorprompt     
-        #     self.__addorder_ui.get_another_input(errorpromt,inputprompt)
-
 #búið
     def is_valid_group(self, group):
         errorprompt = 'Rangur innsláttur reyndu aftur!'
@@ -50,18 +48,14 @@ class OrderService(self):
             return None
         else:
             return errorprompt
-         #   self.__addorder_ui.get_another_input(errorprompt,inputprompt)
-
 # vantar eitthvað   
     def ia_valid_user_choice(self, user_choice):
         errorprompt = 'Rangur innsláttur.'
-        try:
-            user_choice = user_choice.capitalize()
-            if user_choice in self.VALID_BRANDS:
-                break
-       # self.__addorder_ui.get_another_input(errorprompt,inputprompt)
-
-
+        user_choice = user_choice.capitalize()
+        if user_choice in self.VALID_BRANDS:
+            return None
+        else:
+            return errorprompt
 #búið 
     def is_valid_custumer(self, custumer):
         errorprompt = 'Rangur viðskiptavinur! '
@@ -88,9 +82,7 @@ class OrderService(self):
                 raise ValueError
             return None
         except ValueError:
-            return errorprompt
-                # self.__addorder_ui.get_another_input(errorprompt, inputprompt)
- 
+            return errorprompt 
 #búið ? ? ?
     def is_valid_info(self, info):
         errorprompt = 'Rangar upplýsingar '
@@ -98,4 +90,3 @@ class OrderService(self):
             return "Útleiga bókuð"
         else:
             return errorprompt
-
