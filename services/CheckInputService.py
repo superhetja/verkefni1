@@ -1,11 +1,14 @@
 class CheckInput:
 
-    VAlID_BRANDS = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault",
+    # VAlID_BRANDS = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault",
+    # "Mazda","Kia","Opel","Ford","Skoda","Mercedez Benz","Nissan","Jeep","Land Rover",
+    # "Mitsubishi","Volvo","Citroen","VW","Audi","BMW","Chevrolet","Mini"]
+
+    ACTION_CHOICES=[1,2,3,4,5,6,7,8]
+    VALID_BRANDS = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault",
     "Mazda","Kia","Opel","Ford","Skoda","Mercedez Benz","Nissan","Jeep","Land Rover",
     "Mitsubishi","Volvo","Citroen","VW","Audi","BMW","Chevrolet","Mini"]
 
-    ACTION_CHOICES=[1,2,3,4,5,6,7,8]
-    
     def __init__(self):
         pass
 
@@ -24,7 +27,7 @@ class CheckInput:
         errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
         try:
             atsymbol = email.index('@')
-            dot = email.index('.', atsymbol)
+            email.index('.', atsymbol)
             return None
         except ValueError:
             return errorprompt

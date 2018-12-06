@@ -1,6 +1,6 @@
 from repositories.OrderRepository import OrderRepository
 from services.CheckInputService import CheckInput
-from CheckInputService import CheckInput
+#from CheckInputService import CheckInput
 
 class OrderService():
     def __init__(self):
@@ -33,7 +33,7 @@ class OrderService():
             return None
         except ValueError:
             return errorprompt     
-#búið
+
     def is_valid_group(self, group):
         errorprompt = 'Rangur innsláttur\nSláðu inn gildan hóp'
         try:
@@ -47,27 +47,26 @@ class OrderService():
     def is_valid_brand(self, brand):
         errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
         brand = brand.capitalize()
-        if brand in VALID_BRANDS:
+        if brand in self.__check_input.VALID_BRANDS:
             return None
         else:
             return errorprompt
-# BÚið   
-    def ia_valid_user_choice(self, user_choice):
+  
+    def is_valid_user_choice(self, user_choice):
         errorprompt = 'Rangur innsláttur.'
         user_choice = user_choice.capitalize()
-        if user_choice in self.ACTION_CHOICES:
+        if user_choice in self.__check_input.ACTION_CHOICES:
             return None
         else:
             return errorprompt
-    
-    def is_valid_custumer(self, custumer):
-        #errorprompt = 'Rangur viðskiptavinur'
-        for i in custumer:
-            if i in custumer:
-                if i.isalpha() == False:
-                    return False
-                else:
-                    return True
+
+    def is_valid_customer(self, customer):
+        errorprompt = 'Rangar insláttur\nSláðu inn eingöngu bókstafi.'
+        name = customer.split()
+        for i in name:
+            if i.isalpha() == False:
+                return errorprompt
+        return None
 
     def is_valid_payment(self, payment):
         errorprompt = 'Rangur innsláttur\nKort(k)/Peningur(p)'
@@ -75,7 +74,7 @@ class OrderService():
             return None
         else:
             return errorprompt
-#búið
+
     def is_valid_card_number(self, card_number):
         errorprompt = 'Rangt kortanúmer\nSláðu inn eingöngu tölustafi.'
         try:
@@ -86,7 +85,7 @@ class OrderService():
             return None
         except ValueError:
             return errorprompt 
-#búið
+
     def is_valid_info(self, info):
         errorprompt = 'Rangar upplýsingar'
         if info == 'J':
