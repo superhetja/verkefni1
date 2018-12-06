@@ -56,3 +56,10 @@ class CheckInput:
             return None
         except ValueError:
             return errorprompt
+
+    def is_valid_between_two_letters(self, a, b, choice):
+        errorprompt = 'Ekki rétt valið\nVeldu rétt'
+        if choice == a or choice == b:
+            return None
+        else:
+            return errorprompt
