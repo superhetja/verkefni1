@@ -9,7 +9,7 @@ class Employee:
     
     def get_fullname(self):
         return self.__fullname
-
+ 
     def get_password(self):
         return self.__password
 
@@ -20,5 +20,5 @@ class Employee:
         return self.__admin
 
     def get_ssn(self):
-        return self.__ssn
+        return self.__ssn 
 

@@ -15,7 +15,7 @@ class CustomerUi:
             print(customer)
 
     def new_customer(self):
-        print(Header())
+        print(self.__header)
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
         while True:

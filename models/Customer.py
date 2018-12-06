@@ -21,4 +21,4 @@ class Customer:
         return self.__ssn
 
     def get_phoneNr(self):
-        return self.__phoneNr
+        return self.__phoneNr 
