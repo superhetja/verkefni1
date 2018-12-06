@@ -73,6 +73,8 @@ class CheckInput:
         else:
             return errorprompt
 
+
+
     #Er eh að reyna að setja þetta í fall svo að það
     #verði ekki allar þessar endurtekningar
     def eh_eh(self, sentence_input, user_errorprompt):

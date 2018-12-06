@@ -8,6 +8,9 @@ class InputUi:
     PHONEPROMPT = 'Símanúmer: '
     EMAILPROMPT = 'Netfang: '
     MOREPROMPT = 'Viltu halda áfram j/n: '
+    BOOKINGDATEPROMPT = 'Sláðu inn úttektardag: '
+    RETURNDATEPROMPT = "Sláðu inn skiladag: "
+    CARDPROMPT = 'Kortanúmer: '
 
     def __init__(self):
         self.__check_input = CheckInput()
@@ -22,7 +25,7 @@ class InputUi:
 
     def get_number_between(self, lower, higher):
         while True:
-            num = input('>')
+            num = input('> ')
             errorprompt = self.__check_input.is_valid_number_between(num,lower,higher)
             if errorprompt == None:
                 return num
@@ -30,7 +33,7 @@ class InputUi:
 
     def get_email(self):
         while True:
-            email = input('Netfang: ')
+            email = input(self.EMAILPROMPT)
             errorprompt = self.__check_input.is_valid_email(email)
             if errorprompt == None:
                 return email
@@ -60,6 +63,10 @@ class InputUi:
             if errorprompt == None:
                 return num
             print(errorprompt)
+
+    def get_date(self, prompt): #Vantar að villumeðhöndla
+        date = input(prompt)
+        return date
 
     def clear_screen(self):
         '''

@@ -2,67 +2,32 @@ from models.Color import Color
 from models.Order import Order
 from ui.HeaderUi import Header
 from services.OrderService import OrderService
-from services.CheckInputService import CheckInput
+from ui.InputUi import InputUi
 
-class OrderUi():
+class OrderUi:
     def __init__(self):
         self.__service = OrderService()
         self.__header = Header()
-        self.__check_input = CheckInput()
+        self.__get_input = InputUi
 
     def set_order(self):
-        self.__check_input.eh_eh('Sláðu inn úttektardag: ', self.__service.is_valid_date())
-        # while True:
-        #     date1 = input("Sláðu inn úttektardag: ")
-        #     errorprompt = self.__service.is_valid_date(date1)
-        #     if not errorprompt:
-        #         break
-        #     else:
-        #         print(errorprompt)
-        while True:    
-            date2 = input("Sláðu inn skiladag: ")
-            errorprompt = self.__service.is_valid_date(date2)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:        
-            group = input("Bílaflokkur: ")
-            errorprompt = self.__service.is_valid_group(group)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            brand = input("Tegund Bíls: ")
-            errorprompt = self.__service.is_valid_brand(brand)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
+
+        date1 = self.__get_input.get_date(self.__get_input.BOOKINGDATEPROMPT)
+        date2 = self.__get_input.get_date(self.__get_input.RETURNDATEPROMPT)
+        self.car_group_menu()
+        group = self.__get_input.get_number_between(1,7)
         print("Lausir bíla á valdri dagsetningu: ")
         #Prenta út lista yfir alla lausa bíla á valdri dagsetninu
-        while True:
-            user_choice= input("Valinn bíll: ")
-            errorprompt = self.__service.is_valid_user_choice(user_choice)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            customer= input("Viðskiptavinur: ")
-            errorprompt = self.__service.is_valid_customer(customer)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            payment = input("Greiðslumáti(k/kort,p/preningur): ").capitalize()
-            errorprompt = self.__service.is_valid_payment(payment)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
+        car = self.__get_input.get_number_between(1,10) #Þarf að laga töluna..
+        customer = self.__get_input.get_string('Viðskiptavinur: ')
+        payment = self.__get_input.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
+        if payment == 'k':
+            cardnumber = self.__get_input.get_number_lengt(self.__get_input.CARDPROMPT, 8)
+            
+
+
+
+
         if payment == "K":
             while True:
                 card_number = input("Kortanúmer: ")
@@ -83,7 +48,7 @@ class OrderUi():
             else:
                 print(errorprompt)
     
-    def car_order_menu(self):
+    def car_group_menu(self):
         print("Bílflokkar")
         print("1. Smá bíll")
         print("2. Lúxus bíll")
