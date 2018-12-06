@@ -8,7 +8,8 @@ class EmployeeService:
         self.__check_input = CheckInput()
 
 
-    def add_employee(self, employee)
+    def add_employee(self, employee):
+        pass
 
 
     def is_valid_employee(self, employee):
@@ -17,7 +18,7 @@ class EmployeeService:
         # self.__email = email
         # self.__admin = admin
         # self.__ssn = ssn
-        return True
+        pass
 #nafn
     def is_valid_fullname(self,fullname):
         return self.__check_input.is_string(fullname)

@@ -14,4 +14,4 @@ class CustomerRepository:
          for line in aFile.readlines():
             customer = eval(line.strip())
             customers.append(customer)
-         return customers
+         return customers 
