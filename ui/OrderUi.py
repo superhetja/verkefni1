@@ -26,7 +26,7 @@ class OrderUi():
             else:
                 print(errorprompt)
         while True:        
-            group = input("Bílflokkur: ")
+            group = input("Bílaflokkur: ")
             errorprompt = self.__service.is_valid_group(group)
             if not errorprompt:
                 break
