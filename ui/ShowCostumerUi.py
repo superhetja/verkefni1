@@ -1,6 +1,6 @@
 from services.CostumerService import CostumerService
 from services.CheckInputService import CheckInput
-from models.costumer import costumer 
+from models.costumer import costumer
 
 print_header()
 ACTION_CHOICES = [1,2,3,4,5]
@@ -20,6 +20,9 @@ class ShowCostumer:
                 user_input_ssn()
 
         def user_input_name(self):
+            pass
+        
+        def get_customer(self):
             while True:
                 name = input("Nafn: ")
                 errorprompt = self.__service.is_valid_name(name)
