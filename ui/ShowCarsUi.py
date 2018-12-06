@@ -1,8 +1,9 @@
 from services.CarService import CarService
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
+from ui.InputUi import InputUi
 
-class ShowCars:
+class ShowCars(InputUi):
     def __init__(self):
         self.__service = CarService()
         self.__check_input = CheckInput()
@@ -11,15 +12,10 @@ class ShowCars:
     def show_cars_menu(self):
         self.__clear.clear_screen()
         print('1. Prenta alla bíla.')
-        print('2. Prenta lausa bíla')
-        print('3. Prenta bókaða bíla')
+        print('2. Prenta lausa bíla.')
+        print('3. Prenta bókaða bíla.')
 
-        while True:
-            action = input('>')
-            errorprompt = self.__check_input.is_valid_number_between(action,1,3)
-            if errorprompt == None:
-                break
-            print(errorprompt)
+        action = self.get_number_between(1,3)
 
         if action == '1':
             self.print_all_cars()

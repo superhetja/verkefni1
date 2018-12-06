@@ -1,2 +1,0 @@
-Customer('Jón Jónson','1234567890','jon@ru.is','5812345')
-Customer('Gunna Gunnarsdóttir','1203842349','gunna@visir.is','4404000')

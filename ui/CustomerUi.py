@@ -2,50 +2,21 @@ from services.CustomerService import CustomerService
 from models.Customer import Customer
 from models.Color import Color
 from ui.HeaderUi import Header
+from InputUi import InputUi
 
 
-class CustomerUi:
+class CustomerUi(InputUi):
     def __init__(self):
         self.__service = CustomerService()
         self.__header = Header()
-
-    def print_all_customers(self):
-        customers = self.__service.get_customers()
-        for customer in customers:
-            print(customer)
 
     def new_customer(self):
         print(self.__header)
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
-        while True:
-            name = input("Nafn: ")
-            errorprompt = self.__service.is_valid_name(name)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            ssn = input("Kennitala: ")
-            errorprompt = self.__service.is_valid_ssn(ssn)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            email = input("Netfang: ")
-            errorprompt = self.__service.is_valid_email(email)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-        while True:
-            phoneNr = input("Símanúmer: ")
-            errorprompt = self.__service.is_valid_phoneNr(phoneNr)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-
-        NewCustomer = Customer(name, ssn, email, phoneNr)
+        name = self.get_string(self.NAMEPROMPT)
+        ssn = self.get_valid_numer_lengt(self.SSNPROMPT, 10)
+        email = self.get_email()
+        phonenr = self.get_valid_numer_lengt(self.PHONEPROMPT,7)
+        NewCustomer = Customer(name, ssn, email, phonenr)
         self.__service.add_customer(NewCustomer)

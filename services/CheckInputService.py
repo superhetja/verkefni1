@@ -33,6 +33,14 @@ class CheckInput:
         except ValueError:
             return errorprompt
 
+    def is_valid_number(self,num):
+        errorprompt = 'Rangur innsláttur\nSláðu inn eingöngu heiltölur.'
+        try:
+            int(num)
+            return None
+        except ValueError:
+            return errorprompt
+
     def is_valid_letter(self, letter, valid_letters):
         errorprompt = 'Rangur innsláttur'
         if letter in valid_letters:

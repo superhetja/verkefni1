@@ -1,13 +1,22 @@
 class Order: 
-    def __init__(self, date1, date2, group, brand, user_choice, costumer, payment, card_number):
+    def __init__(self, date1, date2, group, car, customer, payment, card_number='',returned = False):
         self.__date1 = date1
         self.__date2 = date2
         self.__group = group
-        self.__brand = brand
-        self.__user_choice = user_choice
-        self.__costumer = costumer
+        self.__car = car
+        self.__customer = customer
         self.__payment = payment
         self.__card_number = card_number
+        self.__returned = returned
+
+    def __str__(self):
+        pass
+
+    def __repr__(self):
+        return "Order('{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
+        self.__date2,self.__group,self.__car,self.__customer,self.__payment,self.__card_number,
+        self.__returned)
+
 
     def get_date1(self):
         return self.__date1

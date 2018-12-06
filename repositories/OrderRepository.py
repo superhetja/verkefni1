@@ -6,11 +6,12 @@ class OrderRepository:
 
     def add_order(self, order):
         with open('./data/orders.txt', 'a+') as aFile: 
-            aFile.write(Order.__repr__()+'\n')
+            aFile.write(Order.__repr__(order)+'\n')
 
     def get_order(self):
-        with open('data/cars.txt') as aFile:
+        oders = []
+        with open('data/orders.txt') as aFile:
             for line in aFile.readlines():
-                Order = eval(line.strip())
-                Order.append(Order)
-            return Order
+                order = eval(line.strip())
+                orders.append(order)
+            return orders

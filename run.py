@@ -9,9 +9,9 @@
 # a.new_customer()
 
 '''keyrir prenta alla viðskiptavini'''
-# from ui.CustomerUi import CustomerUi
-# a = CustomerUi()
-# a.print_all_customers()
+from ui.ShowCustomerUi import ShowCustomer
+a = ShowCustomer()
+a.show_customer_menu()
 
 '''keyrir bæta við bíl'''
 # from ui.AddCarUi import AddCarUi
