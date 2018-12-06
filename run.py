@@ -9,14 +9,14 @@
 # a.new_customer()
 
 '''keyrir prenta alla viðskiptavini'''
-from ui.ShowCustomerUi import ShowCustomer
-a = ShowCustomer()
-a.show_customer_menu()
+#from ui.ShowCustomerUi import ShowCustomer
+#a = ShowCustomer()
+#a.show_customer_menu()
 
 '''keyrir bæta við bíl'''
-# from ui.AddCarUi import AddCarUi
-# a = AddCarUi()
-# a.add_car_menu()
+from ui.AddCarUi import AddCarUi
+a = AddCarUi()
+a.add_car_menu()
 
 '''Keyrir pöntun'''
 # from ui.OrderUi import OrderUi

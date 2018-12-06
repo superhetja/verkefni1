@@ -20,9 +20,9 @@ class InputUi:
                 return num
             print(errorprompt)
 
-    def get_number_between(self, lower, higher):
+    def get_number_between(self, lower, higher,prompt='> '):
         while True:
-            num = input('>')
+            num = input(prompt)
             errorprompt = self.__check_input.is_valid_number_between(num,lower,higher)
             if errorprompt == None:
                 return num

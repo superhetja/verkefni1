@@ -3,11 +3,12 @@ from services.CheckInputService import CheckInput
 from models.Clear import Clear
 from ui.InputUi import InputUi
 
-class ShowCars(InputUi):
+class ShowCars:
     def __init__(self):
         self.__service = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
+        self.__input_ui=InputUi()
 
     def show_cars_menu(self):
         self.__clear.clear_screen()
@@ -15,7 +16,7 @@ class ShowCars(InputUi):
         print('2. Prenta lausa bíla.')
         print('3. Prenta bókaða bíla.')
 
-        action = self.get_number_between(1,3)
+        action = self.__input_ui.get_number_between(1,3)
 
         if action == '1':
             self.print_all_cars()
@@ -44,15 +45,11 @@ class ShowCars(InputUi):
             print(car)
         self.get_more()
 
+
+
     def get_more(self):
-        while True:
-            action = input('Viltu halda áfram j/n: ').lower()
-            errorprompt = self.__check_input.is_valid_letter(action, ['j','n'])
-            if errorprompt == None:
-                break
-            print(errorprompt)
-        
-        if action == 'j':
+        letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])
+        if letter == 'j':
             self.show_cars_menu()
-        else:
+        else: #Skipun að fara til baka um eina valmynd
             pass
