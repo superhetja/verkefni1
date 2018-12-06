@@ -5,7 +5,7 @@ from services.CheckInputService import CheckInput
 class EmployeeService:
 
     def __init__(self):
-        self.__check_input = CheckInput()
+        self.__check = CheckInput()
 
     def add_employee(self, employee):
         pass
@@ -20,7 +20,7 @@ class EmployeeService:
         pass
 #nafn
     def is_valid_fullname(self,fullname):
-        return self.__check_input.is_string(fullname)
+        return self.__check.is_string(fullname)
 
 #password
   
@@ -37,11 +37,11 @@ class EmployeeService:
             return errorprompt
 #admin 
     def is_valid_admin(self, admin):
-        return self.__check_is_valid_between_two_letters('y,n')
+        return self.__check.is_valid_between_two_letters('y','n', admin)
         
 #ssn
     def is_valid_ssn(self, ssn):
-        return self.__check_input.is_valid_number_length(ssn,10)
+        return self.__check.is_valid_number_length(ssn,10)
             
 
 
