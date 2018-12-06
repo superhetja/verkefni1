@@ -28,7 +28,7 @@ class OrderService(self):
                 raise ValueError
             return None
         except ValueError:
-            return errorprompt     
+            return errorpromt     
 #búið
     def is_valid_group(self, group):
         errorprompt = 'Rangur innsláttur reyndu aftur!'
