@@ -7,31 +7,31 @@ ACTION_CHOICES=[1,2,3,4,5,6,7,8]
 
 class OrderUi():
     def __init__(self):
-        self.__service = OrderService
+        self.__service = OrderService()
         self.__header = Header()
 
     def add_order(self):
         while True:
             date1 = input("Sláðu inn úttektardag: ")
-            errorpromt = self.__service.is_valid_date1(date1)
-            if not errorpromt:
+            errorprompt = self.__service.is_valid_date(date1)
+            if not errorprompt:
                 break
             else:
-                print(errorpromt)
+                print(errorprompt)
         while True:    
             date2 = input("Sláðu inn skiladag: ")
-            errorpromt = self.__service.is_valid_date2(date2)
-            if not errorpromt:
+            errorprompt = self.__service.is_valid_date(date2)
+            if not errorprompt:
                 break
             else:
-                print(errorpromt)
+                print(errorprompt)
         while True:        
             group = input("Bílflokkur: ")
-            errorpromt = self.__service.is_valid_group(group)
-            if not errorpromt:
+            errorprompt = self.__service.is_valid_group(group)
+            if not errorprompt:
                 break
             else:
-                print(errorpromt)
+                print(errorprompt)
         while True:
             brand = input("Tegund Bíls: ")
             errorprompt = self.__service.is_valid_brand(brand)
@@ -49,8 +49,8 @@ class OrderUi():
             else:
                 print(errorprompt)
         while True:
-            costomer= input("Viðskiptavinur: ")
-            errorprompt = self.__service.is_valid_custumer(custumer)
+            customer= input("Viðskiptavinur: ")
+            errorprompt = self.__service.is_valid_customer(customer)
             if not errorprompt:
                 break
             else:
@@ -76,6 +76,7 @@ class OrderUi():
             info = input("Eru allar upplýsingar réttar? j/n").capitalize()
             errorprompt = self.__service.is_valid_info(info)
             if info == "J":
+                new_order = Order(date1, date2, group, brand, user_choice, customer, payment, card_number)
                 print("Útleiga bókuð")
             else:
                 print(errorprompt)
