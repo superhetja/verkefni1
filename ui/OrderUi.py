@@ -2,13 +2,13 @@ from models.Color import Color
 from models.Order import Order
 from ui.HeaderUi import Header
 from services.OrderService import OrderService
-
-ACTION_CHOICES=[1,2,3,4,5,6,7,8]
+from services.CheckInputService import CheckInput
 
 class OrderUi():
     def __init__(self):
         self.__service = OrderService()
         self.__header = Header()
+        self.__check_imput = CheckInput()
 
     def add_order(self):
         while True:
