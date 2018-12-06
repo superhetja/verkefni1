@@ -25,21 +25,21 @@ class CreateEmployeeUi:
         password = input(str('Lykilorð: '))
         while True:
             ssn = input('Kennitala: ')
-            errorprompt = self.__service_is_valid_ssn(ssn)
+            errorprompt = self.__service.is_valid_ssn(ssn)
             if not errorprompt:
                 break
             else:
                 print(errorprompt)
         while True:
             email = input('Email: ')
-            errorprompt = self.__service_is_valid_email(email)
+            errorprompt = self.__service.is_valid_email(email)
             if not errorprompt:
                 break
             else:
                 print(errorprompt)
         while True:
             admin = input('Admin y/n: ').capitalize()
-            errorprompt = self.__service_is_valid_admin(admin)
+            errorprompt = self.__service.is_valid_admin(admin)
             if not errorprompt:
                 break
             else:
