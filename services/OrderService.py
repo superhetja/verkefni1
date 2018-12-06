@@ -1,5 +1,6 @@
 from repositories.OrderRepository import OrderRepository
 from services.CheckInputService import CheckInput
+from CheckInputService import CheckInput
 
 class OrderService():
     def __init__(self):
@@ -25,13 +26,13 @@ class OrderService():
         try:
             date_list = date.split(".")
             for num in date_list:
-                date = int(date)
-                if 7 < date < 1:
+                num = int(num)
+                if 7 < num < 1:
                     errorprompt = 'Ógild dagsetning\nSláðu inn gilda dagsetingu.'
                     raise ValueError
             return None
         except ValueError:
-            return errorpromt     
+            return errorprompt     
 #búið
     def is_valid_group(self, group):
         errorprompt = 'Rangur innsláttur\nSláðu inn gildan hóp'
@@ -44,22 +45,20 @@ class OrderService():
             return errorprompt   
 #búið
     def is_valid_brand(self, brand):
-        pass
-        # errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
-        # brand = brand.capitalize()
-        # if brand in self.__check_input:
-        #     return None
-        # else:
-        #     return errorprompt
+        errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
+        brand = brand.capitalize()
+        if brand in VALID_BRANDS:
+            return None
+        else:
+            return errorprompt
 # BÚið   
     def ia_valid_user_choice(self, user_choice):
-        pass
-        # errorprompt = 'Rangur innsláttur.'
-        # user_choice = user_choice.capitalize()
-        # if user_choice in self.ACTION_CHOICES:
-        #     return None
-        # else:
-        #     return errorprompt
+        errorprompt = 'Rangur innsláttur.'
+        user_choice = user_choice.capitalize()
+        if user_choice in self.ACTION_CHOICES:
+            return None
+        else:
+            return errorprompt
     
     def is_valid_custumer(self, custumer):
         #errorprompt = 'Rangur viðskiptavinur'
