@@ -25,11 +25,7 @@ class InputUi:
 
     def get_number_between(self, lower, higher,prompt='> '):
         while True:
-<<<<<<< HEAD
             num = input(prompt)
-=======
-            num = input('> ')
->>>>>>> 7ac7fd84d3028ca7dc358ea6f3cee56abe76a339
             errorprompt = self.__check_input.is_valid_number_between(num,lower,higher)
             if errorprompt == None:
                 return num
