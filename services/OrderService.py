@@ -1,9 +1,10 @@
 from repositories.OrderRepository import OrderRepository
+from services.CheckInputService import CheckInput
 
-class OrderService(self):
+class OrderService():
     def __init__(self):
         self.__order_repo = OrderRepository()
-    #   self.__newOrder_ui = NewOrder()
+        self.__check_input = CheckInput()
     
     def add_order(self, order): 
         if self.is_valid_order(order):
@@ -17,64 +18,67 @@ class OrderService(self):
     #    custumer = is_valid_custumer(order)
     #    payment = is_valid_payment(order)
     #    card_number = is_valid_card_number(order)
-        return True
-#búið
+        pass
+
     def is_valid_date(self, date):
-        errorpromt = 'Rangur innsláttur\nSláðu inn aftur.'
+        errorprompt = 'Rangur innsláttur\nSláðu inn einungis tölustafi.'
         try:
-            date = int(date)
-            if 7 < date < 1:
-                errorpromt = 'Röng dagsetning.'
-                raise ValueError
+            date_list = date.split(".")
+            for num in date_list:
+                date = int(date)
+                if 7 < date < 1:
+                    errorprompt = 'Ógild dagsetning\nSláðu inn gilda dagsetingu.'
+                    raise ValueError
             return None
         except ValueError:
             return errorprompt     
 #búið
     def is_valid_group(self, group):
-        errorprompt = 'Rangur innsláttur reyndu aftur!'
+        errorprompt = 'Rangur innsláttur\nSláðu inn gildan hóp'
         try:
             group = int(group)
             if 7 < group <1:
-                errorprompt = 'Sláðu inn gildan hóp.'
                 raise ValueError
             return None
         except ValueError:
             return errorprompt   
 #búið
     def is_valid_brand(self, brand):
-        errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
-        brand = brand.capitalize()
-        if brand in self.VALID_BRANDS:
-            return None
-        else:
-            return errorprompt
+        pass
+        # errorprompt = 'Ekki rétt tegund\nSláðu inn gilda tegund.'
+        # brand = brand.capitalize()
+        # if brand in self.__check_input:
+        #     return None
+        # else:
+        #     return errorprompt
 # BÚið   
     def ia_valid_user_choice(self, user_choice):
-        errorprompt = 'Rangur innsláttur.'
-        user_choice = user_choice.capitalize()
-        if user_choice in self.ACTION_CHOICES:
-            return None
-        else:
-            return errorprompt
-#búið 
+        pass
+        # errorprompt = 'Rangur innsláttur.'
+        # user_choice = user_choice.capitalize()
+        # if user_choice in self.ACTION_CHOICES:
+        #     return None
+        # else:
+        #     return errorprompt
+    
     def is_valid_custumer(self, custumer):
-        errorprompt = 'Rangur viðskiptavinur! '
+        #errorprompt = 'Rangur viðskiptavinur'
         for i in custumer:
             if i in custumer:
                 if i.isalpha() == False:
                     return False
                 else:
                     return True
-#búið 
+
     def is_valid_payment(self, payment):
-        errorprompt = 'Rangur innsláttur'
+        errorprompt = 'Rangur innsláttur\nKort(k)/Peningur(p)'
         if payment == 'K' or payment == 'P':
             return None
         else:
             return errorprompt
 #búið
     def is_valid_card_number(self, card_number):
-        errorprompt = 'Rangt kortanúmer'
+        errorprompt = 'Rangt kortanúmer\nSláðu inn eingöngu tölustafi.'
         try:
             card_number = int(card_number)
             if len(str(card_number)) != 16 : 
