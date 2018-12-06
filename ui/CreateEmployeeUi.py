@@ -1,29 +1,45 @@
 from models.Employee import Employee
+from ui.HeaderUi import Header
+from services.EmployeeService import EmployeeService
+from models.Color import Color
 class CreateEmployeeUi:
-
     def __init__(self):
+        self.__header = Header()
+        self.__service = EmployeeService()
         
 
-    def create_empoyee():
-        fullname = input('Fullt nafn: ')
+    def create_empoyee(self):
+        print(self.__header)
+        print(Color.BOLD + 'Nýskráning starfsmanna'+ Color.END)
+        print('Sláðu inn upplýsingar um starfsmann')
         while True:
-            try:
-            ssn = int(input(ssn)).strip()
-            if len(ssn) == 10:
+            fullname = input('Fullt nafn: ')
+            errorprompt = self.__service.is_valid_fullname(fullname)
+            if not errorprompt:
                 break
             else:
-                print('Sláðu inn gilt lykilorð!')
-            except ValueError:
-                print('Sláðu inn eingöngu tölur')
-        password = input('Lykilorð: ')
-        email = input('Email: ')
+                print(errorprompt)    
+        password = input(str('Lykilorð: '))
         while True:
-            admin = input('Admin y/n: ').lower()
-            if admin == 'y'
-                admin = True
+            ssn = input('Kennitala: ')
+            errorprompt = self.__service_is_valid_ssn(ssn)
+            if not errorprompt:
                 break
-            elif admin == 'n'
-                admin = False
+            else:
+                print(errorprompt)
+        while True:
+            email = input('Email: ')
+            errorprompt = self.__service_is_valid_email(email)
+            if not errorprompt:
                 break
-            print('Veldu rétt')
+            else:
+                print(errorprompt)
+        while True:
+            admin = input('Admin y/n: ').capitalize()
+            errorprompt = self.__service_is_valid_admin(admin)
+            if not errorprompt:
+                break
+            else:
+                print(errorprompt)
+
         new_employee = Employee(fullname, ssn, password, email, admin)
