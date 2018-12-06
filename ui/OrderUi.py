@@ -92,6 +92,14 @@ class OrderUi():
         print("6. Sendiferðabíll")
         print("7. Allir flokkar ")
     
+    def print_order(self):
+        booking_date=input("Tímabil: ")
+        #sækja bíl
+        the_cost= input("Kostnaður: ")
+        costumer=input("Viðskiptavinur: ")
+        ammount= input("Greiðslumáti: ")
+        full_ammount= input("Heildarkostnaður: ")
+    
     #def print_available_cars(self) 
     #prentar út lausa bíla
 
