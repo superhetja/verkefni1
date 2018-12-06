@@ -10,7 +10,7 @@ class OrderUi():
         self.__service = OrderService()
         self.__header = Header()
 
-    def add_order(self):
+    def set_order(self):
         while True:
             date1 = input("Sláðu inn úttektardag: ")
             errorprompt = self.__service.is_valid_date(date1)
