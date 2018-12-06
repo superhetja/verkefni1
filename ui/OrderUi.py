@@ -1,5 +1,4 @@
 from models.Color import Color
-# from models.car import Car
 from models.Order import Order
 from ui.HeaderUi import Header
 from services.OrderService import OrderService
