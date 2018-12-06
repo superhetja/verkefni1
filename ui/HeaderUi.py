@@ -7,6 +7,3 @@ class Header:
     
     def __str__(self):
         return Color.BOLD + 'Bílaleiga ehf.' + Color.END
-
-    # def print_header(self):
-    #     print(Color.BOLD + 'Bílaleiga ehf.' + Color.END)
