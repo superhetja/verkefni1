@@ -9,9 +9,9 @@ class OrderUi:
         self.__service = OrderService()
         self.__header = Header()
         self.__get_input = InputUi
+        self.__order = Order()
 
     def set_order(self):
-
         date1 = self.__get_input.get_date(self.__get_input.BOOKINGDATEPROMPT)
         date2 = self.__get_input.get_date(self.__get_input.RETURNDATEPROMPT)
         self.car_group_menu()
@@ -26,7 +26,6 @@ class OrderUi:
         new_order = Order(date1, date2, group,car, customer,payment)
         self.__service.add_order(new_order)
         print("Útleiga bókuð")
-
     
     def car_group_menu(self):
         print("Bílflokkar")
@@ -39,12 +38,12 @@ class OrderUi:
         print("7. Allir flokkar ")
     
     def print_order(self):
-        booking_date=input("Tímabil: ")
-        #sækja bíl
-        the_cost= input("Kostnaður: ")
-        costumer=input("Viðskiptavinur: ")
-        ammount= input("Greiðslumáti: ")
-        full_ammount= input("Heildarkostnaður: ")
+        print('Tímabil: {}'.format(self.__Order.get_period()))
+        print('Bíll: {}'.format(Order.get_car()))
+        print('Kostanður: {}'.format(Order.get_cost()))
+        print('Viðskiptavinur: {}'.format(Order.get_customer()))
+        print('Greiðslumáti: {}'.format(Order.get_payment()))
+        print('Heildarkostnaður: {}'.format(Order.get_full_amount()))
     
     #def print_available_cars(self) 
     #prentar út lausa bíla
