@@ -6,7 +6,7 @@ from ui.InputUi import InputUi
 from ui.OrderUi import OrderUi
 from ui.ShowCarsUi import ShowCars
 from ui.ShowCustomerUi import ShowCustomer
-from ui.CustomerUi import Customer
+from ui.CustomerUi import CustomerUi
 
 class Salesman: 
     def __init__(self):
@@ -16,8 +16,7 @@ class Salesman:
         self.__order = OrderUi()
         self.__showcar = ShowCars()
         self.__showcustomer = ShowCustomer()
-        self.__customer = Customer()
-        
+        self.__customer = CustomerUi()
 
     def main_menu(self):
         while True:

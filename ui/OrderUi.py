@@ -8,7 +8,7 @@ class OrderUi:
     def __init__(self):
         self.__service = OrderService()
         self.__header = Header()
-        self.__get_input = InputUi
+        self.__get_input = InputUi()
         self.__order = Order()
 
     def set_order(self):
@@ -23,7 +23,7 @@ class OrderUi:
         payment = self.__get_input.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
         if payment == 'k':
             cardnumber = self.__get_input.get_number_lengt(self.__get_input.CARDPROMPT, 8)
-        new_order = Order(date1, date2, group,car, customer,payment)
+        new_order = Order(date1, date2, group, car, customer, payment)
         self.__service.add_order(new_order)
         print("Útleiga bókuð")
     
@@ -38,12 +38,12 @@ class OrderUi:
         print("7. Allir flokkar ")
     
     def print_order(self):
-        print('Tímabil: {}'.format(self.__Order.get_period()))
-        print('Bíll: {}'.format(Order.get_car()))
-        print('Kostanður: {}'.format(Order.get_cost()))
-        print('Viðskiptavinur: {}'.format(Order.get_customer()))
-        print('Greiðslumáti: {}'.format(Order.get_payment()))
-        print('Heildarkostnaður: {}'.format(Order.get_full_amount()))
+        print('Tímabil: {}'.format(self.__order.get_time_period()))
+        print('Bíll: {}'.format(self.__order.get_car()))
+        #print('Kostanður: {}'.format(self.__order.get_cost()))
+        print('Viðskiptavinur: {}'.format(self.__order.get_customer()))
+        print('Greiðslumáti: {}'.format(self.__order.get_payment()))
+        #print('Heildarkostnaður: {}'.format(self.__order.get_full_amount()))
     
     #def print_available_cars(self) 
     #prentar út lausa bíla
