@@ -12,14 +12,6 @@ class CustomerService:
     def get_customers(self):
         return self.__customer_repo.get_customers()
 
-    def get_customer_match(self,searchstr,method):
-        customer_who_match= []
-        customers = self.get_customers()
-        for customer in customers:
-          #  method = customer+'.'+method
-            if eval(customer.method) == searchstr:
-                customer_who_match.append(customer)
-        return customer
 
     def get_matches_name(self, name):
         customer_who_match= []
@@ -53,7 +45,10 @@ class CustomerService:
                 customer_who_match.append(customer)
         return customer_who_match
 
-    def remove_customer(self, a_list, indexnum):
+    def remove_customer(self, customer):
         a_list.pop(indexnum)
         self.__customer_repo.overwrite_file(a_list)
         
+    def change_customer(self, to_remove, to_add):
+        whole_list = self.get_customers()
+

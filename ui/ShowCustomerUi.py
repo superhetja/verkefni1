@@ -83,12 +83,31 @@ class ShowCustomer(InputUi):
 
     def choice_customer(self, a_list):
         choice = self.inpuut.get_number_between(1,len(a_list)+1)
-        index_num = int(choice)-1
-        chosen_customer = a_list[index_num]
+        chosen_customer = a_list[int(choice)-1]
         print(chosen_customer)
-        changeordel = self.inpuut.get_letter('Viltu breyta eða eyða viðskiptavini? b/e: ',['e','b'])
-        if changeordel == 'e':
-            self.__service.remove_customer(a_list,index_num)
+        change_or_del = self.inpuut.get_letter('Viltu breyta eða eyða viðskiptavini? b/e: ',['e','b'])
+        if change_or_del == 'e':
+            self.__service.remove_customer(chosen_customer)
+        else:
+            self.change_customer(chosen_customer)
+    
+    def change_customer(self, customer):
+        print('Hverju viltu breyta?')
+        print('1. Nafni')
+        print('2. Kenntölu')
+        print('3. Netfangi')
+        print('4. Símanúmeri')
+        action = self.inpuut.get_number_between(1,4)
+
+        if action == '1':
+            name = self.inpuut.get_string(self.inpuut.NAMEPROMPT)
+        elif action == '2':
+            ssn = self.inpuut.get_number_length(self.inpuut.SSNPROMPT,10)
+        elif action == '3':
+            email = self.inpuut.get_email()
+        else:
+            phonenr = self.inpuut.get_number_length(self.inpuut.PHONEPROMPT,7)
+
          
     #choiceCostumer=input("Valinn viðskiptavinur: ")
     #þegar valið er í actions ákveðinn viðskiptavin 
