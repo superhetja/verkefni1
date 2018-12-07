@@ -23,30 +23,8 @@ class OrderUi:
         payment = self.__get_input.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
         if payment == 'k':
             cardnumber = self.__get_input.get_number_lengt(self.__get_input.CARDPROMPT, 8)
-            
+        print("Útleiga bókuð")
 
-
-
-
-        if payment == "K":
-            while True:
-                card_number = input("Kortanúmer: ")
-                errorprompt = self.__service.is_valid_card_number(card_number)
-                if not errorprompt:
-                    break
-                else:
-                    print(errorprompt)
-        print("Yfirlit")
-        #Prenta yfirlit yfir pöntunina
-        while True:
-            info = input("Eru allar upplýsingar réttar? j/n").capitalize()
-            errorprompt = self.__service.is_valid_info(info)
-            if info == "J":
-                new_order = Order(date1, date2, group, brand, user_choice, customer, payment, card_number)
-                self.__service.add_order(new_order)
-                print("Útleiga bókuð")
-            else:
-                print(errorprompt)
     
     def car_group_menu(self):
         print("Bílflokkar")

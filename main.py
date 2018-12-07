@@ -1,7 +1,11 @@
-from ui.LoginUi import Login
+from ui.SalesmanUi import Salesman
 
 def main():
-    ui = Login()
+    ui = Salesman()
+    ui.main_menu()
+
+main()
+
 
         
 
