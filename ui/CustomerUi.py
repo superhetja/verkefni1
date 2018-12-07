@@ -5,18 +5,20 @@ from ui.HeaderUi import Header
 from InputUi import InputUi
 
 
-class CustomerUi(InputUi):
+
+class CustomerUi:
     def __init__(self):
         self.__service = CustomerService()
         self.__header = Header()
+        self.__input = InputUi()
 
     def new_customer(self):
         print(self.__header)
         print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
         print("Sláðu inn upplýsingar um viðskiptavin:")
-        name = self.get_string(self.NAMEPROMPT)
-        ssn = self.get_valid_numer_lengt(self.SSNPROMPT, 10)
-        email = self.get_email()
-        phonenr = self.get_valid_numer_lengt(self.PHONEPROMPT,7)
+        name = self.__input.get_string(self.__input.NAMEPROMPT)
+        ssn = self.__input.get_number_lengt(self.__input.SSNPROMPT, 10)
+        email = self.__input.get_email()
+        phonenr = self.__input.get_number_lengt(self.__input.PHONEPROMPT,7)
         NewCustomer = Customer(name, ssn, email, phonenr)
         self.__service.add_customer(NewCustomer)

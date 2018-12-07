@@ -23,6 +23,8 @@ class OrderUi:
         payment = self.__get_input.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
         if payment == 'k':
             cardnumber = self.__get_input.get_number_lengt(self.__get_input.CARDPROMPT, 8)
+        new_order = Order(date1, date2, group,car, customer,payment)
+        self.__service.add_order(new_order)
         print("Útleiga bókuð")
 
     
