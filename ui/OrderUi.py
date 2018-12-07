@@ -9,7 +9,7 @@ class OrderUi:
         self.__service = OrderService()
         self.__header = Header()
         self.__get_input = InputUi
-        self.__order = Order()
+        self.__order = Order() 
 
     def set_order(self):
         date1 = self.__get_input.get_date(self.__get_input.BOOKINGDATEPROMPT)

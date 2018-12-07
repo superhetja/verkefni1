@@ -11,6 +11,8 @@ class InputUi:
     BOOKINGDATEPROMPT = 'Sláðu inn úttektardag: '
     RETURNDATEPROMPT = "Sláðu inn skiladag: "
     CARDPROMPT = 'Kortanúmer: '
+    ADMINPROMPT = 'j/n: '
+   
 
     def __init__(self):
         self.__check_input = CheckInput()
@@ -85,4 +87,4 @@ class InputUi:
             for i in a_list:
                 print(str(count)+'.',i)
                 count += 1
-        
+         

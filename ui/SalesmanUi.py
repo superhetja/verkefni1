@@ -8,7 +8,7 @@ from ui.ShowCarsUi import ShowCars
 from ui.ShowCustomerUi import ShowCustomer
 from ui.CustomerUi import Customer
 
-class Salesman: 
+class Salesman:  
     def __init__(self):
         self.__car_service = CarService()
         self.__header = Header()

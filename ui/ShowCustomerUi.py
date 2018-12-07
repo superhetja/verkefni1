@@ -55,7 +55,7 @@ class ShowCustomer(InputUi):
         phonenr = self.inpuut.get_number(self.inpuut.PHONEPROMPT)
         customers = self.__service.get_matches_phonenr(phonenr)
         self.inpuut.print_list(customers)
-        self.get_more()
+        self.get_more() 
 
     def print_customer_by_email(self):
         email = self.inpuut.get_string(self.inpuut.EMAILPROMPT)
