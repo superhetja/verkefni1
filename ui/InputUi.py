@@ -58,7 +58,7 @@ class InputUi:
                 return string
             print(errorprompt)
 
-    def get_number_lengt(self,prompt,length):
+    def get_number_length(self,prompt,length):
         while True:
             num = input(prompt)
             errorprompt = self.__check_input.is_valid_number_length(num,length)
@@ -69,6 +69,14 @@ class InputUi:
     def get_date(self, prompt): #Vantar að villumeðhöndla
         date = input(prompt)
         return date
+
+    def get_admin(self, prompt):
+        while True:
+            admin = input(prompt).capitalize()
+            errorprompt = self.__check_input.is_valid_between_two_letters('j', 'n', admin)
+            if errorprompt == None:
+                return admin
+            print(errorprompt)
 
     def clear_screen(self):
         '''

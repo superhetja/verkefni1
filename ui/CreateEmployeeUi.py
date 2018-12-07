@@ -19,17 +19,9 @@ class CreateEmployeeUi:
         print('Sláðu inn upplýsingar um starfsmann')
         name = self.__input.get_string(self.__input.NAMEPROMPT)
         password = input(str("Lykilorð: "))
-        ssn = self.__input.get_number_length(self.__input.SSNPROMPT)
+        ssn = self.__input.get_number_length(self.__input.SSNPROMPT, 10)
         email = self.__input.get_email()
         admin = self.__input.get_admin(self.__input.ADMINPROMPT)
         
-        while True:
-            admin = input('Admin y/n: ').capitalize()
-            errorprompt = self.__service.is_valid_admin(admin)
-            if not errorprompt:
-                break
-            else:
-                print(errorprompt)
-
         new_employee = Employee(name, ssn, password, email, admin)
         self.__service.add_employee(new_employee)
