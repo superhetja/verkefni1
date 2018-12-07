@@ -41,6 +41,3 @@ class AddCarUi:
         print('4. Jepplingur')
         print('5. Jeppi')
         print('6. Sendiferðabíll')
-
-
-    
