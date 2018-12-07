@@ -18,30 +18,3 @@ class EmployeeService:
         # self.__admin = admin
         # self.__ssn = ssn
         pass
-#nafn
-    def is_valid_fullname(self,fullname):
-        return self.__check.is_string(fullname)
-
-#password
-  
-
-
-#email
-    def is_valid_email(self, email):
-        errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
-        try:
-            atsymbol = email.index('@')
-            email.index('.', atsymbol)
-            return None
-        except ValueError:
-            return errorprompt
-#admin 
-    def is_valid_admin(self, admin):
-        return self.__check.is_valid_between_two_letters('y','n', admin)
-        
-#ssn
-    def is_valid_ssn(self, ssn):
-        return self.__check.is_valid_number_length(ssn,10)
-            
-
-

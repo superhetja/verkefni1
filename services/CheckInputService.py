@@ -1,3 +1,5 @@
+import datetime
+
 class CheckInput:
 
     # VAlID_BRANDS = ["Suzuki","Honda", "Hyundai","Toyota", "Volkswagen","Lexus","Renault",
@@ -72,3 +74,20 @@ class CheckInput:
             return None
         else:
             return errorprompt
+
+
+    def is_valid_date(self, date):
+        errorprompt = 'Ógild dagsetning'
+        try:
+            if '.' in date:
+                seperator = '.'
+            elif '/' in date:
+                seperator = '/' 
+            elif '-' in date:
+                seperator = '-'
+            day,month,year = date.split(seperator)
+            datetime.datetime(year,month,day)
+            return None
+        except ValueError:
+            return(errorprompt)
+
