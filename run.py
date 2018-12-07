@@ -14,14 +14,15 @@
 #a.show_customer_menu()
 
 '''keyrir bæta við bíl'''
-from ui.AddCarUi import AddCarUi
-a = AddCarUi()
-a.add_car_menu()
+# from ui.AddCarUi import AddCarUi
+# a = AddCarUi()
+# a.add_car_menu()
 
 '''Keyrir pöntun'''
-# from ui.OrderUi import OrderUi
-# a = OrderUi()
-# a.set_order()
+from ui.OrderUi import OrderUi
+a = OrderUi()
+a.set_order()
 
 '''Keyrir búa til nýan starfsmann'''
+
 
