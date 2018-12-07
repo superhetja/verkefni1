@@ -67,8 +67,12 @@ class InputUi:
             print(errorprompt)
 
     def get_date(self, prompt): #Vantar að villumeðhöndla
-        date = input(prompt)
-        return date
+        while True:
+            date =input(prompt)
+            errorprompt = self.__check_input.is_valid_date(date)
+            if errorprompt == None:
+                return date
+            print(errorprompt)
 
     def get_admin(self, prompt):
         while True:
