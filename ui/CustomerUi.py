@@ -4,8 +4,6 @@ from models.Color import Color
 from ui.HeaderUi import Header
 from ui.InputUi import InputUi
 
-
-
 class CustomerUi:
     def __init__(self):
         self.__service = CustomerService()

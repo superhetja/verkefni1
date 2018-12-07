@@ -28,7 +28,7 @@ class CreateEmployeeUi:
             errorprompt = self.__service.is_valid_ssn(ssn)
             if not errorprompt:
                 break
-            else:
+            else: 
                 print(errorprompt)
         while True:
             email = input('Email: ')

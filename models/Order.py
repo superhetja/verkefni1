@@ -17,12 +17,14 @@ class Order:
         self.__date2,self.__group,self.__car,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
-
     def get_date1(self):
         return self.__date1
     
     def get_date2(self):
         return self.__date2
+    
+    def get_time_period(self):
+        return (self.__date2 - self.__date1)
     
     def get_group(self):
         return self.__group
