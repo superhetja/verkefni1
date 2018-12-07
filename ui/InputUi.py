@@ -78,9 +78,11 @@ class InputUi:
         system_call(command)
 
     def print_list(self,a_list):
+        count = 1
         if len(a_list) == 0:
             print('Engar niðurstöður fundust.')
         else: 
             for i in a_list:
-                print(i)
+                print(str(count)+'.',i)
+                count += 1
         

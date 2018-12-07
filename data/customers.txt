@@ -1,1 +1,2 @@
 Customer('Margrét Hannesdóttir','2309874920','maggaBest@gmail.com','6789234')
+Customer('Jón Jónsson','1312862939','gunna@ru.is','5812345')

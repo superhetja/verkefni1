@@ -45,8 +45,6 @@ class ShowCars:
             print(car)
         self.get_more()
 
-
-
     def get_more(self):
         letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])
         if letter == 'j':

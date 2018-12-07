@@ -66,6 +66,7 @@ class ShowCustomer(InputUi):
     def print_all_customers(self):
         customers = self.__service.get_customers()
         self.inpuut.print_list(customers)
+        self.choice_customer(customers)
         self.get_more()
 
     def get_more(self):
@@ -75,12 +76,20 @@ class ShowCustomer(InputUi):
         else: #Skipun að fara til baka um eina valmynd
             pass
 
+
     def all_costumers(self):
         pass
     #prenta út alla viðskiptavini með þessu nafni og kt.
 
-    def choice_costumer(self):
-        pass
+    def choice_customer(self, a_list):
+        choice = self.inpuut.get_number_between(1,len(a_list)+1)
+        index_num = int(choice)-1
+        chosen_customer = a_list[index_num]
+        print(chosen_customer)
+        changeordel = self.inpuut.get_letter('Viltu breyta eða eyða viðskiptavini? b/e: ',['e','b'])
+        if changeordel == 'e':
+            self.__service.remove_customer(a_list,index_num)
+         
     #choiceCostumer=input("Valinn viðskiptavinur: ")
     #þegar valið er í actions ákveðinn viðskiptavin 
     #yfirlit yfir þessum viðskiptavin

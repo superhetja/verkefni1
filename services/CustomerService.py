@@ -52,3 +52,8 @@ class CustomerService:
             if email in customer.get_email():
                 customer_who_match.append(customer)
         return customer_who_match
+
+    def remove_customer(self, a_list, indexnum):
+        a_list.pop(indexnum)
+        self.__customer_repo.overwrite_file(a_list)
+        

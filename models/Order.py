@@ -39,5 +39,8 @@ class Order:
     def get_card_number(self):
         return self.__card_number
 
+    def return_car(self):
+        self.__returned = True
+        
 # if payment == K
 # card_number

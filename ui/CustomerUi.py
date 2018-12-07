@@ -2,7 +2,7 @@ from services.CustomerService import CustomerService
 from models.Customer import Customer
 from models.Color import Color
 from ui.HeaderUi import Header
-from InputUi import InputUi
+from ui.InputUi import InputUi
 
 
 
