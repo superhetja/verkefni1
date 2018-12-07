@@ -1,6 +1,6 @@
 from models.Order import Order
 
-class OrderRepository: 
+class OrderRepository:
     def __init__(self):
         pass
 
