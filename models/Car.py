@@ -8,10 +8,11 @@ class Car:
     VAN = 9000
     TAX = 1.11
     INSURANCE = 30000
-    def __init__(self, group=0, brand='', subbrand='', seats= 0, transmission='', doors=0, booked=False):
+    def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
         self.__group = int(group)
         self.__brand = brand
         self.__subbrand = subbrand
+        self.__carnumber = carnumber
         self.__seats = seats
         self.__booked = booked
         self.__transmission = transmission
@@ -34,10 +35,10 @@ class Car:
         return price
         
     def __str__(self):
-        return "Bíll: {} {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}, Í útleigu: {}".format(self.__brand,self.__subbrand, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
+        return "Bíll: {} {}, Bílnúmer: {}, Verð: {} kr, Fjöldi dyra: {}, Fjöldi sæta: {}, Skipting: {}, Í útleigu: {}".format(self.__brand,self.__subbrand,self.__carnumber,self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
     
     def __repr__(self):
-        return "Car('{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__seats,self.__transmission,self.__doors,self.__booked)
+        return "Car('{}','{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__carnumber,self.__seats,self.__transmission,self.__doors,self.__booked)
     
     def get_price(self):
         self.set_price()
@@ -60,3 +61,12 @@ class Car:
 
     def is_booked(self):
         return self.__booked
+    
+    def get_carnumber(self):
+        return self.__carnumber
+
+    def book_car(self):
+        self.__booked = True
+    
+    def return_car(self):
+        self.__booked = False

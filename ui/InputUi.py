@@ -11,6 +11,7 @@ class InputUi:
     BOOKINGDATEPROMPT = 'Sláðu inn úttektardag: '
     RETURNDATEPROMPT = "Sláðu inn skiladag: "
     CARDPROMPT = 'Kortanúmer: '
+    CARNUMPROMPT = 'Bílnúmer: '
     ADMINPROMPT = 'j/n: '
    
 
@@ -100,3 +101,10 @@ class InputUi:
                 print(str(count)+'.',i)
                 count += 1
          
+    def get_carnum(self):
+        while True:
+            carnum = input(self.CARNUMPROMPT)
+            errorprompt = self.__check_input.is_carnum(carnum)
+            if errorprompt == None:
+                return carnum
+            print(errorprompt)

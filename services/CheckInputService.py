@@ -86,8 +86,13 @@ class CheckInput:
             elif '-' in date:
                 seperator = '-'
             day,month,year = date.split(seperator)
-            datetime.datetime(year,month,day)
+            datetime.datetime(int(year),int(month),int(day))
             return None
         except ValueError:
             return(errorprompt)
 
+    def is_carnum(self, carnum):
+        errorprompt = 'Rangur innsláttur'
+        if len(carnum) == 5 and carnum.isalnum():
+            return None
+        return errorprompt

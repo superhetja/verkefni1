@@ -16,12 +16,13 @@ class AddCarUi:
         group=self.__input_ui.get_number_between(1,6)
 
         brand = input('Tegund: ').capitalize()
-        subbrand=input('Undirtegund: ').capitalize()
+        subbrand = input('Undirtegund: ').capitalize()
+        carnumber = self.__input_ui.get_carnum()
         seats=self.__input_ui.get_number_between(2,7,'Fjöldi sæta: ')
         transmission=self.__input_ui.get_letter('Skipting b/s: ', ['b','s'])
         doors=self.__input_ui.get_number_between(3,5,'Fjöldi dyra: ')
 
-        new_car = Car(group, brand, subbrand, seats, transmission, doors)
+        new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_car(new_car)
         print("Nýskráningu lokið! ")
         self.get_more()
