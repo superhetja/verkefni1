@@ -1,0 +1,11 @@
+Búa til bíl
+prenta bíla í útleigu
+prenta lausa bíla
+prenta allabíla
+
+búa til viðskiptavin
+prenta alla viðskiptavini
+leita að viðskiptavini
+breyta viðskiptavini
+
+prenta aðalvalmynd

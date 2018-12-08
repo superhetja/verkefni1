@@ -2,19 +2,26 @@ from models.Customer import Customer
 
 class CustomerRepository:
    def __init__(self):
-      pass
+      self.__customer_list = self.read_file()
    
    def add_customer(self, customer):
       with open('data/customers.txt', 'a+') as aFile:
          aFile.write(Customer.__repr__(customer) + '\n')
+      a_list = self.__customer_list
+      a_list.append(customer)
+      self.__customer_list = a_list
+   #   self.__customer_list.append(customer)
 
-   def get_customers(self):
+   def read_file(self):
       customers = []
       with open("data/customers.txt") as aFile:
          for line in aFile.readlines():
             customer = eval(line.strip())
             customers.append(customer)
          return customers
+
+   def get_customers(self):
+      return self.__customer_list
  
    def overwrite_file(self,new_content):
    #   with open('data/customers.txt,'w'): pass

@@ -1,7 +1,3 @@
-Villumeðhönda get_date (þarf að athuga með hvernig á að setja inn strippa / og -)
-
-Breyta viðskiptavini. (Í rauninni bara búa til nýjann viðskiptavin sem er alveg eins
-nema bara búið að breyta því sem þarf að breyta og svo eða út gamla, alveg eins í remove_cutomer)
 
 Finna út hvernig það er hægt að instance af bíl og viðskiptavin við order þannig það haldi 
 utan um bílinn sem er í útleigu
