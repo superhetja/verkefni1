@@ -12,12 +12,12 @@ class OrderService(Service):
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
-        self.__repo = OrderRepository()
+        self.__order_repo = OrderRepository()
 
     def add_order(self, order): 
         carnumber = order.get_car()
         self.book_car(carnumber)
-        self.__repo.add_content(order)
+        self.__order_repo.add_content(order)
 
     def book_car(self, carnumber):
         cars = self.__car_repo.get_content()
