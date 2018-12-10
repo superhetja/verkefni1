@@ -3,16 +3,16 @@ from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
 
 class Ui:
-    NAMEPROMPT = 'Nafn: '
-    SSNPROMPT = 'Kennitala: '
-    PHONEPROMPT = 'Símanúmer: '
-    EMAILPROMPT = 'Netfang: '
-    MOREPROMPT = 'Viltu halda áfram j/n: '
-    BOOKINGDATEPROMPT = 'Sláðu inn úttektardag: '
-    RETURNDATEPROMPT = "Sláðu inn skiladag: "
-    CARDPROMPT = 'Kortanúmer: '
-    CARNUMPROMPT = 'Bílnúmer: '
-    ADMINPROMPT = 'j/n: '
+    NAMEPROMPT = 'NAME: '
+    SSNPROMPT = 'SSN: '
+    PHONEPROMPT = 'PHONENUMER: '
+    EMAILPROMPT = 'EMAIL: '
+    MOREPROMPT = 'DO YOU WANT TO CONTINUE? Y/N: '
+    BOOKINGDATEPROMPT = 'BOOKING DATE: '
+    RETURNDATEPROMPT = "RETURN DATE: "
+    CARDPROMPT = 'CARD NUMER: '
+    CARNUMPROMPT = 'CAR NUMBER: '
+    ADMINPROMPT = 'Y/N: '
    
 
     def __init__(self):
