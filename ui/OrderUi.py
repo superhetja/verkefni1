@@ -97,12 +97,12 @@ class OrderUi(Ui):
 
     #Búa bara til str fall í Order til að prenta út order
     def print_order(self, new_order):
-       # print('Tímabil: {}'.format(new_order.get_time_period()))
-        print('Bíll: {}'.format(new_order.get_car()))
+        print('Tímabil: {} - {}'.format(new_order.get_date1, new_order.get_date2))
+        print('Bíll: {}'.format(new_order.get_car))
         #print('Kostanður: {}'.format(self.__order.get_cost()))
         print('Viðskiptavinur: {}'.format(new_order.get_customer()))
         print('Greiðslumáti: {}'.format(new_order.get_payment()))
-        #print('Heildarkostnaður: {}'.format(self.__order.get_full_amount()))
+        #print('Heildarkostnaður: {}'.format(new_order.num_of_days * 'PRICE')
     
     #def print_available_cars(self) 
     #prentar út lausa bíla

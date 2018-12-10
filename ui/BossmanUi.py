@@ -1,14 +1,14 @@
 from services.CarService import CarService
-from HeaderUi import Header
+from ui.HeaderUi import Header
 from models.Color import Color
 from models.Clear import Clear
-from Ui import Ui
-from OrderUi import OrderUi
-from ShowCarsUi import ShowCars
-from ShowCustomerUi import ShowCustomer
-from CustomerUi import CustomerUi
-from AddCarUi import AddCarUi
-from CreateEmployeeUi import CreateEmployee
+from ui.Ui import Ui
+from ui.OrderUi import OrderUi
+from ui.ShowCarsUi import ShowCars
+from ui.ShowCustomerUi import ShowCustomer
+from ui.CustomerUi import CustomerUi
+from ui.AddCarUi import AddCarUi
+from ui.CreateEmployeeUi import CreateEmployee
 
 ACTION_CHOICES = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 class Bossman: 
@@ -27,26 +27,26 @@ class Bossman:
     def main_menu(self):
         print(self.__header)
         while True:
-            print((Color.BOLD + "Útleiga"+ Color.END))
-            print("1. Skrá nýja útleigu")
-            print("2. Fletta upp útleigu")
-            print("3. Ská skil")
-            print("4. Skoða verðskrá")
-            print("5. Uppfæra verð")
+            print((Color.BOLD + "Rental"+ Color.END))
+            print("1. Register new rental")
+            print("2. Search rental")
+            print("3. Register returnday")
+            print("4. View price list")
+            print("5. Update price")
 
-            print(Color.BOLD + "Bílar"+ Color.END)
-            print("6. Skoða bíla")
-            print("7. Skrá nýjan bíl")
+            print(Color.BOLD + "Cars"+ Color.END)
+            print("6. View cars")
+            print("7. Register new car")
 
-            print(Color.BOLD + "Viðskiptavinur"+ Color.END)
-            print("8. Skrá nýjan viðskiptavin")
-            print("9. Fletta upp viðskiptavini ")
-            print("10. Skoða viðskiptavini")
+            print(Color.BOLD + "Customer"+ Color.END)
+            print("8. Register new customer")
+            print("9. Search customer ")
+            print("10. View customers")
 
-            print(Color.BOLD + "Starfsmaður"+ Color.END)
-            print("11. Skrá nýjan starfsmann")
-            print("12. Fletta upp starfsmanni")
-            print('13. Skoða starfsmenn')
+            print(Color.BOLD + "Employee"+ Color.END)
+            print("11. Register new employee")
+            print("12. Search employee")
+            print('13. View employees')
             #print("13. Birta starfsmann")
 
     def action_choice(self):

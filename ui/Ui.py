@@ -3,17 +3,17 @@ from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
 
 class Ui:
-    NAMEPROMPT = 'Nafn: '
-    SSNPROMPT = 'Kennitala: '
-    PHONEPROMPT = 'Símanúmer: '
-    EMAILPROMPT = 'Netfang: '
-    MOREPROMPT = 'Viltu halda áfram j/n: '
-    BOOKINGDATEPROMPT = 'Sláðu inn úttektardag: '
-    RETURNDATEPROMPT = "Sláðu inn skiladag: "
-    CARDPROMPT = 'Kortanúmer: '
-    CARNUMPROMPT = 'Bílnúmer: '
-    ADMINPROMPT = 'j/n: '
-
+    NAMEPROMPT = 'NAME: '
+    SSNPROMPT = 'SSN: '
+    PHONEPROMPT = 'PHONENUMER: '
+    EMAILPROMPT = 'EMAIL: '
+    MOREPROMPT = 'DO YOU WANT TO CONTINUE? Y/N: '
+    BOOKINGDATEPROMPT = 'BOOKING DATE: '
+    RETURNDATEPROMPT = "RETURN DATE: "
+    CARDPROMPT = 'CARD NUMER: '
+    CARNUMPROMPT = 'CAR NUMBER: '
+    ADMINPROMPT = 'Y/N: '
+   
     def __init__(self):
         self.__check_input = CheckInput()
 
@@ -77,7 +77,7 @@ class Ui:
     def get_admin(self, prompt):
         while True:
             admin = input(prompt).capitalize()
-            errorprompt = self.__check_input.is_valid_between_two_letters('j', 'n', admin)
+            errorprompt = self.__check_input.is_valid_between_two_letters('y', 'n', admin)
             if errorprompt == None:
                 return admin
             print(errorprompt)
@@ -94,7 +94,7 @@ class Ui:
     def print_list(self,a_list):
         count = 1
         if len(a_list) == 0:
-            print('Engar niðurstöður fundust.')
+            print('No results found.')
         else: 
             for i in a_list:
                 print(str(count)+'.',i)
@@ -108,9 +108,9 @@ class Ui:
                 return carnum
             print(errorprompt)
 
-    def get_more(self,path):
-        letter = self.get_letter(self.MOREPROMPT,['j','n'])
-        if letter == 'j':
-            path
+    def get_more(self):
+        letter = self.get_letter(self.MOREPROMPT,['y','n'])
+        if letter == 'y':
+            self.MAIN
         else:
             pass

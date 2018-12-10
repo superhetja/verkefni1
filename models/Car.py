@@ -6,7 +6,7 @@ class Car:
     SMALLSUV = 8000
     SUV = 10000
     VAN = 9000
-    TAX = 1.11
+    TAX = 1.11 
     INSURANCE = 30000
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
         self.__group = int(group)
