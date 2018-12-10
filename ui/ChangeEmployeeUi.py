@@ -11,8 +11,6 @@ class ChangeEmployeeUi:
         self.__service = EmployeeService()
         self.__clear = Clear()
         self.__input = InputUi()
-        
-
 
     def change_employee(self, employee):
         action = self.main_menu()
@@ -28,8 +26,6 @@ class ChangeEmployeeUi:
         self.__service.remove_employee(employee)
         self.__service.add_employee(changedEmployee)
 
-
-
     def main_menu(self):
         print(Color.BOLD + 'Starfsmaður'+ Color.END)
         print('1. Breyta nafni')
@@ -37,7 +33,6 @@ class ChangeEmployeeUi:
         print('3. Breyta kennitölu')
         print('4. Breyta stöðu')
         print('5. Breyta lykilorði')
-
         action = self.__input.get_number_between(1, 5)
         return action
             
