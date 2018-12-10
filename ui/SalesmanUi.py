@@ -38,9 +38,9 @@ class Salesman(Ui):
             print(Color.BOLD + "Viðskiptavinur"+ Color.END)
             print("7. Skrá nýjan viðskiptavin")
             print("8. Fletta upp viðskiptavin")
-            print("9. Skoða viðskiptavini ")
+            print("9. Skoða alla viðskiptavini ")
 
-            action = self.get_number_between(1,8)
+            action = self.get_number_between(1,9)
             if action=='1':
                 self.__order.set_order()
             elif action=='2':
@@ -58,4 +58,4 @@ class Salesman(Ui):
             elif action == '8':
                 self.__showcustomer.search_customer()
             elif action =='9':
-                self.__showcustomer.show_customer_main()
+                self.__showcustomer.print_all_customers()

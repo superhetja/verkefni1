@@ -11,15 +11,15 @@ class Order:
         self.__payment = payment
         self.__card_number = card_number
         self.__returned = returned
+        self.__group = group
         self.__price = self.calculate_price(group)
-        self.__group = self.get_group(group)
 
     def __str__(self):
         return "Dagsetning: {} {}, Bíll {}, Viðskiptavinur {}, Greiðslur {}, Kortnúmer: {}, Staða: {}".format(self.__date1, self.__date2, self.__car, self.__customer, self.__payment, self.__card_number, self.__returned)
         
     def __repr__(self):
-        return "Order('{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
-        self.__date2,self.__car,self.__customer,self.__payment,self.__card_number,
+        return "Order('{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
+        self.__date2,self.__group,self.__car,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
     def get_date1(self):

@@ -108,9 +108,3 @@ class Ui:
                 return carnum
             print(errorprompt)
 
-    def get_more(self):
-        letter = self.get_letter(self.MOREPROMPT,['y','n'])
-        if letter == 'y':
-            self.MAIN
-        else:
-            pass

@@ -32,7 +32,7 @@ class OrderUi(Ui):
         payment = self.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
         cardnumber = ''
         if payment == 'k':
-            cardnumber = self.get_number_length(self.CARDPROMPT, 8)
+            cardnumber = self.get_number_length(self.CARDPROMPT, 16)
         new_order = Order(str(date1), str(date2), group, car, customer, payment, cardnumber)
        # self.print_order(new_order)
         self.__service.add_order(new_order)
@@ -52,12 +52,14 @@ class OrderUi(Ui):
         self.car_group_menu(cars,total_cars)
         group = self.get_number_between(1,7)
         print("Lausir bíla á valdri dagsetningu: ")
-        self.print_list(cars[int(group)-1])
+        cars_in_group = cars[int(group)-1]
+        self.print_list(cars_in_group)
         choice = self.get_number_between(1,len(cars[int(group)-1]))
-        car = cars[int(choice)-1]
-        return group,car
+        car = cars_in_group[int(choice)-1]
+        carnum = car.get_carnumber()
+        return group, carnum
             
-    def sort_cars(self,):
+    def sort_cars(self):
         available_cars = self.__car_service.get_available_cars()
         car_list = [[],[],[],[],[],[],[]]
         for car in available_cars:
