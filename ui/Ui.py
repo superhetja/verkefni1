@@ -14,7 +14,6 @@ class Ui:
     CARNUMPROMPT = 'CAR NUMBER: '
     ADMINPROMPT = 'Y/N: '
    
-
     def __init__(self):
         self.__check_input = CheckInput()
 
