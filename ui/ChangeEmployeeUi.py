@@ -28,12 +28,12 @@ class ChangeEmployeeUi:
         self.__service.add_employee(changedEmployee)
 
     def main_menu(self):
-        print(Color.BOLD + 'Starfsmaður'+ Color.END)
-        print('1. Breyta nafni')
-        print('2. Breyta netfangi')
-        print('3. Breyta kennitölu')
-        print('4. Breyta stöðu')
-        print('5. Breyta lykilorði')
+        print(Color.BOLD + 'Employee'+ Color.END)
+        print('1. Change name')
+        print('2. Change email')
+        print('3. Change ssn')
+        print('4. Change admin')
+        print('5. Change password')
 
         action = self.get_number_between(1, 5)
         return action 
