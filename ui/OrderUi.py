@@ -11,22 +11,23 @@ from models.Car import Car
 
 class OrderUi:
     def __init__(self):
+        Ui.__init__(self)
         self.__service = OrderService()
         self.__header = Header()
-        self.__get_input = Ui()
+        #self.__get_input = Ui()
         self.__car_service = CarService()
         self.__customer_service = CustomerService()
         self.__new_customer = CustomerUi()
 
     def set_order(self):
-        date1 = self.__get_input.get_date(self.__get_input.BOOKINGDATEPROMPT)
-        date2 = self.__get_input.get_date(self.__get_input.RETURNDATEPROMPT)
+        date1 = self.get_date(self.BOOKINGDATEPROMPT)
+        date2 = self.get_date(self.RETURNDATEPROMPT)
         car = self.get_cars()
         customer = self.get_customer()
-        payment = self.__get_input.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
+        payment = self.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
         cardnumber = ''
         if payment == 'k':
-            cardnumber = self.__get_input.get_number_length(self.__get_input.CARDPROMPT, 8)
+            cardnumber = self.get_number_length(self.CARDPROMPT, 8)
         new_order = Order(date1, date2, car, customer, payment, cardnumber)
        # self.print_order(new_order)
         self.__service.add_order(new_order)
@@ -35,9 +36,9 @@ class OrderUi:
     def get_cars(self):
         cars, total_cars = self.sort_cars()
         self.car_group_menu(cars,total_cars)
-        group = self.__get_input.get_number_between(1,7)
+        group = self.get_number_between(1,7)
         print("Lausir bíla á valdri dagsetningu: ")
-        self.__get_input.print_list(cars[int(group)-1])
+        self.print_list(cars[int(group)-1])
         car = self.get_car(cars[int(group)-1])
         return car
             
@@ -50,14 +51,14 @@ class OrderUi:
         return car_list, len(available_cars)
 
     def get_customer(self):
-        choice = self.__get_input.get_letter('Skrá nýjann eða fletta upp viðskiptavini(s/f):',['s','f'])
+        choice = self.get_letter('Skrá nýjann eða fletta upp viðskiptavini(s/f):',['s','f'])
         if choice == 'f':
             while True:
-                search = self.__get_input.get_string('Sláðu inn leitarstreng: ')
+                search = self.get_string('Sláðu inn leitarstreng: ')
                 customers = self.__customer_service.get_matches(search)
-                self.__get_input.print_list(customers)
+                self.print_list(customers)
                 if len(customers) != 0:
-                    customber_num = self.__get_input.get_number_between(1,len(customers))
+                    customber_num = self.get_number_between(1,len(customers))
                     customer = customers[int(customber_num)-1]
                     print('Valinn viðskiptavinur er:', customer)
                     return customer.get_ssn()
@@ -68,7 +69,7 @@ class OrderUi:
             return customer.get_ssn()
 
     def get_car(self, cars):
-        choice = self.__get_input.get_number_between(1,len(cars))
+        choice = self.get_number_between(1,len(cars))
         car = cars[len(choice)-1]
         return car.get_carnumber()
         
