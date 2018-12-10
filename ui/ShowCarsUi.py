@@ -1,7 +1,7 @@
 from services.CarService import CarService
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
-from ui.Ui import Ui
+from Ui import Ui
 
 class ShowCars:
     def __init__(self):

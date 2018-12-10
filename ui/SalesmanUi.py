@@ -14,12 +14,12 @@ class Salesman:
         Ui.__init__(self)
         self.__car_service = CarService()
         self.__header = Header()
-        #self.__input_ui = Ui()
         self.__order = OrderUi()
         self.__showcar = ShowCars()
         self.__showcustomer = ShowCustomer()
         self.__customer = CustomerUi()
         self.__addcar = AddCarUi()
+        #self.__input_ui = Ui()
 
     def main_menu(self):
         while True:
@@ -56,6 +56,6 @@ class Salesman:
             elif action == '7':
                 self.__customer.new_customer()
             elif action == '8':
-                self.__showcustomer.serch_customer()
+                self.__showcustomer.search_customer()
             elif action =='9':
                 self.__showcustomer.show_customer_main()

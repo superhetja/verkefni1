@@ -1,9 +1,9 @@
 from models.Employee import Employee
-from ui.HeaderUi import Header
+from HeaderUi import Header
 from services.EmployeeService import EmployeeService
 from models.Color import Color
 from models.Clear import Clear
-from ui.Ui import Ui
+from Ui import Ui
 
 class CreateEmployee:
     def __init__(self):
