@@ -13,9 +13,9 @@ class ShowCars:
 
     def show_cars_menu(self):
         self.__clear.clear_screen()
-        print('1. Prenta alla bíla.')
-        print('2. Prenta lausa bíla.')
-        print('3. Prenta bókaða bíla.')
+        print('1. Print all cars.')
+        print('2. Print all available cars.')
+        print('3. Print all rented cars.')
 
         action = self.get_number_between(1,3)
 
