@@ -1,6 +1,5 @@
 from models.Car import Car
-from repositories.PriceListRepository import PriceListRepository
-from services.Service import Service
+
  
 class show_price_list(Ui):
     def __init__(self, STANDARD, LUXURY, ELECTRIC, SMALLSUV, SUV, VAN, TAX, INSURANCE):
