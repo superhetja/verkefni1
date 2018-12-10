@@ -1,64 +1,34 @@
 from repositories.CustomerRepository import CustomerRepository
 from models.Customer import Customer
-
-class CustomerService:
-    def __init__(self):
-        self.__customer_repo = CustomerRepository()
-
-    def add_customer(self, customer):
-        self.__customer_repo.add_customer(customer)
+from services.Service import Service
 
 
-    def get_customers(self):
-        return self.__customer_repo.get_customers()
 
-    def get_matches(self, search):
-        customers_who_match = []
-        customers = self.get_customers()
-        for customer in customers:
-            if search in customer.__repr__():
-                customers_who_match.append(customer)
-        return customers_who_match
-            
-    # def get_matches_name(self, name):
-    #     customer_who_match = []
-    #     customers = self.get_customers()
+class CustomerService(Service):
+    REPO = CustomerRepository()
+
+    # def add_customer(self, customer):
+    #     self.__repo.add_content(customer)
+
+    # def get_full_content(self):
+    #     return self.__repo.get_content()
+
+    # def get_matches(self, search):
+    #     customers_who_match = []
+    #     customers = self.get_full_content()
     #     for customer in customers:
-    #         if name in customer.get_name():
-    #             customer_who_match.append(customer)
-    #     return customer_who_match
-
-    # def get_matches_ssn(self, ssn):
-    #     customer_who_match = []
-    #     customers = self.get_customers()
-    #     for customer in customers:
-    #         if ssn in customer.get_ssn():
-    #             customer_who_match.append(customer)
-    #     return customer_who_match
-
-    # def get_matches_phonenr(self, phonenr):
-    #     customer_who_match= []
-    #     customers = self.get_customers()
-    #     for customer in customers:
-    #         if phonenr in customer.get_phoneNr():
-    #             customer_who_match.append(customer)
-    #     return customer_who_match
-
-    # def get_matches_email(self, email):
-    #     customer_who_match = []
-    #     customers = self.get_customers()
-    #     for customer in customers:
-    #         if email in customer.get_email():
-    #             customer_who_match.append(customer)
-    #     return customer_who_match
-
-    def remove_customer(self, customer):
-        full_list = self.get_customers()
-        full_list.remove(customer)
-        self.__customer_repo.overwrite_file(full_list)
+    #         if search in customer.__repr__():
+    #             customers_who_match.append(customer)
+    #     return customers_who_match
         
-    def change_customer(self, to_remove, to_add):
-        full_list = self.get_customers()
-        full_list.remove(to_remove)
-        full_list.append(to_add)
-        self.__customer_repo.overwrite_file(full_list)
+
+    # def remove_customer(self, customer):
+    #     full_list = self.get_full_content()
+    #     full_list.remove(customer)
+    #     self.__repo.overwrite_file(full_list)
+        
+    # def change_customer(self, to_remove, to_add):
+    #     full_list = self.get_full_content()
+    #     full_list.remove(to_remove)
+    #     full_list.append(to_add)
+    #     self.__repo.overwrite_file(full_list)

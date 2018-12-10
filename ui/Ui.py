@@ -2,7 +2,7 @@ from services.CheckInputService import CheckInput
 from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
 
-class InputUi:
+class Ui:
     NAMEPROMPT = 'Nafn: '
     SSNPROMPT = 'Kennitala: '
     PHONEPROMPT = 'Símanúmer: '
@@ -108,3 +108,10 @@ class InputUi:
             if errorprompt == None:
                 return carnum
             print(errorprompt)
+
+    def get_more(self):
+        letter = self.get_letter(self.MOREPROMPT,['j','n'])
+        if letter == 'j':
+            self.show_customer_main()
+        else:
+            pass

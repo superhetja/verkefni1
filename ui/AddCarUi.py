@@ -2,13 +2,13 @@ from services.CarService import CarService
 from models.Car import Car
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
-from ui.InputUi import InputUi
+from ui.Ui import Ui
 class AddCarUi:
     def __init__(self):
         self.__car = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
-        self.__input_ui=InputUi()
+        self.__input_ui=Ui()
 
     def add_car_menu(self):
         self.__clear.clear_screen()
@@ -23,7 +23,7 @@ class AddCarUi:
         doors=self.__input_ui.get_number_between(3,5,'Fjöldi dyra: ')
 
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
-        self.__car.add_car(new_car)
+        self.__car.add_content(new_car)
         print("Nýskráningu lokið! ")
         self.get_more()
 
@@ -33,6 +33,7 @@ class AddCarUi:
             self.add_car_menu()
         else: #Skipun að fara til baka um eina valmynd
             pass
+
 
     def car_group_menu(self):
         print('Bílaflokkar')

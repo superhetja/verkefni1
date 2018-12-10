@@ -2,13 +2,13 @@ from services.CustomerService import CustomerService
 from models.Customer import Customer
 from models.Color import Color
 from ui.HeaderUi import Header
-from ui.InputUi import InputUi
+from ui.Ui import Ui
 
 class CustomerUi:
     def __init__(self):
         self.__service = CustomerService()
         self.__header = Header()
-        self.__input = InputUi()
+        self.__input = Ui()
 
     def new_customer(self):
         print(self.__header)
