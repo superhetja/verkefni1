@@ -23,7 +23,7 @@ class Order:
     def get_date2(self):
         return self.__date2
     
-    def get_time_period(self):
+    def num_of_days(self):
         day1, month1, year1 = self.__date1.split('.')
         day2, month2, year2 = self.__date2.split('.')
         date1 = date(int(year1), int(month1), int(day1))
