@@ -15,16 +15,16 @@ class AddCarUi:
         self.car_group_menu()
         group=self.__input_ui.get_number_between(1,6)
 
-        brand = input('Tegund: ').capitalize()
-        subbrand = input('Undirtegund: ').capitalize()
+        brand = input('Brand: ').capitalize()
+        subbrand = input('Subbrand: ').capitalize()
         carnumber = self.__input_ui.get_carnum()
-        seats=self.__input_ui.get_number_between(2,7,'Fjöldi sæta: ')
-        transmission=self.__input_ui.get_letter('Skipting b/s: ', ['b','s'])
-        doors=self.__input_ui.get_number_between(3,5,'Fjöldi dyra: ')
+        seats=self.__input_ui.get_number_between(2,7,'Number of seats: ')
+        transmission=self.__input_ui.get_letter('Transmission a/s: ', ['a','s'])
+        doors=self.__input_ui.get_number_between(3,5,'Number of doors: ')
 
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
-        print("Nýskráningu lokið! ")
+        print("New car registration complete! ")
         self.get_more()
 
     def get_more(self):
@@ -36,10 +36,10 @@ class AddCarUi:
 
 
     def car_group_menu(self):
-        print('Bílaflokkar')
-        print('1. Smá bíll')
-        print('2. Lúxus bíll')
-        print('3. Rafbíll')
-        print('4. Jepplingur')
-        print('5. Jeppi')
-        print('6. Sendiferðabíll')
+        print('Car groups')
+        print('1. Standar')
+        print('2. Luxury')
+        print('3. Electric')
+        print('4. Small suv')
+        print('5. Suv')
+        print('6. Van')

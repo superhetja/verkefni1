@@ -1,12 +1,12 @@
 class Car:
     PRICE_PER_DAY = 5000
-    STANDART = 5000
+    STANDARD = 5000
     LUXURY = 8000
     ELECTRIC = 7000
     SMALLSUV = 8000
     SUV = 10000
     VAN = 9000
-    TAX = 1.11
+    TAX = 1.11 
     INSURANCE = 30000
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
         self.__group = int(group)
@@ -21,7 +21,7 @@ class Car:
         
     def set_price(self):
         if self.__group == 1:
-            price = self.STANDART
+            price = self.STANDARD
         elif self.__group == 2:
             price = self.LUXURY
         elif self.__group == 3:

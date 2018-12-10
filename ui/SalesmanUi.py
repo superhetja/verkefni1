@@ -9,18 +9,17 @@ from ui.ShowCustomerUi import ShowCustomer
 from ui.CustomerUi import CustomerUi
 from ui.AddCarUi import AddCarUi
 
-
-
-class Salesman:  
+class Salesman(Ui):  
     def __init__(self):
+        Ui.__init__(self)
         self.__car_service = CarService()
         self.__header = Header()
-        self.__input_ui = Ui()
         self.__order = OrderUi()
         self.__showcar = ShowCars()
         self.__showcustomer = ShowCustomer()
         self.__customer = CustomerUi()
         self.__addcar = AddCarUi()
+        #self.__input_ui = Ui()
 
     def main_menu(self):
         while True:
@@ -38,9 +37,10 @@ class Salesman:
 
             print(Color.BOLD + "Viðskiptavinur"+ Color.END)
             print("7. Skrá nýjan viðskiptavin")
-            print("8. Skoða viðskiptavini ")
+            print("8. Fletta upp viðskiptavin")
+            print("9. Skoða viðskiptavini ")
 
-            action = self.__input_ui.get_number_between(1,8)
+            action = self.get_number_between(1,8)
             if action=='1':
                 self.__order.set_order()
             elif action=='2':
@@ -55,11 +55,7 @@ class Salesman:
                 self.__addcar.add_car_menu()
             elif action == '7':
                 self.__customer.new_customer()
-            elif action =='8':
+            elif action == '8':
+                self.__showcustomer.search_customer()
+            elif action =='9':
                 self.__showcustomer.show_customer_main()
-
-
-            
-
-
-

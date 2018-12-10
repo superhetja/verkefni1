@@ -2,15 +2,16 @@ from models.Order import Order
 from models.Color import Color
 from ui.Ui import Ui
 from services.OrderService import OrderService
+from ui.HeaderUi import Header
 
 
 class ShowOrder(Ui):
-
     def __init__(self):
         Ui.__init__(self)
         self.__color = Color()
 #        self = InputUi()
         self.__service = OrderService()
+        self.__header = Header()
 
     def show_order_main(self):
         '''Aðal fallið'''
@@ -35,7 +36,7 @@ class ShowOrder(Ui):
         orders = self.__service.get_full_content()
         self.print_list(orders)
         if len(orders) == 0:
-            self.get_more()
+            self.get_more(self.show_order_main())
         else:
             self.choice_order(orders)
 
@@ -52,11 +53,5 @@ class ShowOrder(Ui):
             self.__service.remove_instance(chosen_order)
 
 
-    def get_more(self):
-        pass
-
-
-
-
-
-    
+    # def get_more(self):
+    #     pass

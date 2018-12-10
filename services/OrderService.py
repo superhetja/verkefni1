@@ -3,6 +3,7 @@ from models.Order import Order
 from repositories.CarRepository import CarRepository
 from models.Car import Car
 from services.Service import Service
+from datetime import date
 
 
 class OrderService(Service):
@@ -11,11 +12,12 @@ class OrderService(Service):
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
+        self.__order_repo = OrderRepository()
 
     def add_order(self, order): 
         carnumber = order.get_car()
         self.book_car(carnumber)
-        self.__repo.add_content(order)
+        self.__order_repo.add_content(order)
 
     def book_car(self, carnumber):
         cars = self.__car_repo.get_content()
@@ -24,6 +26,16 @@ class OrderService(Service):
                 car.book_car()
                 break
         self.__car_repo.overwrite_file(cars)
+
+    def get_datetime(self,day):
+        day, month, year = day.split('.')
+        day = date(int(year), int(month), int(day))
+        return day
+
+    def get_time_period(self,date1,date2):
+        time_period = (date2 - date1).days
+        return time_period
+
 
     # def get_orders(self):
     #     return self.__repo.get_content()

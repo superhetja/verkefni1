@@ -10,6 +10,8 @@ class EmployeeService:
     def add_employee(self, employee):
         pass
 
+    def remove_employee(self, employee):
+        pass
 
     def is_valid_employee(self, employee):
         # self.__fullname = fullname

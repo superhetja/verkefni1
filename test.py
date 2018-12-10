@@ -1,8 +1,5 @@
-email = 'alli.r@ru.is'
+from datetime import date
+from models.Eitthvad import Eitthvad
 
-try:
-    atsymble = email.index('@')
-    dot = email.index('.', atsymble)
-    print('Rétt')
-except ValueError:
-    print('Rangur innsláttur')
+print(date(2018-12-20))
+

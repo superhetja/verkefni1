@@ -5,10 +5,11 @@ from ui.Ui import Ui
 
 class ShowCars:
     def __init__(self):
+        Ui.__init__(self)
         self.__service = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
-        self.__input_ui=Ui()
+        #self.__input_ui=Ui()
 
     def show_cars_menu(self):
         self.__clear.clear_screen()
@@ -16,7 +17,7 @@ class ShowCars:
         print('2. Prenta lausa bíla.')
         print('3. Prenta bókaða bíla.')
 
-        action = self.__input_ui.get_number_between(1,3)
+        action = self.get_number_between(1,3)
 
         if action == '1':
             self.print_all_cars()
@@ -46,7 +47,7 @@ class ShowCars:
         self.get_more()
 
     def get_more(self):
-        letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])
+        letter = self.get_letter(self.MOREPROMPT,['j','n'])
         if letter == 'j':
             self.show_cars_menu()
         else: #Skipun að fara til baka um eina valmynd
