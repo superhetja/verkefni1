@@ -54,9 +54,3 @@ class ShowOrder(Ui):
 
     def get_more(self):
         pass
-
-
-
-
-
-    
