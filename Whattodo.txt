@@ -4,4 +4,15 @@ utan um bílinn sem er í útleigu
 
 gera Ui sem prentar út kostnað leigu, notandi velur hversu marga daga og hvaða flokk
 
-Kannski gera create employee XXX
+Kannski gera create employee XXX 
+
+
+PriceList.py
+PriceListRepository
+PriceListService
+PriceListUi
+
+ShowEmployeeUi    ---- byrjað 
+
+
+

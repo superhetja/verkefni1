@@ -1,3 +1,3 @@
 
 
-class PriceListService(service)
+class PriceListService(service) 
