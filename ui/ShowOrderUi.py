@@ -6,7 +6,6 @@ from ui.HeaderUi import Header
 
 
 class ShowOrder(Ui):
-
     def __init__(self):
         Ui.__init__(self)
         self.__color = Color()
