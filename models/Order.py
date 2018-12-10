@@ -9,8 +9,8 @@ class Order:
         self.__returned = returned
 
     def __str__(self):
-        pass
-
+        return "Dagsettning: {} {}, Bíll {}, Viðskiptavinur {}, Greiðslur {}, Kortnúmer {}, Skiladagur {}".format(self.__date1, self.__date2, self.__car, self.__customer, self.__payment, self.__card_number, self.__return)
+        
     def __repr__(self):
         return "Order('{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
         self.__date2,self.__car,self.__customer,self.__payment,self.__card_number,

@@ -7,7 +7,7 @@ class Customer:
 
     def __str__(self):
         return 'Nafn: {}, Kt: {}, Netfang: {}, Símanúmer: {}'.format(self.__name, self.__ssn, self.__email, self.__phoneNr)    
-    
+     
     def __repr__(self):
         return "Customer('{}','{}','{}','{}')".format(self.__name, self.__ssn, self.__email, self.__phoneNr)
 
