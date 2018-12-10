@@ -1,12 +1,12 @@
 from models.Color import Color
 from models.Order import Order
-from ui.HeaderUi import Header
+from HeaderUi import Header
 from services.OrderService import OrderService
-from ui.Ui import Ui
+from Ui import Ui
 from services.CarService import CarService
 from services.CustomerService import CustomerService
 from models.Customer import Customer
-from ui.CustomerUi import CustomerUi
+from CustomerUi import CustomerUi
 from models.Car import Car
 
 class OrderUi:

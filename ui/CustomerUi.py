@@ -1,8 +1,8 @@
 from services.CustomerService import CustomerService
 from models.Customer import Customer
 from models.Color import Color
-from ui.HeaderUi import Header
-from ui.Ui import Ui
+from HeaderUi import Header
+from Ui import Ui
 
 class CustomerUi:
     def __init__(self):

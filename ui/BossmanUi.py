@@ -1,8 +1,13 @@
 from services.CarService import CarService
-from models.Color import Color
-from ShowCustomerUi import ShowCustomer
 from HeaderUi import Header
+from models.Color import Color
+from models.Clear import Clear
 from Ui import Ui
+from OrderUi import OrderUi
+from ShowCarsUi import ShowCars
+from ShowCustomerUi import ShowCustomer
+from CustomerUi import CustomerUi
+from AddCarUi import AddCarUi
 from CreateEmployeeUi import CreateEmployee
 
 ACTION_CHOICES = [1,2,3,4,5,6,7,8,9,10,11,12,13]
@@ -12,7 +17,11 @@ class Bossman:
         Ui.__init__(self)
         self.__car_service = CarService()
         self.__header = Header()
+        self.__order = OrderUi()
+        self.__showcar = ShowCars()
         self.__showcustomer = ShowCustomer()
+        self.__customer = CustomerUi()
+        self.__addcar = AddCarUi()
         self.__employee = CreateEmployee()
 
     def main_menu(self):
@@ -37,7 +46,7 @@ class Bossman:
             print(Color.BOLD + "Starfsmaður"+ Color.END)
             print("11. Skrá nýjan starfsmann")
             print("12. Fletta upp starfsmanni")
-            print("13. Birta starfsmann")
+            #print("13. Birta starfsmann")
 
     def action_choice(self):
         while True:
@@ -56,49 +65,22 @@ class Bossman:
             elif action =='5':
                 #Uppfæra verð
                 pass
-            elif action == '6'
+            elif action == '6':
                 self.__showcar.show_cars_menu()
             elif action =='7':
                 self.__addcar.add_car_menu()
             elif action == '8':
                 self.__customer.new_customer()
             elif action == '9':
-                self.__showcustomer.serch_customer()
+                self.__showcustomer.search_customer()
             elif action == '10':
                 self.__showcustomer.show_customer_main()
             elif action == '11':
                 self.__employee.create_empoyee()
             elif action == '12':
+                #Fletta upp starfsmanni
                 #self.__
                 pass
-            elif action == '13':
-                
-
-
-# <<<<<<< HEAD
-# class Bossman:
-#     def __init__():
-#             pass
-#         fullname = input('Full nafn: ')
-#         while True:
-#             try:
-#             ssn = int(input(ssn)).strip()
-#             if len(ssn) == 10:
-#                 break
-#             else:
-#                 print('Sláðu inn gilt lykilorð!')
-#             except ValueError:
-#                 print('Sláðu inn eingöngu tölur')
-#         password = input('Lykilorð: ')
-#         email = input('Email: ')
-#         while True:
-#             admin = input('Admin y/n: ').lower()
-#             if admin == 'y'
-#                 admin = True
-#                 break
-#             elif admin == 'n'
-#                 admin = False
-#                 break
-#             print('Veldu rétt')
-# =======
-#>>>>>>> 598fea71ae8155241a1bf3939d9423281e8acea5
+            # elif action == '13':
+            #     #Birta starfsmann
+            #     pass
