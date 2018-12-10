@@ -46,6 +46,7 @@ class Bossman:
             print(Color.BOLD + "Starfsmaður"+ Color.END)
             print("11. Skrá nýjan starfsmann")
             print("12. Fletta upp starfsmanni")
+            print('13. Skoða starfsmenn')
             #print("13. Birta starfsmann")
 
     def action_choice(self):

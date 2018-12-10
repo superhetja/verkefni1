@@ -1,3 +1,4 @@
+from datetime import date
 class Order: 
     def __init__(self, date1, date2, group, car, customer, payment, card_number='',returned = False):
         self.__date1 = date1
@@ -23,7 +24,12 @@ class Order:
         return self.__date2
     
     def get_time_period(self):
-        return (self.__date2 - self.__date1)
+        day1, month1, year1 = self.__date1.split('.')
+        day2, month2, year2 = self.__date2.split('.')
+        date1 = date(int(year1), int(month1), int(day1))
+        date2 = date(int(year2), int(month2), int(day2))
+        time_period = date1 - date2
+        return time_period.days
 
     def get_car(self):
         return self.__car
@@ -39,6 +45,3 @@ class Order:
 
     def return_car(self):
         self.__returned = True
-        
-# if payment == K
-# card_number

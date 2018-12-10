@@ -56,7 +56,7 @@ class ShowCustomer(Ui):
     #     else:
     #         pass
 
-    def choice_customer(self, a_list):
+    def choose_customer(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
         print(chosen_customer)
