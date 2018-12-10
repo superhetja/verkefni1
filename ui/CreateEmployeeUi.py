@@ -16,10 +16,10 @@ class CreateEmployee(Ui):
     def create_empoyee(self):
         self.__clear.clear_screen()
         print(self.__header)
-        print(Color.BOLD + 'Nýskráning starfsmanna'+ Color.END)
-        print('Sláðu inn upplýsingar um starfsmann')
+        print(Color.BOLD + 'Regester employees'+ Color.END)
+        print('Enter employee information')
         name = self.get_string(self.NAMEPROMPT)
-        password = input(str("Lykilorð: "))
+        password = input(str("Password: "))
         ssn = self.get_number_length(self.SSNPROMPT, 10)
         email = self.get_email()
         admin = self.get_admin(self.ADMINPROMPT)
