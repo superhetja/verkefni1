@@ -1,18 +1,20 @@
-# from models.Car import Car
+from models.Car import Car
+from repositories.PriceListRepository import PriceListRepository
+from services.Service import Service
  
- 
-class show_price_list:
+class show_price_list(Ui):
     def __init__(self, STANDARD, LUXURY, ELECTRIC, SMALLSUV, SUV, VAN, TAX, INSURANCE):
         Car.__init__(self)
-        self.__STANDARD = STANDARD
-        self.__LUXURY = LUXURY
-        self.__ELECTRIC = ELECTRIC
-        self.__SMALLSUV = SMALLSUV
-        self.__SUV = SUV 
-        self.__VAN = VAN 
+        # self.__STANDARD = STANDARD
+        # self.__LUXURY = LUXURY
+        # self.__ELECTRIC = ELECTRIC
+        # self.__SMALLSUV = SMALLSUV
+        # self.__SUV = SUV 
+        # self.__VAN = VAN 
 
     def show_price_list(self):
         self.__clear.clear_screen()
+        print('Verð án trygginga (fyrir einn dag)')
         print('Verð fyrir standard bíl: {}'.format(self.STANDARD))
         print('Verð fyrir lúxús bíl: {}'.format(self.LUXURY))
         print('Verð fyrir rafmagns bíl: {}'.format(self.ELECTRIC))
@@ -20,8 +22,11 @@ class show_price_list:
         print('Verð fyrir jeppa: {}'.format(self.SUV))
         print('Verð fyrir fluttningabíl: {}'.format(self.VAN))
 
+        print('Verð með tryggingu: {}')
 
-#  PRICE_PER_DAY = 5000
+
+
+
 
 #     # STANDARD = 5000
 #     # LUXURY = 8000
