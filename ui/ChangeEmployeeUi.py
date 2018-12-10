@@ -1,8 +1,8 @@
 from models.Employee import Employee
-from HeaderUi import Header
+from ui.HeaderUi import Header
 from services.EmployeeService import EmployeeService
 from models.Clear import Clear
-from Ui import Ui
+from ui.Ui import Ui
 from models.Color import Color
 
 class ChangeEmployeeUi:

@@ -1,8 +1,8 @@
 from models.Order import Order
 from models.Color import Color
-from Ui import Ui
+from ui.Ui import Ui
 from services.OrderService import OrderService
-from HeaderUi import Header
+from ui.HeaderUi import Header
 
 
 class ShowOrder(Ui):

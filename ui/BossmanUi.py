@@ -1,14 +1,14 @@
 from services.CarService import CarService
-from HeaderUi import Header
+from ui.HeaderUi import Header
 from models.Color import Color
 from models.Clear import Clear
-from Ui import Ui
-from OrderUi import OrderUi
-from ShowCarsUi import ShowCars
-from ShowCustomerUi import ShowCustomer
-from CustomerUi import CustomerUi
-from AddCarUi import AddCarUi
-from CreateEmployeeUi import CreateEmployee
+from ui.Ui import Ui
+from ui.OrderUi import OrderUi
+from ui.ShowCarsUi import ShowCars
+from ui.ShowCustomerUi import ShowCustomer
+from ui.CustomerUi import CustomerUi
+from ui.AddCarUi import AddCarUi
+from ui.CreateEmployeeUi import CreateEmployee
 
 ACTION_CHOICES = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 class Bossman: 
