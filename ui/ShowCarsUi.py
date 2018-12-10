@@ -1,14 +1,14 @@
 from services.CarService import CarService
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
-from ui.InputUi import InputUi
+from ui.Ui import Ui
 
 class ShowCars:
     def __init__(self):
         self.__service = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
-        self.__input_ui=InputUi()
+        self.__input_ui=Ui()
 
     def show_cars_menu(self):
         self.__clear.clear_screen()
@@ -28,7 +28,7 @@ class ShowCars:
             self.print_unavailable_cars()
 
     def print_all_cars(self):
-        cars = self.__service.get_cars()
+        cars = self.__service.get_full_content()
         for car in cars: 
             print(car)
         self.get_more()

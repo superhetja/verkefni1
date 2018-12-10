@@ -2,7 +2,7 @@ from models.Color import Color
 from models.Order import Order
 from ui.HeaderUi import Header
 from services.OrderService import OrderService
-from ui.InputUi import InputUi
+from ui.Ui import Ui
 from services.CarService import CarService
 from services.CustomerService import CustomerService
 from models.Customer import Customer
@@ -13,7 +13,7 @@ class OrderUi:
     def __init__(self):
         self.__service = OrderService()
         self.__header = Header()
-        self.__get_input = InputUi()
+        self.__get_input = Ui()
         self.__car_service = CarService()
         self.__customer_service = CustomerService()
         self.__new_customer = CustomerUi()
