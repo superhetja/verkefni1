@@ -2,6 +2,7 @@ from models.Order import Order
 from models.Color import Color
 from ui.Ui import Ui
 from services.OrderService import OrderService
+from ui.HeaderUi import Header
 
 
 class ShowOrder(Ui):
@@ -11,6 +12,7 @@ class ShowOrder(Ui):
         self.__color = Color()
 #        self = InputUi()
         self.__service = OrderService()
+        self.__header = Header()
 
     def show_order_main(self):
         '''Aðal fallið'''
