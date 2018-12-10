@@ -21,15 +21,15 @@ class ShowCustomer(Ui):
         print('1. Fletta viðskiptavin.')
         print('2. Birta alla viðskiptavini.')
 
-    def show_customer_main(self):
-        '''Aðal fallið til að byrja klassan'''
-        self.clear_screen()
-        self.print_menu()
-        action = self.get_number_between(1,2) #self.get_number_between(1,5)
-        if action == '1':
-            self.search_customer()
-        else:
-            self.print_all_customers()
+    # def show_customer_main(self):
+    #     '''Aðal fallið til að byrja klassan'''
+    #     self.clear_screen()
+    #     self.print_menu()
+    #     action = self.get_number_between(1,2) #self.get_number_between(1,5)
+    #     if action == '1':
+    #         self.search_customer()
+    #     else:
+    #         self.print_all_customers()
 
     def search_customer(self):
         search = input('Sláðu inn leitarstreng: ')
@@ -38,16 +38,13 @@ class ShowCustomer(Ui):
         if len(customers) == 0:
             self.get_more()
         else:
-            self.choice_customer(customers)
+            self.choose_customer(customers)
 
 
     def print_all_customers(self):
         customers = self.__service.get_full_content()
         self.print_list(customers)
-        if len(customers) == 0:
-            self.get_more()
-        else:
-            self.choice_customer(customers)
+        self.choose_customer(customers)
 
     # def get_more(self):
     #     letter = self.get_letter(self.MOREPROMPT,['j','n'])
@@ -55,7 +52,7 @@ class ShowCustomer(Ui):
     #         self.show_customer_main()
     #     else:
     #         pass
-
+pilu
     def choose_customer(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
@@ -72,7 +69,7 @@ class ShowCustomer(Ui):
         elif action == '2':
             self.change_customer(chosen_customer)
         elif action == '3':
-            self.show_customer_main()
+            self.search_customer()
         else:
             pass
     
@@ -101,6 +98,12 @@ class ShowCustomer(Ui):
         self.get_more()
 
          
+    def get_more(self):
+        letter = self.get_letter(self.MOREPROMPT,['y','n'])
+        if letter == 'y':
+            self.search_customer()
+        else:
+            pass
     #choiceCostumer=input("Valinn viðskiptavinur: ")
     #þegar valið er í actions ákveðinn viðskiptavin 
     #yfirlit yfir þessum viðskiptavin

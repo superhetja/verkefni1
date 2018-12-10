@@ -30,6 +30,11 @@ class ShowOrder(Ui):
     def search_order(self):
         search = input('Sláðu inn leitarsteng:')
         orders = self.__service.get_matches(search)
+        self.print_list(orders)
+        if len(orders) == 0:
+            self.get_more()
+        else:
+            
 
 
     def print_all_orders(self):

@@ -25,7 +25,9 @@ class OrderService(Service):
             if car.get_carnumber() == carnumber:
                 car.book_car()
                 break
-        self.__car_repo.overwrite_file(cars)
+                self.__car_repo.overwrite_file(cars)
+            else:
+                s = input('fannske ekki')
 
     def get_datetime(self,day):
         day, month, year = day.split('.')
