@@ -14,5 +14,10 @@ PriceListUi
 
 ShowEmployeeUi    ---- byrjað 
 
+búið að breyta í ensk
+- AddCarUi
+- BossmanUi
+- ChangeEmployee
+
 
 

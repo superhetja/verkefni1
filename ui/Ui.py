@@ -77,7 +77,7 @@ class Ui:
     def get_admin(self, prompt):
         while True:
             admin = input(prompt).capitalize()
-            errorprompt = self.__check_input.is_valid_between_two_letters('j', 'n', admin)
+            errorprompt = self.__check_input.is_valid_between_two_letters('y', 'n', admin)
             if errorprompt == None:
                 return admin
             print(errorprompt)
@@ -94,7 +94,7 @@ class Ui:
     def print_list(self,a_list):
         count = 1
         if len(a_list) == 0:
-            print('Engar niðurstöður fundust.')
+            print('No results found.')
         else: 
             for i in a_list:
                 print(str(count)+'.',i)
@@ -109,8 +109,8 @@ class Ui:
             print(errorprompt)
 
     def get_more(self):
-        letter = self.get_letter(self.MOREPROMPT,['j','n'])
-        if letter == 'j':
+        letter = self.get_letter(self.MOREPROMPT,['y','n'])
+        if letter == 'y':
             self.show_customer_main()
         else:
             pass

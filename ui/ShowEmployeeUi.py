@@ -17,9 +17,9 @@ class ShowEmployee(Ui):
     #    self= InputUi()
 
     def print_menu(self):
-        print(Color.BOLD+'Fletta upp starfsmanni'+Color.END)
-        print('1. Fletta upp starfsmanni')
-        print('2. Birtna alla starfsmenn')
+        print(Color.BOLD+'Search employee'+Color.END)
+        print('1. Search employee')
+        print('2. View all employees')
 
     def show_employee_main(self):
         #eftir .........
@@ -35,7 +35,7 @@ class ShowEmployee(Ui):
 
 
     def search_employee(self):
-        search = input('Sláðu inn leitarstreng: ')
+        search = input('Input search: ')
         employee = self.__service.get_matches(search)
         self.print_list(employee)
         if len(employee) == 0:
@@ -62,14 +62,14 @@ class ShowEmployee(Ui):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_employee = a_list[int(choice)-1]
         print(chosen_employee)
-        print('1. Breyta starfsmanni')
-        print('2. Eyða starfsmanni')
-        print('3. Fletta upp öðrum starfsmanni')
-        print('4. Fara til baka á valmynd')
+        print('1. Change employee')
+        print('2. Delete employee')
+        print('3. Search another employee')
+        print('4. Go back to menu')
         action Ö self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_employee)
-            print('Starfsmanni eytt')
+            print('Employee deleted')
             self.get_more()
         elif action == '2':
             self.__change_employee(chosen_employee)
@@ -79,11 +79,11 @@ class ShowEmployee(Ui):
             pass
     
     def __change_employee(self, employee):
-        print('Hverju viltu breyta?')
-        print('1. Nafni')
-        print('2. Kenntölu')
-        print('3. Netfangi')
-        print('4. Símanúmeri')
+        print('What do you want to change?')
+        print('1. Name')
+        print('2. Ssn')
+        print('3. Email')
+        print('4. Phone number')
         action = self.get_number_between(1,4)
         name = employee.get_name()
         ssn = employee.get_ssn()
@@ -99,5 +99,5 @@ class ShowEmployee(Ui):
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_employee= employee(name,ssn,email,phonenr)
         self.__service.change_instance(employee, new_employee)
-        print('Breytingu lokið.')
+        print('Change complete!')
         self.get_more()
