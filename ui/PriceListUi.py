@@ -1,5 +1,6 @@
 from models.Car import Car
- 
+from repositories.PriceListRepository import PriceListRepository
+from services.Service import Service
  
 class show_price_list(Ui):
     def __init__(self, STANDARD, LUXURY, ELECTRIC, SMALLSUV, SUV, VAN, TAX, INSURANCE):
@@ -21,7 +22,7 @@ class show_price_list(Ui):
         print('Verð fyrir jeppa: {}'.format(self.SUV))
         print('Verð fyrir fluttningabíl: {}'.format(self.VAN))
 
-        print('Verð með tryggingu')
+        print('Verð með tryggingu: {}')
 
 
 
