@@ -1,15 +1,15 @@
 from services.CarService import CarService
-from HeaderUi import Header
+from ui.HeaderUi import Header
 from models.Clear import Clear
 from models.Color import Color
-from Ui import Ui
-from OrderUi import OrderUi
-from ShowCarsUi import ShowCars
-from ShowCustomerUi import ShowCustomer
-from CustomerUi import CustomerUi
-from AddCarUi import AddCarUi
+from ui.Ui import Ui
+from ui.OrderUi import OrderUi
+from ui.ShowCarsUi import ShowCars
+from ui.ShowCustomerUi import ShowCustomer
+from ui.CustomerUi import CustomerUi
+from ui.AddCarUi import AddCarUi
 
-class Salesman:  
+class Salesman(Ui):  
     def __init__(self):
         Ui.__init__(self)
         self.__car_service = CarService()

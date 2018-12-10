@@ -13,7 +13,6 @@ class Ui:
     CARDPROMPT = 'Kortanúmer: '
     CARNUMPROMPT = 'Bílnúmer: '
     ADMINPROMPT = 'j/n: '
-   
 
     def __init__(self):
         self.__check_input = CheckInput()
@@ -69,7 +68,7 @@ class Ui:
 
     def get_date(self, prompt): #Vantar að villumeðhöndla
         while True:
-            date =input(prompt)
+            date = input(prompt)
             errorprompt = self.__check_input.is_valid_date(date)
             if errorprompt == None:
                 return date
@@ -109,9 +108,9 @@ class Ui:
                 return carnum
             print(errorprompt)
 
-    def get_more(self):
+    def get_more(self,path):
         letter = self.get_letter(self.MOREPROMPT,['j','n'])
         if letter == 'j':
-            self.show_customer_main()
+            path
         else:
             pass

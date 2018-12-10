@@ -5,7 +5,7 @@ from models.Color import Color
 from models.Clear import Clear
 from Ui import Ui
 
-class CreateEmployee:
+class CreateEmployee(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__header = Header()

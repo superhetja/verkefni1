@@ -1,8 +1,8 @@
 from models.Order import Order
 from models.Color import Color
-from Ui import Ui
+from ui.Ui import Ui
 from services.OrderService import OrderService
-from HeaderUi import Header
+from ui.HeaderUi import Header
 
 
 class ShowOrder(Ui):
@@ -37,7 +37,7 @@ class ShowOrder(Ui):
         orders = self.__service.get_full_content()
         self.print_list(orders)
         if len(orders) == 0:
-            self.get_more()
+            self.get_more(self.show_order_main())
         else:
             self.choice_order(orders)
 
@@ -54,5 +54,5 @@ class ShowOrder(Ui):
             self.__service.remove_instance(chosen_order)
 
 
-    def get_more(self):
-        pass
+    # def get_more(self):
+    #     pass

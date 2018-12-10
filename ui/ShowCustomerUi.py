@@ -1,10 +1,10 @@
 from services.CustomerService import CustomerService
 from services.CheckInputService import CheckInput
 from models.Customer import Customer
-from HeaderUi import Header
+from ui.HeaderUi import Header
 #from models.Clear import Clear
 from models.Color import Color
-from Ui import Ui
+from ui.Ui import Ui
 
 
 class ShowCustomer(Ui):

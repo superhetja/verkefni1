@@ -21,7 +21,7 @@ class Car:
         
     def set_price(self):
         if self.__group == 1:
-            price = self.STANDART
+            price = self.STANDARD
         elif self.__group == 2:
             price = self.LUXURY
         elif self.__group == 3:

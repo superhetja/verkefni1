@@ -1,7 +1,8 @@
 # from models.Car import Car
+from ui.Ui import Ui
  
  
-class show_price_list:
+class ShowPrice(Ui):
     def __init__(self, STANDARD, LUXURY, ELECTRIC, SMALLSUV, SUV, VAN, TAX, INSURANCE):
         Car.__init__(self)
         self.__STANDARD = STANDARD

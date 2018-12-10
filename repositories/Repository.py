@@ -13,7 +13,7 @@ class Repository:
 
     def add_content(self, content):
         with open(self.FILELOCATION, 'a+') as aFile:
-            aFile.write(self.MODELCLASS.__repr__(content) + '\n')
+            aFile.write(content.__repr__() + '\n')
         a_list = self.__repo_list
         a_list.append(content)
         self.__repo_list = a_list
@@ -34,4 +34,4 @@ class Repository:
    #   with open('data/customers.txt,'w'): pass
         with open(self.FILELOCATION, 'w') as aFile:
             for instance in new_content:
-                aFile.write(self.MODELCLASS.__repr__(instance) + '\n')
+                aFile.write(instance.__repr__() + '\n')
