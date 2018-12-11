@@ -36,7 +36,6 @@ class ShowOrder(Ui):
             self.get_more()
         else:
             self.choose_order(orders)
-            
 
     def print_all_orders(self):
         '''Prentar ut allar pantanir'''

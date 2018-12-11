@@ -78,4 +78,14 @@ class OrderService(Service):
             return available_cars
         else:
             return sorted_list[int(group)-1]
+
+    def file_delivery(self, order):
+        self.return_car(order)
+        orders = self.get_full_content()
+        orders.remove(order)
+        order.file_delivery()
+        orders.append(order)
+        self.__order_repo.overwrite_file(orders)
+        
+
         

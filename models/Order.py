@@ -78,6 +78,6 @@ class Order:
     def get_extra_insurance(self):
         return self.__extra_insurance
 
-    def return_car(self):
+    def file_delivery(self):
         self.__returned = True
-        self.__status = 'Returned'
+        self.__status = 'Delivered'

@@ -118,7 +118,7 @@ class OrderUi(Ui):
             return 'Card'
         else:
             return 'Cash'
-            
+
     def get_more(self):
         '''Spyr hvort notandi vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
