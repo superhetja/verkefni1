@@ -5,7 +5,7 @@ from models.Customer import Customer
 from models.Price import Price
 
 class Repository:
-    FILELOCATION = 'data/customers.txt'
+    FILELOCATION = './data/customers.txt'
     MODELCLASS = 'Customer'
 
     def __init__(self):
