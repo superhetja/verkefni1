@@ -59,7 +59,7 @@ class ShowOrder(Ui):
             print('Order deleted')
             self.get_more()
         elif action == '2':
-            self.__service.change_order(chosen_order)
+            self.change_order(chosen_order)
         elif action == '3':
             self.search_order()
         else:
