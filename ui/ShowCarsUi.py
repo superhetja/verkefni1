@@ -14,20 +14,11 @@ class ShowCars:
         self.__header = Header()
         #self.__input_ui=Ui()
 
-<<<<<<< HEAD
     def print_menu(self):
         print(Color.BOLD + 'Car menu' + Color.END)
         print('1. Print all cars')
         print('2. Print available cars')
         print('3. Print unavailable cars')
-=======
-    def show_cars_menu(self):
-        self.__clear.clear_screen()
-        print('1. Print all cars.')
-        print('2. Print all available cars.')
-        print('3. Print all rented cars.')
->>>>>>> 31402db3cf452001894382da32f72bf49d199cb4
-
 
     def show_cars_main(self):
         #eftir .......
