@@ -1,4 +1,5 @@
 class Car:
+    """Segir til um verðin"""
     PRICE_PER_DAY = 5000
     STANDARD = 5000
     LUXURY = 8000
@@ -17,6 +18,7 @@ class Car:
     CARVAN = 2,000,000 
     
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
+        """private klasi:flokkur, tegund, undirtegund, bílnúmer,sætafjöldi, skipting, fyrafjöldi, leigan"""
         self.__group = int(group)
         self.__brand = brand
         self.__subbrand = subbrand
@@ -28,6 +30,7 @@ class Car:
         self.__price = self.set_price()
         
     def set_price(self):
+        """Verðin á bílunum """
         if self.__group == 1:
             price = self.STANDARD
         elif self.__group == 2:
@@ -46,6 +49,7 @@ class Car:
         return "{} {}, License plate: {}, Price: {}kr, Number of doors: {}, Number of seats: {}, Transmition: {}, Rental: {}".format(self.__brand, self.__subbrand, self.__carnumber, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
     
     def __repr__(self):
+        """Prentar"""
         return "Car('{}','{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__carnumber,self.__seats,self.__transmission,self.__doors,self.__booked)
     
     def get_price(self):
