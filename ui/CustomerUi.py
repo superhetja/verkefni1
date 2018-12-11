@@ -13,8 +13,8 @@ class CustomerUi(Ui):
 
     def new_customer(self):
         print(self.__header)
-        print(Color.BOLD + "Nýskráning viðskiptavina" + Color.END)
-        print("Sláðu inn upplýsingar um viðskiptavin:")
+        print(Color.BOLD + "Register customers" + Color.END)
+        print("Enter custumer information :")
         name = self.get_string(self.NAMEPROMPT)
         ssn = self.get_number_length(self.SSNPROMPT, 10)
         email = self.get_email()

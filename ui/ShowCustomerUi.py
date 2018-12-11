@@ -76,7 +76,7 @@ pilu
     def change_customer(self, customer):
         print('What do you want to change?')
         print('1. Name')
-        print('2. Ssn')
+        print('2. SSN')
         print('3. Email')
         print('4. Phone number')
         action = self.get_number_between(1,4)
@@ -94,7 +94,7 @@ pilu
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
-        print('Change customer.')
+        print('Change complete.')
         self.get_more()
 
          

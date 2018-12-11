@@ -4,4 +4,4 @@ class Eitthvad:
         self.__date = date1
     
     def __repr__(self):
-        return "Eitthvad('{}')".format(self.__date)
+        return "Something('{}')".format(self.__date)

@@ -14,15 +14,15 @@ class ShowPrice(Ui):
 
     def show_price_list(self):
         self.__clear.clear_screen()
-        print('Verð án trygginga (fyrir einn dag)')
-        print('Verð fyrir standard bíl: {}'.format(self.STANDARD))
-        print('Verð fyrir lúxús bíl: {}'.format(self.LUXURY))
-        print('Verð fyrir rafmagns bíl: {}'.format(self.ELECTRIC))
-        print('Verð fyrir jeppling: {}'.format(self.SMALLSUV))
-        print('Verð fyrir jeppa: {}'.format(self.SUV))
-        print('Verð fyrir fluttningabíl: {}'.format(self.VAN))
+        print('Price without insurance (for one day)')
+        print('Price for Small car: {}'.format(self.STANDARD))
+        print('Price for Luxury car: {}'.format(self.LUXURY))
+        print('Price for Electric car: {}'.format(self.ELECTRIC))
+        print('Price for SUV: {}'.format(self.SMALLSUV))
+        print('Price for Jeep: {}'.format(self.SUV))
+        print('Price for Van: {}'.format(self.VAN))
 
-        print('Verð með tryggingu: {}')
+        print('Price with insurance: {}')
 
 
 
