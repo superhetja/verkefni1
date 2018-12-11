@@ -4,8 +4,9 @@ from services.CheckInputService import CheckInput
 from models.Clear import Clear
 from ui.Ui import Ui
 
-class AddCarUi:
+class AddCarUi(Ui):
     def __init__(self):
+        Ui.__init__(self)
         self.__car = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
@@ -20,13 +21,25 @@ class AddCarUi:
         subbrand = input('Subbrand: ').capitalize()
         carnumber = self.__input_ui.get_carnum()
         seats=self.__input_ui.get_number_between(2,7,'Number of seats: ')
-        transmission=self.__input_ui.get_letter('Transmission a/s: ', ['a','s'])
+        transmission=self.get_transmission
         doors=self.__input_ui.get_number_between(3,5,'Number of doors: ')
 
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
         print("Registration complete! ")
         self.get_more()
+
+
+    def get_transmission(self):
+        '''Biður notanda um skiptinu skilar manual eða auto'''
+        print('Transmission:')
+        print('1. Automatic')
+        print('2. Manual')
+        choice = self.get_number_between(1,2)
+        if choice == '1':
+            return 'Automatic'
+        else:
+            return 'Manual'
 
     def get_more(self):
         letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])

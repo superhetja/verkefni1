@@ -20,15 +20,6 @@ class ShowCustomer(Ui):
         print('1. Search customer')
         print('2. View all customers')
 
-    # def show_customer_main(self):
-    #     '''Aðal fallið til að byrja klassan'''
-    #     self.clear_screen()
-    #     self.print_menu()
-    #     action = self.get_number_between(1,2) #self.get_number_between(1,5)
-    #     if action == '1':
-    #         self.search_customer()
-    #     else:
-    #         self.print_all_customers()
 
     def search_customer(self):
         search = input('Input search: ')
@@ -45,12 +36,6 @@ class ShowCustomer(Ui):
         self.print_list(customers)
         self.choose_customer(customers)
 
-    # def get_more(self):
-    #     letter = self.get_letter(self.MOREPROMPT,['j','n'])
-    #     if letter == 'j':
-    #         self.show_customer_main()
-    #     else:
-    #         pass
 
     def choose_customer(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
@@ -103,8 +88,3 @@ class ShowCustomer(Ui):
             self.search_customer()
         else:
             pass
-    #choiceCostumer=input("Valinn viðskiptavinur: ")
-    #þegar valið er í actions ákveðinn viðskiptavin 
-    #yfirlit yfir þessum viðskiptavin
-
-    #Varntar fjöldi leigja og hvort við viljum breyta eða eyða viðskiptavini

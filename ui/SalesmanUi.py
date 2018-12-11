@@ -8,6 +8,7 @@ from ui.ShowCarsUi import ShowCars
 from ui.ShowCustomerUi import ShowCustomer
 from ui.CustomerUi import CustomerUi
 from ui.AddCarUi import AddCarUi
+from ui.ShowOrderUi import ShowOrder
 
 class Salesman(Ui):  
     def __init__(self):
@@ -19,6 +20,7 @@ class Salesman(Ui):
         self.__showcustomer = ShowCustomer()
         self.__customer = CustomerUi()
         self.__addcar = AddCarUi()
+        self.__showorder = ShowOrder()
         #self.__input_ui = Ui()
 
     def main_menu(self):
@@ -42,9 +44,9 @@ class Salesman(Ui):
 
             action = self.get_number_between(1,9)
             if action=='1':
-                self.__order.set_order()
+                self.__order.set_order() #Komið
             elif action=='2':
-                pass
+                self.__showorder.show_order_main() #Komið
             elif action=='3':
                 pass
             elif action=='4':
@@ -54,7 +56,7 @@ class Salesman(Ui):
             elif action =='6':
                 self.__addcar.add_car_menu()
             elif action == '7':
-                self.__customer.new_customer()
+                self.__customer.customer_main()
             elif action == '8':
                 self.__showcustomer.search_customer()
             elif action =='9':

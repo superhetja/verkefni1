@@ -62,7 +62,7 @@ class CheckInput:
         try:
             num = int(num)
             if len(str(num)) != length:
-                errorprompt = 'incorrect number of digits'
+                errorprompt = 'Incorrect number of digits'
                 raise ValueError
             return None
         except ValueError:

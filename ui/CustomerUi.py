@@ -11,9 +11,9 @@ class CustomerUi(Ui):
         self.__header = Header()
         #self.__input = Ui()
 
-    def customer_main(self)
+    def customer_main(self):
         print(self.__header)
-        new_customer()
+        self.new_customer()
 
     def new_customer(self):
         print(Color.BOLD + "Register customer" + Color.END)
