@@ -84,6 +84,7 @@ class OrderUi(Ui):
             self.__new_customer.new_customer()
             customers = self.__customer_service.get_full_content()
             customer = customers[-1]
+            print('Valinn viðskiptavinur er:', customer)
             return customer.get_ssn()
 
         
