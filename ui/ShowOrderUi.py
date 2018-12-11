@@ -10,7 +10,6 @@ class ShowOrder(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__color = Color()
-#        self = InputUi()
         self.__order_service = OrderService()
         self.__service = Service()
         self.__header = Header()
