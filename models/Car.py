@@ -3,8 +3,8 @@ class Car:
     STANDARD = 5000
     LUXURY = 8000
     ELECTRIC = 7000
-    SMALLSUV = 8000
-    SUV = 10000
+    SUV = 8000
+    JEEP = 10000
     VAN = 9000
     TAX = 1.11 
     INSURANCE = 30000
@@ -12,8 +12,8 @@ class Car:
     CARSTANDARD = 2,000,000
     CARLUXURY = 8,000,000 
     CARELECTRIC = 4,000,000 
-    CARSMALLSUV = 3,000,000 
-    CARSUV = 5,000,000 
+    CARSUV = 3,000,000 
+    CARJEEP = 5,000,000 
     CARVAN = 2,000,000 
     
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
@@ -35,15 +35,15 @@ class Car:
         elif self.__group == 3:
             price = self.ELECTRIC
         elif self.__group == 4:
-            price = self.SMALLSUV
-        elif self.__group == 5:
             price = self.SUV
+        elif self.__group == 5:
+            price = self.JEEP
         elif self.__group == 6:
             price = self.VAN
         return price
         
     def __str__(self):
-        return "Car: {} {}, Car number: {}, Price: {} $, Number of doors: {}, Number of seats: {}, Transmition: {}, Rental: {}".format(self.__brand, self.__subbrand, self.__carnumber, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
+        return "Car: {} {}, License plate: {}, Price: {} $, Number of doors: {}, Number of seats: {}, Transmition: {}, Rental: {}".format(self.__brand, self.__subbrand, self.__carnumber, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
     
     def __repr__(self):
         return "Car('{}','{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__carnumber,self.__seats,self.__transmission,self.__doors,self.__booked)

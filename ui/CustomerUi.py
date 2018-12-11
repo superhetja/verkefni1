@@ -11,8 +11,11 @@ class CustomerUi(Ui):
         self.__header = Header()
         #self.__input = Ui()
 
-    def new_customer(self):
+    def customer_main(self)
         print(self.__header)
+        new_customer()
+
+    def new_customer(self):
         print(Color.BOLD + "Register customer" + Color.END)
         print("Enter custumer information :")
         name = self.get_string(self.NAMEPROMPT)
@@ -21,3 +24,4 @@ class CustomerUi(Ui):
         phonenr = self.get_number_length(self.PHONEPROMPT,7)
         NewCustomer = Customer(name, ssn, email, phonenr)
         self.__service.add_content(NewCustomer)
+        print('Customer registered')

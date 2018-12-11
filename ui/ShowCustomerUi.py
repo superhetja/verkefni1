@@ -14,7 +14,6 @@ class ShowCustomer(Ui):
         self.__header = Header()
         self.__color = Color()
         self.__check_input = CheckInput()
-    #    self= InputUi()
 
     def print_menu(self):
         print(Color.BOLD+'Search customer'+Color.END)
@@ -52,7 +51,7 @@ class ShowCustomer(Ui):
     #         self.show_customer_main()
     #     else:
     #         pass
-pilu
+
     def choose_customer(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
