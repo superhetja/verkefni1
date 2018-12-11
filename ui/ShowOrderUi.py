@@ -3,6 +3,7 @@ from models.Color import Color
 from ui.Ui import Ui
 from services.OrderService import OrderService
 from ui.HeaderUi import Header
+from services.Service import Service
 
 
 class ShowOrder(Ui):
@@ -10,7 +11,8 @@ class ShowOrder(Ui):
         Ui.__init__(self)
         self.__color = Color()
 #        self = InputUi()
-        self.__service = OrderService()
+        self.__order_service = OrderService()
+        self.__service = Service()
         self.__header = Header()
 
     def show_order_main(self):
@@ -29,7 +31,7 @@ class ShowOrder(Ui):
 
     def search_order(self):
         search = input('Input search:')
-        orders = self.__service.get_matches(search)
+        orders = self.__order_service.get_matches(search)
         self.print_list(orders)
         if len(orders) == 0:
             self.get_more()
@@ -38,7 +40,7 @@ class ShowOrder(Ui):
             
 
     def print_all_orders(self):
-        orders = self.__service.get_full_content()
+        orders = self.__order_service.get_full_content()
         self.print_list(orders)
         if len(orders) == 0:
             self.get_more(self.show_order_main())
@@ -87,8 +89,8 @@ class ShowOrder(Ui):
             if payment == 'k':
                 cardnum = self.get_number_length(self.CARDPROMPT, 8)
         new_order = Order(date1, date2, group, car, customer, payment, cardnum)
-        self.__service.change_instance(order, new_order)
-        self.__service.add_order(new_order)
+        self.__order_service.change_instance(order, new_order)
+        self.__order_service.add_order(new_order)
         print('Change complete!')
         self.get_more()
 
