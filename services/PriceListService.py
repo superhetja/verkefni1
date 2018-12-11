@@ -1,5 +1,6 @@
 from repositories.PriceListRepository import PriceListRepository
 from services.Service import Service
+from models.Price import Price
 
 class PriceListService(service):  
 REPO = PriceListRepository()
@@ -13,7 +14,7 @@ def calculate_pricelist(self, rent_price_per_day, price_of_car):
     full_price = (rent_price_per_day + (price_of_car * 0.1) / 365 ) * 1.11
     
 
-
+ 
 
 
 
