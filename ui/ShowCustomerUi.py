@@ -57,8 +57,8 @@ pilu
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
         print(chosen_customer)
-        print('1. Change customer')
-        print('2. Delete customer')
+        print('1. Delete customer')
+        print('2. Change customer')
         print('3. Search another customer')
         print('4. Back to main menu')
         action = self.get_number_between(1,4)
@@ -94,7 +94,7 @@ pilu
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
-        print('Change complete!.')
+        print('Change customer.')
         self.get_more()
 
          
