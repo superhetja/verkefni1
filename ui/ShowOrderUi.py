@@ -68,8 +68,7 @@ class ShowOrder(Ui):
         print('What do you want to change?')
         print('1. Pick up date')
         print('2. Return date')
-        print('3. ')
-        print('4. ')
+        print('3. Payment methood')
         action = self.get_number_between(1, 4)
         # vantar
         if action == '1':
@@ -77,8 +76,6 @@ class ShowOrder(Ui):
         elif action == '2':
             #vantar
         elif action == '3':
-            #vantar
-        elif action == '4':
             #vantar
         new_order = Order(date1, date2, group, car, customer, payment)
         self.__service.change_instance(order, new_order)
