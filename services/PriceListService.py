@@ -5,15 +5,22 @@ from models.Price import Price
 class PriceListService(Service):  
     #REPO = PriceListRepository()
 
-
     def __init__(self):
-        #self.__pricelist_repo = PriceListRepository()
-        pass
+        self.__price = Price()
 
-    def calculate_pricelist(self, rent_price_per_day, price_of_car):
-        #price for one day 
-        full_price = (rent_price_per_day + (price_of_car * 0.1) / 365 ) * 1.11
-        return full_price
+    def calculate_price_x_days(self,group, days):
+        price_w_tax = self.__price.get_price_one_day(group)
+        price_all_period = price_w_tax * int(days)
+        
+
+
+
+
+
+    # def calculate_pricelist(self, rent_price_per_day, price_of_car):
+    #     #price for one day 
+    #     full_price = (rent_price_per_day + (price_of_car * 0.1) / 365 ) * 1.11
+    #     return full_price
     
 
  
