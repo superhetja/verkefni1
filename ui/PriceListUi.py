@@ -1,19 +1,19 @@
 #from models.Car import Car
 from models.Price import Price
 from ui.Ui import Ui
-#from services.PriceListService import PriceListService
+from services.PriceListService import PriceListService
  
  
 class ShowPrice(Ui):
     def __init__(self):
         #Car.__init__(self)
-        #self.__service = PriceListService()
+        self.__service = PriceListService()
         self.__price = Price()
         
  
-    def show_price_list(self):
+    def show_price_list(self,days):
         #self.__clear.clear_screen()
-        print('Price without insurance (for one day)')
+        print('Price without insurance for 1 day')
         print('Price for Small car: \t\t{:.0f}'.format(self.__price.get_price_one_day('1')))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__price.get_price_one_day('2')))
         print('Price for Electric car: \t{:.0f}'.format(self.__price.get_price_one_day('3')))
@@ -31,7 +31,10 @@ class ShowPrice(Ui):
 
 
     def calculate_price_x_days(self):
-		days = self.get_number_between(1,6,'How many days: ')
+    	days = self.get_number_between(1,6,'How many days: ')
+        if days = ''
+        self.show_price_list(days)
+
 
         
 

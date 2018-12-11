@@ -11,6 +11,12 @@ class PriceListService(Service):
     def calculate_price_x_days(self,group, days):
         price_w_tax = self.__price.get_price_one_day(group)
         price_all_period = price_w_tax * int(days)
+        return price_all_period
+    
+    def calculate_price_x_days_w_insurance(self,group,days):
+        price_all_period = self.calculate_price_x_days(group,days)
+        return price_all_period + self.__price.INSURANCE
+
         
 
 
