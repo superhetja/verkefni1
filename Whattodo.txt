@@ -20,4 +20,5 @@ búið að breyta í ensk
 - ChangeEmployee
 
 - ShowCustomerUi
+- ShowOrderUi
 
