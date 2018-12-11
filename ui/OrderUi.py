@@ -85,6 +85,7 @@ class OrderUi:
     
 
     #Búa bara til str fall í Order til að prenta út order
+    #Komið en kann ekki að kalla á það
     def print_order(self, new_order):
         print('Tímabil: {} - {}'.format(new_order.get_date1, new_order.get_date2))
         print('Car: {}'.format(new_order.get_car()))

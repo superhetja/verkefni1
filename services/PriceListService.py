@@ -3,11 +3,12 @@ from services.Service import Service
 from models.Price import Price
 
 class PriceListService(Service):  
-    REPO = PriceListRepository()
+    #REPO = PriceListRepository()
 
 
     def __init__(self):
-        self.__pricelist_repo = PriceListRepository()
+        #self.__pricelist_repo = PriceListRepository()
+        pass
 
     def calculate_pricelist(self, rent_price_per_day, price_of_car):
         #price for one day 
