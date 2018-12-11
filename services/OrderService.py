@@ -4,6 +4,7 @@ from repositories.CarRepository import CarRepository
 from models.Car import Car
 from services.Service import Service
 from datetime import date
+from models.Price import Price
 
 
 class OrderService(Service):
@@ -38,6 +39,20 @@ class OrderService(Service):
         time_period = (date2 - date1).days
         return time_period
 
+    def get_today(self):
+        return date.today()
+
+    def get_extra_insurance(self, choice):
+        if choice == 'y':
+            return True
+        else:
+            return False
+
+    def get_total_insurance(self, extra_insurance):
+        if extra_insurance:
+            return Price.EXTRAINSURANCE + Price.INSURANCE
+        else:
+            return Price.INSURANCE
 
     # def get_orders(self):
     #     return self.__repo.get_content()

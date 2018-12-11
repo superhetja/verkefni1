@@ -32,7 +32,7 @@ class ShowPrice(Ui):
         self.get_x_days()
 
     def get_x_days(self):
-        days = self.get_number_between(2,10000,'How many days: ')
+        days = self.get_number('How many days: ')
         self.show_price_list_x_days(days)
 
 

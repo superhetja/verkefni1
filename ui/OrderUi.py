@@ -22,33 +22,37 @@ class OrderUi(Ui):
         self.__new_customer = CustomerUi()
 
     def set_order(self):
-        date1 = self.get_date(self.BOOKINGDATEPROMPT,)
-        date1 = self.__service.get_datetime(date1)
+        '''bokar bil i dag'''
+        date1 = self.__service.get_today()
+        # date1 = self.get_date(self.BOOKINGDATEPROMPT,)
+        # date1 = self.__service.get_datetime(date1)
         date2 = self.get_date(self.RETURNDATEPROMPT,)
         date2 = self.__service.get_datetime(date2)
         time_period = self.__service.get_time_period(date1,date2)
         group, car = self.get_group_car()
-        self.print_price(group,time_period)
+        extra_insurance = self.get_letter('Extra insurance? (y/n)', ['y','n'])
+        extra_insurance = self.__service.get_extra_insurance(extra_insurance)
+        self.print_price(group,time_period,extra_insurance)
         customer = self.get_customer()
-        payment = self.get_letter("Payment method(c/card,m/money): ", ['c','m'])
-        cardnumber = ''
-        if payment == 'k':
-            cardnumber = self.get_number_length(self.CARDPROMPT, 16)
-        new_order = Order(str(date1), str(date2), group, car, customer, payment, cardnumber)
+        payment = self.get_payment()
+        cardnumber = self.get_number_length(self.CARDPROMPT, 16)
+        new_order = Order(str(date1), str(date2), group, car, extra_insurance, customer, payment, cardnumber)
        # self.print_order(new_order)
         self.__service.add_order(new_order)
-        print("Rented booked")
+        print("Rent booked")
     
 
-    def print_price(self,group,period):
+    def print_price(self,group,period,extra_insurance):
+        '''Pretnar út sundurliðað verð á pöntuninni'''
         tax = Price.TAX
-        insurance = Price.INSURANCE
+        insurance = self.__service.get_total_insurance(extra_insurance)
         price = Price.price_dict[group][Price.PRICE]
         total_price = price*period
         print('Price without insurance: ', total_price, 'Price with tax: ',total_price*tax)
         print('Insurance: ', insurance, 'Payment: ',(total_price*tax)+insurance) 
 
     def get_group_car(self):
+        '''Skilar flokki og bílnúmeri sem viskiptavinur velur'''
         cars, total_cars = self.sort_cars()
         self.car_group_menu(cars,total_cars)
         group = self.get_number_between(1,7)
@@ -61,6 +65,7 @@ class OrderUi(Ui):
         return group, carnum
             
     def sort_cars(self):
+        '''Tekur alla lausa bíla og flokkar þá eftir hvaða flokki þeir tilheyra'''
         available_cars = self.__car_service.get_available_cars()
         car_list = [[],[],[],[],[],[],[]]
         for car in available_cars:
@@ -69,8 +74,11 @@ class OrderUi(Ui):
         return car_list, len(available_cars)
 
     def get_customer(self):
-        choice = self.get_letter('Regester or Look up customer (r/l):',['r','l'])
-        if choice == 'f':
+        '''Flettir upp eða býr til nýjann viðskiptavin skilar kennitölu viðskiptavinar'''
+        print('1. Register new customer')
+        print('2. Look up existing customer')
+        choice = self.get_number_between(1,2)
+        if choice == '2':
             while True:
                 search = self.get_string('Enter a search string: ')
                 customers = self.__customer_service.get_matches(search)
@@ -84,11 +92,11 @@ class OrderUi(Ui):
             self.__new_customer.new_customer()
             customers = self.__customer_service.get_full_content()
             customer = customers[-1]
-            print('Valinn viðskiptavinur er:', customer)
+            print('Choosen customer:', customer)
             return customer.get_ssn()
 
-        
     def car_group_menu(self,cars,total_cars):
+        '''Prentar út alla bílaflokanna og hversu margir eru lausir'''
         print("Cargroup\t\tAvailable cars")
         print("1. Small car\t\t\t",len(cars[0]))
         print("2. Luxury car\t\t\t",len(cars[1]))
@@ -97,6 +105,18 @@ class OrderUi(Ui):
         print("5. Jeep\t\t\t",len(cars[4]))
         print("6. Van\t\t",len(cars[5]))
         print("7. All groups\t\t",total_cars)
+
+    def get_payment(self):
+        print('Payment method:')
+        print('1. Card')
+        print('2. Cash')
+        choice = self.get_number_between(1,2)
+        if choice == '1':
+            return 'Card'
+        else:
+            return 'Cash'
+            
+
     
 
     # #Búa bara til str fall í Order til að prenta út order

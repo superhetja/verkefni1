@@ -10,7 +10,7 @@ class Ui:
     MOREPROMPT = 'Do you want to continue? y/n: '
     BOOKINGDATEPROMPT = 'Booking date: '
     RETURNDATEPROMPT = "Return date: "
-    CARDPROMPT = 'Card number: '
+    CARDPROMPT = 'Card number for insurance: '
     CARNUMPROMPT = 'Car number: '
     ADMINPROMPT = 'y/n: '
    
