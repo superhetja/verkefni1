@@ -17,9 +17,9 @@ class ShowCustomer(Ui):
     #    self= InputUi()
 
     def print_menu(self):
-        print(Color.BOLD+'Fletta upp viðskiptavini'+Color.END)
-        print('1. Fletta viðskiptavin.')
-        print('2. Birta alla viðskiptavini.')
+        print(Color.BOLD+'Search customer'+Color.END)
+        print('1. Search customer')
+        print('2. View all customers')
 
     # def show_customer_main(self):
     #     '''Aðal fallið til að byrja klassan'''
@@ -32,7 +32,7 @@ class ShowCustomer(Ui):
     #         self.print_all_customers()
 
     def search_customer(self):
-        search = input('Sláðu inn leitarstreng: ')
+        search = input('Input search: ')
         customers = self.__service.get_matches(search)
         self.print_list(customers)
         if len(customers) == 0:
@@ -57,14 +57,14 @@ pilu
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
         print(chosen_customer)
-        print('1. Breyta viðskiptavin')
-        print('2. Eyða viðskiptavin')
-        print('3. Fletta upp öðrum viðskiptavin')
-        print('4. Fara til baka á aðalvalmynd')
+        print('1. Change customer')
+        print('2. Delete customer')
+        print('3. Search another customer')
+        print('4. Back to main menu')
         action = self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_customer)
-            print('Viðskiptavini eytt')
+            print('Customer deleted')
             self.get_more()
         elif action == '2':
             self.change_customer(chosen_customer)
@@ -74,11 +74,11 @@ pilu
             pass
     
     def change_customer(self, customer):
-        print('Hverju viltu breyta?')
-        print('1. Nafni')
-        print('2. Kenntölu')
-        print('3. Netfangi')
-        print('4. Símanúmeri')
+        print('What do you want to change?')
+        print('1. Name')
+        print('2. Ssn')
+        print('3. Email')
+        print('4. Phone number')
         action = self.get_number_between(1,4)
         name = customer.get_name()
         ssn = customer.get_ssn()
@@ -94,7 +94,7 @@ pilu
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
-        print('Breytingu lokið.')
+        print('Change complete!.')
         self.get_more()
 
          
