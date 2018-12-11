@@ -64,7 +64,7 @@ class OrderUi(Ui):
                     return customer.get_ssn()
         else:
             self.__new_customer.new_customer()
-            customers = self.__customer_service.get_customers()
+            customers = self.__customer_service.get_full_content()
             customer = customers[-1]
             return customer.get_ssn()
 
