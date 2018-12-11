@@ -19,9 +19,9 @@
 # a.add_car_menu()
 
 '''Keyrir pöntun'''
-# from ui.OrderUi import OrderUi
-# a = OrderUi()
-# a.set_order()
+from ui.OrderUi import OrderUi
+a = OrderUi()
+a.set_order()
 
 '''Keyrir búa til nýan starfsmann'''
 
