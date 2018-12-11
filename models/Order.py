@@ -3,10 +3,11 @@ from models.Price import Price
 
 class Order: 
 
-    def __init__(self, date1, date2, group, car, customer, payment, card_number='',returned = False):
+    def __init__(self, date1, date2, group, car,extra_insurance, customer, payment, card_number='',returned = False):
         self.__date1 = date1
         self.__date2 = date2
         self.__car = car
+        self.__extra_insurance=extra_insurance
         self.__customer = customer
         self.__payment = payment
         self.__card_number = card_number
@@ -15,11 +16,11 @@ class Order:
         self.__price = self.calculate_price(group)
 
     def __str__(self):
-        return "Time period: {} - {}\nCar: {}\nPrice: {}\nCustomer: {}\nPayment: {}\nCard number: {}\n Status: {}".format(self.__date1, self.__date2, self.__car, self.__price, self.__customer, self.__payment, self.__card_number, self.__returned)
+        return "Time period: {} - {}\nCar: {}\nExtra Insurance: {}\nPrice: {}\nCustomer: {}\nPayment: {}\nCard number: {}\n Status: {}".format(self.__date1, self.__date2, self.__car, self.__price, self.__customer, self.__payment, self.__card_number, self.__returned)
         
     def __repr__(self):
-        return "Order('{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
-        self.__date2,self.__group,self.__car,self.__customer,self.__payment,self.__card_number,
+        return "Order('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
+        self.__date2,self.__group,self.__car,self.__extra_insurance,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
     def get_date1(self):
