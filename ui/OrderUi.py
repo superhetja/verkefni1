@@ -30,14 +30,14 @@ class OrderUi(Ui):
         group, car = self.get_group_car()
         self.print_price(group,time_period)
         customer = self.get_customer()
-        payment = self.get_letter("Greiðslumáti(k/kort,p/preningur): ", ['k','p'])
+        payment = self.get_letter("Payment method(c/card,m/money): ", ['c','m'])
         cardnumber = ''
         if payment == 'k':
             cardnumber = self.get_number_length(self.CARDPROMPT, 16)
         new_order = Order(str(date1), str(date2), group, car, customer, payment, cardnumber)
        # self.print_order(new_order)
         self.__service.add_order(new_order)
-        print("Útleiga bókuð")
+        print("Rented booked")
     
 
     def print_price(self,group,period):
@@ -45,14 +45,14 @@ class OrderUi(Ui):
         insurance = Price.INSURANCE
         price = Price.price_dict[group][Price.PRICE]
         total_price = price*period
-        print('Verð án skatta: ', total_price, 'Verð með sköttum: ',total_price*tax)
-        print('Trygging: ', insurance, 'Til greiðslu: ',(total_price*tax)+insurance) 
+        print('Price without insurance: ', total_price, 'Price with tax: ',total_price*tax)
+        print('Insurance: ', insurance, 'Payment: ',(total_price*tax)+insurance) 
 
     def get_group_car(self):
         cars, total_cars = self.sort_cars()
         self.car_group_menu(cars,total_cars)
         group = self.get_number_between(1,7)
-        print("Lausir bíla á valdri dagsetningu: ")
+        print("Available cars on choosen date: ")
         cars_in_group = cars[int(group)-1]
         self.print_list(cars_in_group)
         choice = self.get_number_between(1,len(cars[int(group)-1]))
@@ -69,16 +69,16 @@ class OrderUi(Ui):
         return car_list, len(available_cars)
 
     def get_customer(self):
-        choice = self.get_letter('Skrá nýjann eða fletta upp viðskiptavini(s/f):',['s','f'])
+        choice = self.get_letter('Regester or Look up customer (r/l):',['r','l'])
         if choice == 'f':
             while True:
-                search = self.get_string('Sláðu inn leitarstreng: ')
+                search = self.get_string('Enter a search string: ')
                 customers = self.__customer_service.get_matches(search)
                 self.print_list(customers)
                 if len(customers) != 0:
                     customber_num = self.get_number_between(1,len(customers))
                     customer = customers[int(customber_num)-1]
-                    print('Valinn viðskiptavinur er:', customer)
+                    print('Choosen customer:', customer)
                     return customer.get_ssn()
         else:
             self.__new_customer.new_customer()
@@ -89,14 +89,14 @@ class OrderUi(Ui):
 
         
     def car_group_menu(self,cars,total_cars):
-        print("Bílflokkar\t\tLausir bílar")
-        print("1. Smá bíll\t\t\t",len(cars[0]))
-        print("2. Lúxus bíll\t\t\t",len(cars[1]))
-        print("3. Rafbíll\t\t\t",len(cars[2]))
-        print("4. Jepplingur\t\t\t",len(cars[3]))
-        print("5. Jeppi\t\t\t",len(cars[4]))
-        print("6. Sendiferðabíll\t\t",len(cars[5]))
-        print("7. Allir flokkar\t\t",total_cars)
+        print("Cargroup\t\tAvailable cars")
+        print("1. Small car\t\t\t",len(cars[0]))
+        print("2. Luxury car\t\t\t",len(cars[1]))
+        print("3. Electric car\t\t\t",len(cars[2]))
+        print("4. Suv\t\t\t",len(cars[3]))
+        print("5. Jeep\t\t\t",len(cars[4]))
+        print("6. Van\t\t",len(cars[5]))
+        print("7. All groups\t\t",total_cars)
     
 
     # #Búa bara til str fall í Order til að prenta út order
