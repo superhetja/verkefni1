@@ -19,5 +19,5 @@ búið að breyta í ensk
 - BossmanUi
 - ChangeEmployee
 
-
+- ShowCustomerUi
 
