@@ -65,8 +65,8 @@ class ShowEmployee(Ui):
         print('1. Change employee')
         print('2. Delete employee')
         print('3. Search another employee')
-        print('4. Go back to menu')
-        action = self.get_number_between(1,4)
+        print('4. Back to menu')
+        action Ö self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_employee)
             print('Employee deleted')

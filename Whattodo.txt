@@ -7,7 +7,7 @@ gera Ui sem prentar út kostnað leigu, notandi velur hversu marga daga og hvað
 Kannski gera create employee XXX 
 
 
-PriceList.py
+PriceList.py.. ?
 PriceListRepository
 PriceListService
 PriceListUi
@@ -15,9 +15,13 @@ PriceListUi
 ShowEmployeeUi    ---- byrjað 
 
 búið að breyta í ensk
+ui:
 - AddCarUi
 - BossmanUi
-- ChangeEmployee
+- ChangeEmployeeUi
+- Ui
+- ShowEmployeeUi
+- 
 
 
 
