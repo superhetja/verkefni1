@@ -15,7 +15,7 @@ class Order:
         self.__price = self.calculate_price(group)
 
     def __str__(self):
-        return "Datetime: {} {}, Car {}, Customer {}, Payment {}, Card number: {}, Status: {}".format(self.__date1, self.__date2, self.__car, self.__customer, self.__payment, self.__card_number, self.__returned)
+        return "Time period: {} - {}, Car: {}, Customer: {}, Payment: {}, Card number: {}, Status: {}".format(self.__date1, self.__date2, self.__car, self.__customer, self.__payment, self.__card_number, self.__returned)
         
     def __repr__(self):
         return "Order('{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,

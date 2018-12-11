@@ -6,7 +6,7 @@ class Customer:
         self.__phoneNr = phoneNr
 
     def __str__(self):
-        return 'Name: {}, SSN: {}, Email: {}, Phonenumber: {}'.format(self.__name, self.__ssn, self.__email, self.__phoneNr)    
+        return 'Name: {}, SSN: {}, Email: {}, Phone number: {}'.format(self.__name, self.__ssn, self.__email, self.__phoneNr)    
      
     def __repr__(self):
         return "Customer('{}','{}','{}','{}')".format(self.__name, self.__ssn, self.__email, self.__phoneNr)
