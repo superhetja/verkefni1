@@ -70,7 +70,7 @@ class ShowOrder(Ui):
         print('2. Return date')
         print('3. Payment methood')
         action = self.get_number_between(1, 4)
-        # vantar
+        date1 = self.__get_input
         if action == '1':
             #vantar
         elif action == '2':

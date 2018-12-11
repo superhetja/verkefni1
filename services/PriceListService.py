@@ -1,5 +1,6 @@
 from repositories.PriceListRepository import PriceListRepository
 from services.Service import Service
+from models.Price import Price
 
 class PriceListService(Service):  
     REPO = PriceListRepository()
@@ -14,7 +15,7 @@ class PriceListService(Service):
         return full_price
     
 
-
+ 
 
 
 

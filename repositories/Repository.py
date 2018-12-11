@@ -2,6 +2,7 @@ from models.Order import Order
 from models.Employee import Employee
 from models.Car import Car
 from models.Customer import Customer
+from models.Price import Price
 
 class Repository:
     FILELOCATION = 'data/customers.txt'

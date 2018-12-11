@@ -8,7 +8,7 @@ class ShowPrice(Ui):
         Car.__init__(self)
         self.__service = PriceListService()
         
-
+ 
     def show_price_list(self):
         self.__clear.clear_screen()
         print('Price without insurance (for one day)')
