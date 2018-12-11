@@ -19,15 +19,15 @@
 # a.add_car_menu()
 
 '''Keyrir pöntun'''
-# from ui.OrderUi import OrderUi
-# a = OrderUi()
-# a.set_order()
+from ui.OrderUi import OrderUi
+a = OrderUi()
+a.set_order()
 
 '''Keyrir búa til nýan starfsmann'''
 
 
 '''Keyrir Order'''
-from models.Order import Order
-a = Order('20.12.2018','28.12.2018','1','BBB44','2309874929','k','12345678','False')
-b = a.get_price()
-print(b)
+# from models.Order import Order
+# a = Order('20.12.2018','28.12.2018','1','BBB44','2309874929','k','12345678','False')
+# b = a.get_price()
+# print(b)

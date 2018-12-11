@@ -8,6 +8,14 @@ class Car:
     VAN = 9000
     TAX = 1.11 
     INSURANCE = 30000
+
+    CARSTANDARD = 2,000,000
+    CARLUXURY = 8,000,000 
+    CARELECTRIC = 4,000,000 
+    CARSMALLSUV = 3,000,000 
+    CARSUV = 5,000,000 
+    CARVAN = 2,000,000 
+    
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
         self.__group = int(group)
         self.__brand = brand
