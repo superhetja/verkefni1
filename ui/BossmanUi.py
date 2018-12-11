@@ -28,9 +28,9 @@ class Bossman:
         print(self.__header)
         while True:
             print((Color.BOLD + "Rental"+ Color.END))
-            print("1. Register new rental")
+            print("1. Register new order")
             print("2. Search rental")
-            print("3. Register returnday")
+            print("3. File delivery")
             print("4. View price list")
             print("5. Update price")
 

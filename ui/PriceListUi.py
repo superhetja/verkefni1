@@ -21,13 +21,18 @@ class ShowPrice(Ui):
         print('Price for Jeep: \t\t{:.0f}'.format(self.__price.get_price_one_day('5')))
         print('Price for Van: \t\t\t{:.0f}'.format(self.__price.get_price_one_day('6')))
 
-        # print('Price with insurance: {}')
-        # print('Price for Small car: {}'.format(self.__service.calculate_pricelist(self.STANDARD, self.CARSTANDARD)))
-        # print('Price for luxury car: {}'.format(self.__service.calculate_pricelist(self.LUXURY, self.CARLUXURY)))
-        # print('Price for electric car: {}'.format(self.__service.calculate_pricelist(self.ELECTRIC, self.CARELECTRIC)))
-        # print('Price for small suv: {}'.format(self.__service.calculate_pricelist(self.SMALLSUV, self.CARSMALLSUV)))
-        # print('Price for suv: {}'.format(self.__service.calculate_pricelist(self.SUV, self.CARSUV)))
-        # print('Price for van {}'.format(self.__service.calculate_pricelist(self.VAN, self.CARVAN)))
+        print('Price with insurance: {}')
+        print('Price for Small car: {}'.format(self.__price.get_price_one_day_w_insurance('1')))
+        print('Price for luxury car: {}'.format(self.__price.get_price_one_day_w_insurance('2')))
+        print('Price for electric car: {}'.format(self.__price.get_price_one_day_w_insurance('3')))
+        print('Price for small suv: {}'.format(self.__price.get_price_one_day_w_insurance('4')))
+        print('Price for suv: {}'.format(self.__price.get_price_one_day_w_insurance('5')))
+        print('Price for van {}'.format(self.__price.get_price_one_day_w_insurance('6')))
+
+
+    def calculate_price_x_days(self):
+		days = self.get_number_between(1,6,'How many days: ')
+
         
 
 
