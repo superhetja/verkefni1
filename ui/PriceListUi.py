@@ -23,11 +23,11 @@ class ShowPrice(Ui):
 
         print('Price with insurance for 1 day')
         print('Price for Small car: {}'.format(self.__price.get_price_one_day_w_insurance('1')))
-        print('Price for luxury car: {}'.format(self.__price.get_price_one_day_w_insurance('2')))
-        print('Price for electric car: {}'.format(self.__price.get_price_one_day_w_insurance('3')))
-        print('Price for small suv: {}'.format(self.__price.get_price_one_day_w_insurance('4')))
-        print('Price for suv: {}'.format(self.__price.get_price_one_day_w_insurance('5')))
-        print('Price for van {}'.format(self.__price.get_price_one_day_w_insurance('6')))
+        print('Price for Luxury car: {}'.format(self.__price.get_price_one_day_w_insurance('2')))
+        print('Price for Electric car: {}'.format(self.__price.get_price_one_day_w_insurance('3')))
+        print('Price for Suv: {}'.format(self.__price.get_price_one_day_w_insurance('4')))
+        print('Price for Jeep: {}'.format(self.__price.get_price_one_day_w_insurance('5')))
+        print('Price for Van {}'.format(self.__price.get_price_one_day_w_insurance('6')))
 
 
     def calculate_price_x_days(self):

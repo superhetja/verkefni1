@@ -1,4 +1,4 @@
-Customer('Gunna Jonsdóttir','11069045919','gunnatunna@hotmail.com','6592214')
+Customer('Gunna Jonsdottir','11069045919','gunnatunna@hotmail.com','6592214')
 Customer('Olafur Rúnarsson','2308852219','olismoli@gmail.com','8475618')
 Customer('Halldor Ingimundarsson','1010995649','dorihori@gmail.com','8552626')
 Customer('Finnbogi Finnbogason','2002772689','finnsi77@gmail.com','8492465')

@@ -41,6 +41,6 @@ class AddCarUi:
         print('1. Standar')
         print('2. Luxury')
         print('3. Electric')
-        print('4. Small suv')
-        print('5. Suv')
+        print('4. Suv')
+        print('5. Jeep')
         print('6. Van')
