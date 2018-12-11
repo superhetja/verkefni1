@@ -4,7 +4,8 @@ class Price:
     NAME = 0
     PRICE = 1
     TAX = 1.11
-    INSURANCE = 30000
+    INSURANCE = 10000
+    EXTRAINSURANCE = 5000
 
     def get_price_one_day(self, group):
         price_wo_tax = self.price_dict[group][self.PRICE]

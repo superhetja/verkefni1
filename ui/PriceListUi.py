@@ -21,7 +21,7 @@ class ShowPrice(Ui):
         print('Price for Jeep: \t\t{:.0f}'.format(self.__price.get_price_one_day('5')))
         print('Price for Van: \t\t\t{:.0f}'.format(self.__price.get_price_one_day('6')))
 
-        print('Price with insurance: {}')
+        print('Price with insurance for 1 day')
         print('Price for Small car: {}'.format(self.__price.get_price_one_day_w_insurance('1')))
         print('Price for luxury car: {}'.format(self.__price.get_price_one_day_w_insurance('2')))
         print('Price for electric car: {}'.format(self.__price.get_price_one_day_w_insurance('3')))
@@ -31,8 +31,12 @@ class ShowPrice(Ui):
 
 
     def calculate_price_x_days(self):
-    	days = self.get_number_between(1,6,'How many days: ')
-        if days = ''
+    	days = self.get_number_between(1,100000,'How many days: ')
+        if days = '1':
+            self.show_price_list()
+        else:
+            print('Price without insurance for {} days'.format(days))
+
         self.show_price_list(days)
 
 
