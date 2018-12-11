@@ -12,7 +12,6 @@ class ShowEmployee(Ui):
         Ui.__init__(self)
         self.__service = EmployeeService()
         self.__header = Header()
-        self.__color = Color()
         self.__check_input = CheckInput()
     #    self= InputUi()
 
