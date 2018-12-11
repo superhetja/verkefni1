@@ -27,7 +27,7 @@
 
 
 '''Keyrir Order'''
-from models.Order import Order
-a = Order('20.12.2018','28.12.2018','1','BBB44','2309874929','k','12345678','False')
-b = a.get_price()
-print(b)
+#from models.Order import Order
+#a = Order('20.12.2018','28.12.2018','1','BBB44','2309874929','k','12345678','False')
+#b = a.get_price()
+#print(b)
