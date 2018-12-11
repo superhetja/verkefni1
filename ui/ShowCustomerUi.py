@@ -17,9 +17,15 @@ class ShowCustomer(Ui):
     #    self= InputUi()
 
     def print_menu(self):
+<<<<<<< HEAD
         print(Color.BOLD+'Look up Customer'+Color.END)
         print('1. Browse Customer.')
         print('2. Publish all Customers.')
+=======
+        print(Color.BOLD+'Search customer'+Color.END)
+        print('1. Search customer')
+        print('2. View all customers')
+>>>>>>> 1efe4f279fb3caaf090afe98271d31ae6ca630da
 
     # def show_customer_main(self):
     #     '''Aðal fallið til að byrja klassan'''
@@ -32,7 +38,11 @@ class ShowCustomer(Ui):
     #         self.print_all_customers()
 
     def search_customer(self):
+<<<<<<< HEAD
         search = input('Enter search string: ')
+=======
+        search = input('Input search: ')
+>>>>>>> 1efe4f279fb3caaf090afe98271d31ae6ca630da
         customers = self.__service.get_matches(search)
         self.print_list(customers)
         if len(customers) == 0:
@@ -57,10 +67,17 @@ pilu
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]
         print(chosen_customer)
+<<<<<<< HEAD
         print('1. Change customer')
         print('2. Delete customer')
         print('3. Look up another customer')
         print('4. Go back to the menu')
+=======
+        print('1. Delete customer')
+        print('2. Change customer')
+        print('3. Search another customer')
+        print('4. Back to main menu')
+>>>>>>> 1efe4f279fb3caaf090afe98271d31ae6ca630da
         action = self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_customer)
@@ -76,8 +93,13 @@ pilu
     def change_customer(self, customer):
         print('What do you want to change?')
         print('1. Name')
+<<<<<<< HEAD
         print('2. SSN')
         print('3. Email address')
+=======
+        print('2. Ssn')
+        print('3. Email')
+>>>>>>> 1efe4f279fb3caaf090afe98271d31ae6ca630da
         print('4. Phone number')
         action = self.get_number_between(1,4)
         name = customer.get_name()
@@ -94,7 +116,11 @@ pilu
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
+<<<<<<< HEAD
         print('Change complete.')
+=======
+        print('Change customer.')
+>>>>>>> 1efe4f279fb3caaf090afe98271d31ae6ca630da
         self.get_more()
 
          
