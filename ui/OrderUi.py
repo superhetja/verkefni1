@@ -9,7 +9,7 @@ from models.Customer import Customer
 from ui.CustomerUi import CustomerUi
 from models.Car import Car
 
-class OrderUi:
+class OrderUi(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__service = OrderService()
@@ -78,10 +78,10 @@ class OrderUi:
         print("1. Small car\t\t\t",len(cars[0]))
         print("2. Luxary car\t\t\t",len(cars[1]))
         print("3. electric car\t\t\t",len(cars[2]))
-        print("4. SUV\t\t\t",len(cars[3]))
-        print("5. Jeep\t\t\t",len(cars[4]))
-        print("6. Van\t\t",len(cars[5]))
-        print("7. All groups\t\t",total_cars)
+        print("4. SUV\t\t\t\t",len(cars[3]))
+        print("5. Jeep\t\t\t\t",len(cars[4]))
+        print("6. Van\t\t\t\t",len(cars[5]))
+        print("7. All groups\t\t\t",total_cars)
     
 
     #Búa bara til str fall í Order til að prenta út order
