@@ -32,7 +32,7 @@ class ShowPrice(Ui):
         self.get_x_days()
 
     def get_x_days(self):
-        days = self.get_number_between(2,6,'How many days: ')
+        days = self.get_number_between(2,10000,'How many days: ')
         self.show_price_list_x_days(days)
 
 
@@ -61,15 +61,6 @@ class ShowPrice(Ui):
             self.get_x_days()
         else:
             pass
-        
-    def calculate_price_x_days(self):
-    	days = self.get_number_between(1,100000,'How many days: ')
-        if days = '1':
-            self.show_price_list()
-        else:
-            print('Price without insurance for {} days'.format(days))
-
-        self.show_price_list(days)
 
 
         
