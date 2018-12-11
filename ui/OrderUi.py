@@ -74,7 +74,7 @@ class OrderUi:
         
     def car_group_menu(self,cars,total_cars):
         print("Car group\t\tAvailable cars")
-        print("1. Small car\t\t\t",len(cars[0]))
+        print("1. Standard car\t\t\t",len(cars[0]))
         print("2. Luxary car\t\t\t",len(cars[1]))
         print("3. electric car\t\t\t",len(cars[2]))
         print("4. SUV\t\t\t",len(cars[3]))
