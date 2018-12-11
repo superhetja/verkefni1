@@ -14,7 +14,6 @@ class ShowCustomer(Ui):
         self.__header = Header()
         self.__color = Color()
         self.__check_input = CheckInput()
-    #    self= InputUi()
 
     def print_menu(self):
         print(Color.BOLD+'Search customer'+Color.END)

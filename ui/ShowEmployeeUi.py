@@ -5,15 +5,16 @@ from ui.HeaderUi import Header
 #from models.Clear import Clear
 from models.Color import Color
 from ui.Ui import Ui
+from services.Service import Service
 
 
 class ShowEmployee(Ui):
     def __init__(self):
         Ui.__init__(self)
-        self.__service = EmployeeService()
+        self.__employee_service = EmployeeService()
+        self.__service = Service()
         self.__header = Header()
         self.__check_input = CheckInput()
-    #    self= InputUi()
 
     def print_menu(self):
         print(Color.BOLD+'Search employee'+Color.END)
@@ -35,7 +36,7 @@ class ShowEmployee(Ui):
 
     def search_employee(self):
         search = input('Input search: ')
-        employee = self.__service.get_matches(search)
+        employee = self.__employee_service.get_matches(search)
         self.print_list(employee)
         if len(employee) == 0:
             self.get_more()
@@ -43,7 +44,7 @@ class ShowEmployee(Ui):
             self.choice_employeer(employee)
 
     def print_all_employees(self):
-        employee = self.__serfvice.get_full_centent()
+        employee = self.__employee_service.get_full_centent()
         self.print_lisr(employee)
         if len(employee) == 0:
             self.get_more()
@@ -65,7 +66,7 @@ class ShowEmployee(Ui):
         print('2. Delete employee')
         print('3. Search another employee')
         print('4. Back to menu')
-        action Ö self.get_number_between(1,4)
+        action = self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_employee)
             print('Employee deleted')
