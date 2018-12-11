@@ -7,6 +7,12 @@ class Employee:
         self.__admin = admin
         self.__ssn = ssn
     
+    def __str__(self):
+        return 'Name: {}, SSN: {}, Email: {}, Password: {}, Admin: {}'.format(self.__fullname, self.__ssn, self.__email, self.__password, self.__admin)    
+     
+    def __repr__(self):
+        return "Employee('{}','{}','{}','{}','{}')".format(self.__fullname, self.__ssn, self.__email, self.__password, self.__admin)
+
     def get_fullname(self):
         return self.__fullname
  
@@ -20,5 +26,5 @@ class Employee:
         return self.__admin
 
     def get_ssn(self):
-        return self.__ssn 
+        return self.__ssn
 

@@ -2,6 +2,8 @@ from services.CarService import CarService
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
 from ui.Ui import Ui
+from ui.HeaderUi import Header
+from models.Color import Color
 
 class ShowCars:
     def __init__(self):
@@ -9,22 +11,25 @@ class ShowCars:
         self.__service = CarService()
         self.__check_input = CheckInput()
         self.__clear = Clear()
+        self.__header = Header()
         #self.__input_ui=Ui()
 
-    def show_cars_menu(self):
-        self.__clear.clear_screen()
-        print('1. Print all cars.')
-        print('2. Print all available cars.')
-        print('3. Print all rented cars.')
+    def print_menu(self):
+        print(Color.BOLD + 'Car menu' + Color.END)
+        print('1. Print all cars')
+        print('2. Print available cars')
+        print('3. Print unavailable cars')
 
+    def show_cars_main(self):
+        #eftir .......
+        '''Aðal fallið til að byrja klasann'''
+        self.clear_screen()
+        self.print_menu()
         action = self.get_number_between(1,3)
-
         if action == '1':
             self.print_all_cars()
-        
         if action == '2':
             self.print_available_cars()
-
         if action == '3':
             self.print_unavailable_cars()
 

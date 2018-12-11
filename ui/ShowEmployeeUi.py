@@ -12,7 +12,6 @@ class ShowEmployee(Ui):
         Ui.__init__(self)
         self.__service = EmployeeService()
         self.__header = Header()
-        self.__color = Color()
         self.__check_input = CheckInput()
     #    self= InputUi()
 
@@ -58,7 +57,7 @@ class ShowEmployee(Ui):
     #     else:
     #         pass
 
-    def choice_employee(self, a_list):
+    def choose_employee(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_employee = a_list[int(choice)-1]
         print(chosen_employee)
