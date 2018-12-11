@@ -16,7 +16,7 @@ class CheckInput:
         pass
 
     def is_valid_number_between(self, num, lower, higher):
-        errorprompt = 'Incorrect input\nEnter only numbers.'
+        errorprompt = 'Incorrect input\nEnter numbers only.'
         try:
             num = int(num)
             if num > higher or num < lower:
@@ -36,7 +36,7 @@ class CheckInput:
             return errorprompt
 
     def is_valid_number(self,num):
-        errorprompt = 'Incorrect input\nEnter only integers.'
+        errorprompt = 'Incorrect input\nEnter numbers only.'
         try:
             int(num)
             return None
@@ -50,7 +50,7 @@ class CheckInput:
         return errorprompt
 
     def is_string(self, string):
-        errorprompt = 'Incorrect input\nPlease enter only letters.'
+        errorprompt = 'Incorrect input\nEnter letters only.'
         string = string.split()
         for i in string:
             if i.isalpha() == False:
@@ -58,7 +58,7 @@ class CheckInput:
         return None
 
     def is_valid_number_length(self, num, length):
-        errorprompt = 'Incorrect\nEnter onlu numbers.'
+        errorprompt = 'Incorrect input\nEnter numbers only.'
         try:
             num = int(num)
             if len(str(num)) != length:
@@ -69,7 +69,7 @@ class CheckInput:
             return errorprompt
 
     def is_valid_between_two_letters(self, a, b, choice):
-        errorprompt = 'Not the right choice\nChoose the correct one'
+        errorprompt = 'Invalid choice\nEnter valid choice.'
         if choice == a or choice == b:
             return None
         else:

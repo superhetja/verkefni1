@@ -3,16 +3,16 @@ from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
 
 class Ui:
-    NAMEPROMPT = 'NAME: '
-    SSNPROMPT = 'SSN: '
-    PHONEPROMPT = 'PHONENUMER: '
-    EMAILPROMPT = 'EMAIL: '
-    MOREPROMPT = 'DO YOU WANT TO CONTINUE? Y/N: '
-    BOOKINGDATEPROMPT = 'BOOKING DATE: '
-    RETURNDATEPROMPT = "RETURN DATE: "
-    CARDPROMPT = 'CARD NUMER: '
-    CARNUMPROMPT = 'CAR NUMBER: '
-    ADMINPROMPT = 'Y/N: '
+    NAMEPROMPT = 'Name: '
+    SSNPROMPT = 'Ssn: '
+    PHONEPROMPT = 'Phonenumber: '
+    EMAILPROMPT = 'Email: '
+    MOREPROMPT = 'Do you want to continue? y/n: '
+    BOOKINGDATEPROMPT = 'Booking date: '
+    RETURNDATEPROMPT = "Return date: "
+    CARDPROMPT = 'Card number: '
+    CARNUMPROMPT = 'Car number: '
+    ADMINPROMPT = 'y/n: '
    
     def __init__(self):
         self.__check_input = CheckInput()

@@ -1,8 +1,27 @@
 from repositories.PriceListRepository import PriceListRepository
 from services.Service import Service
+from models.Price import Price
 
-class PriceListService(service):  
+class PriceListService(Service):  
+    #REPO = PriceListRepository()
 
-# reikna út hér  
-# verðið á bílnum      10 % af heildarverðinu 
-# 5000 á dag + 10% + vsk 
+
+    def __init__(self):
+        #self.__pricelist_repo = PriceListRepository()
+        pass
+
+    def calculate_pricelist(self, rent_price_per_day, price_of_car):
+        #price for one day 
+        full_price = (rent_price_per_day + (price_of_car * 0.1) / 365 ) * 1.11
+        return full_price
+    
+
+ 
+
+
+
+
+
+
+
+    

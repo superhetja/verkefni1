@@ -3,6 +3,7 @@ from models.Car import Car
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
 from ui.Ui import Ui
+
 class AddCarUi:
     def __init__(self):
         self.__car = CarService()
@@ -24,7 +25,7 @@ class AddCarUi:
 
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
-        print("New car registration complete! ")
+        print("Registration complete! ")
         self.get_more()
 
     def get_more(self):

@@ -27,7 +27,7 @@ class OrderService(Service):
                 break
                 self.__car_repo.overwrite_file(cars)
             else:
-                s = input('fannske ekki')
+                s = input('fannst ekki')
 
     def get_datetime(self,day):
         day, month, year = day.split('.')

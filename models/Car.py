@@ -8,6 +8,14 @@ class Car:
     VAN = 9000
     TAX = 1.11 
     INSURANCE = 30000
+
+    CARSTANDARD = 2,000,000
+    CARLUXURY = 8,000,000 
+    CARELECTRIC = 4,000,000 
+    CARSMALLSUV = 3,000,000 
+    CARSUV = 5,000,000 
+    CARVAN = 2,000,000 
+    
     def __init__(self, group=0, brand='', subbrand='', carnumber=0,seats= 0, transmission='', doors=0, booked=False):
         self.__group = int(group)
         self.__brand = brand
@@ -35,7 +43,7 @@ class Car:
         return price
         
     def __str__(self):
-        return "Car: {} {}, Carnumber: {}, Price: {} $, Number of doors: {}, Number of seets: {}, Partition: {}, Rental: {}".format(self.__brand,self.__subbrand,self.__carnumber,self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
+        return "Car: {} {}, Car number: {}, Price: {} $, Number of doors: {}, Number of seats: {}, Transmition: {}, Rental: {}".format(self.__brand, self.__subbrand, self.__carnumber, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
     
     def __repr__(self):
         return "Car('{}','{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__carnumber,self.__seats,self.__transmission,self.__doors,self.__booked)

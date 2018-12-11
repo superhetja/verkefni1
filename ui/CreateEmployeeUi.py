@@ -16,7 +16,7 @@ class CreateEmployee(Ui):
     def create_empoyee(self):
         self.__clear.clear_screen()
         print(self.__header)
-        print(Color.BOLD + 'Regester employees'+ Color.END)
+        print(Color.BOLD + 'Regester employee'+ Color.END)
         print('Enter employee information')
         name = self.get_string(self.NAMEPROMPT)
         password = input(str("Password: "))

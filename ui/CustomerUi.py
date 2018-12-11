@@ -13,7 +13,7 @@ class CustomerUi(Ui):
 
     def new_customer(self):
         print(self.__header)
-        print(Color.BOLD + "Register customers" + Color.END)
+        print(Color.BOLD + "Register customer" + Color.END)
         print("Enter custumer information :")
         name = self.get_string(self.NAMEPROMPT)
         ssn = self.get_number_length(self.SSNPROMPT, 10)

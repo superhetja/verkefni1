@@ -3,6 +3,7 @@ from models.Color import Color
 from ui.Ui import Ui
 from services.OrderService import OrderService
 from ui.HeaderUi import Header
+from services.Service import Service
 
 
 class ShowOrder(Ui):
@@ -10,7 +11,8 @@ class ShowOrder(Ui):
         Ui.__init__(self)
         self.__color = Color()
 #        self = InputUi()
-        self.__service = OrderService()
+        self.__order_service = OrderService()
+        self.__service = Service()
         self.__header = Header()
 
     def show_order_main(self):
@@ -29,15 +31,16 @@ class ShowOrder(Ui):
 
     def search_order(self):
         search = input('Input search:')
-        orders = self.__service.get_matches(search)
+        orders = self.__order_service.get_matches(search)
         self.print_list(orders)
         if len(orders) == 0:
             self.get_more()
         else:
+            pass
             
 
     def print_all_orders(self):
-        orders = self.__service.get_full_content()
+        orders = self.__order_service.get_full_content()
         self.print_list(orders)
         if len(orders) == 0:
             self.get_more(self.show_order_main())
@@ -58,7 +61,7 @@ class ShowOrder(Ui):
             print('Order deleted')
             self.get_more()
         elif action == '2':
-            self.__service.change_order(chosen_order)
+            self.change_order(chosen_order)
         elif action == '3':
             self.search_order()
         else:
@@ -68,20 +71,26 @@ class ShowOrder(Ui):
         print('What do you want to change?')
         print('1. Pick up date')
         print('2. Return date')
-        print('3. ')
-        print('4. ')
+        print('3. Payment methood')
         action = self.get_number_between(1, 4)
-        # vantar
+        date1 = order.get_date1()
+        date2 = order.get_date2()
+        group = order.get_group()
+        car = order.get_car()
+        customer = order.get_customer()
+        payment = order.get_payment()
         if action == '1':
-            #vantar
+            date1 = self.get_date(self.BOOKINGDATEPROMPT)
         elif action == '2':
-            #vantar
+            date2 = self.get_date(self.RETURNDATEPROMPT)
         elif action == '3':
-            #vantar
-        elif action == '4':
-            #vantar
-        new_order = Order(date1, date2, group, car, customer, payment)
-        self.__service.change_instance(order, new_order)
+            payment = self.get_letter("Payment method(c/card,m/money): ", ['c','m'])
+            cardnum = ''
+            if payment == 'k':
+                cardnum = self.get_number_length(self.CARDPROMPT, 8)
+        new_order = Order(date1, date2, group, car, customer, payment, cardnum)
+        self.__order_service.change_instance(order, new_order)
+        self.__order_service.add_order(new_order)
         print('Change complete!')
         self.get_more()
 
