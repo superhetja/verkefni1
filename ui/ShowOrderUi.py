@@ -34,6 +34,7 @@ class ShowOrder(Ui):
         if len(orders) == 0:
             self.get_more()
         else:
+            pass
             
 
     def print_all_orders(self):
@@ -70,15 +71,24 @@ class ShowOrder(Ui):
         print('2. Return date')
         print('3. Payment methood')
         action = self.get_number_between(1, 4)
-        date1 = self.__get_input
+        date1 = order.get_date1()
+        date2 = order.get_date2()
+        group = order.get_group()
+        car = order.get_car()
+        customer = order.get_customer()
+        payment = order.get_payment()
         if action == '1':
-            #vantar
+            date1 = self.get_date(self.BOOKINGDATEPROMPT)
         elif action == '2':
-            #vantar
+            date2 = self.get_date(self.RETURNDATEPROMPT)
         elif action == '3':
-            #vantar
-        new_order = Order(date1, date2, group, car, customer, payment)
+            payment = self.get_letter("Payment method(c/card,m/money): ", ['c','m'])
+            cardnum = ''
+            if payment == 'k':
+                cardnum = self.get_number_length(self.CARDPROMPT, 8)
+        new_order = Order(date1, date2, group, car, customer, payment, cardnum)
         self.__service.change_instance(order, new_order)
+        self.__service.add_order(new_order)
         print('Change complete!')
         self.get_more()
 
