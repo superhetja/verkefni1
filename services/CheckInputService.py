@@ -16,18 +16,18 @@ class CheckInput:
         pass
 
     def is_valid_number_between(self, num, lower, higher):
-        errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustaf.'
+        errorprompt = 'Incorrect input\nEnter only numbers.'
         try:
             num = int(num)
             if num > higher or num < lower:
-                errorprompt = 'Rangur innsláttur.'
+                errorprompt = 'Incorrect input.'
                 raise ValueError
             return None
         except ValueError:
             return errorprompt
             
     def is_valid_email(self, email):
-        errorprompt = 'Rangt netfang\nSláðu inn gilt netfang.'
+        errorprompt = 'Incorrect email\nEnter a valid email address.'
         try:
             atsymbol = email.index('@')
             email.index('.', atsymbol)
@@ -36,7 +36,7 @@ class CheckInput:
             return errorprompt
 
     def is_valid_number(self,num):
-        errorprompt = 'Rangur innsláttur\nSláðu inn eingöngu heiltölur.'
+        errorprompt = 'Incorrect input\nEnter only integers.'
         try:
             int(num)
             return None
@@ -44,13 +44,13 @@ class CheckInput:
             return errorprompt
 
     def is_valid_letter(self, letter, valid_letters):
-        errorprompt = 'Rangur innsláttur'
+        errorprompt = 'Incorrect input'
         if letter in valid_letters:
             return None
         return errorprompt
 
     def is_string(self, string):
-        errorprompt = 'Rangar insláttur\nSláðu inn eingöngu bókstafi.'
+        errorprompt = 'Incorrect input\nPlease enter only letters.'
         string = string.split()
         for i in string:
             if i.isalpha() == False:
@@ -58,18 +58,18 @@ class CheckInput:
         return None
 
     def is_valid_number_length(self, num, length):
-        errorprompt = 'Rangur insláttur\nSláðu inn eingöngu tölustafi.'
+        errorprompt = 'Incorrect\nEnter onlu numbers.'
         try:
             num = int(num)
             if len(str(num)) != length:
-                errorprompt = 'Rangur fjöldi tölustafa'
+                errorprompt = 'incorrect number of digits'
                 raise ValueError
             return None
         except ValueError:
             return errorprompt
 
     def is_valid_between_two_letters(self, a, b, choice):
-        errorprompt = 'Ekki rétt valið\nVeldu rétt'
+        errorprompt = 'Not the right choice\nChoose the correct one'
         if choice == a or choice == b:
             return None
         else:
@@ -77,7 +77,7 @@ class CheckInput:
 
 
     def is_valid_date(self, date):
-        errorprompt = 'Ógild dagsetning'
+        errorprompt = 'Invalid date'
         try:
             if '.' in date:
                 seperator = '.'
@@ -92,7 +92,7 @@ class CheckInput:
             return(errorprompt)
 
     def is_carnum(self, carnum):
-        errorprompt = 'Rangur innsláttur'
+        errorprompt = 'Incorrect input'
         if len(carnum) == 5 and carnum.isalnum():
             return None
         return errorprompt

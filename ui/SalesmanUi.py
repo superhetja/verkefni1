@@ -25,20 +25,20 @@ class Salesman(Ui):
         while True:
             print(self.__header)
                 
-            print(Color.BOLD + "Útleiga"+ Color.END)            
-            print("1. Skrá nýja útleigu")
-            print("2. Fletta upp útleigu")
-            print("3. Skrá skil")
-            print("4. Skoða verðskrá")
+            print(Color.BOLD + "Rental"+ Color.END)            
+            print("1. Register new rental")
+            print("2. Look up rental")
+            print("3. File delivery")
+            print("4. View Price list")
 
-            print(Color.BOLD + "Bílar"+ Color.END)
-            print("5. Skoða bíla")
-            print('6. Skrá nýjann bíl')
+            print(Color.BOLD + "Cars"+ Color.END)
+            print("5. View Car")
+            print('6. File new car')
 
-            print(Color.BOLD + "Viðskiptavinur"+ Color.END)
-            print("7. Skrá nýjan viðskiptavin")
-            print("8. Fletta upp viðskiptavin")
-            print("9. Skoða alla viðskiptavini ")
+            print(Color.BOLD + "Customer"+ Color.END)
+            print("7. File new Customer")
+            print("8. Look up Customer")
+            print("9. View all Customers ")
 
             action = self.get_number_between(1,9)
             if action=='1':
