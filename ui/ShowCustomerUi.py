@@ -52,7 +52,7 @@ class ShowCustomer(Ui):
     #         self.show_customer_main()
     #     else:
     #         pass
-pilu
+
     def choose_customer(self, a_list):
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_customer = a_list[int(choice)-1]

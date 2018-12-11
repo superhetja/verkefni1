@@ -9,3 +9,7 @@ class Price:
     def get_price_one_day(self, group):
         price_wo_tax = self.price_dict[group][self.PRICE]
         return price_wo_tax * self.TAX
+    
+    def get_price_one_day_w_insurance(self, group):
+        price_w_tax = self.get_price_one_day(group)
+        return price_w_tax + self.INSURANCE
