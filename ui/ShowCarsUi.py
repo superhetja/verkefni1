@@ -5,7 +5,7 @@ from ui.Ui import Ui
 from ui.HeaderUi import Header
 from models.Color import Color
 
-class ShowCars:
+class ShowCars(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__service = CarService()
