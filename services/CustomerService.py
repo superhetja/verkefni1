@@ -7,6 +7,9 @@ from services.Service import Service
 class CustomerService(Service):
     REPO = CustomerRepository()
 
+    def __init__(self):
+        Service.__init__(self)
+        
     def add_customer(self, customer):
         '''Tekur inn vidskiptavin og sendir hann i repo sem baetir honum i customers.txt'''
         self.__repo.add_content(customer)

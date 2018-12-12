@@ -2,18 +2,21 @@ from repositories.PriceListRepository import PriceListRepository
 from services.Service import Service
 from models.Price import Price
 
-class PriceListService(Service):  
+class PriceListService(Service): 
+
     REPO = PriceListRepository()
 
     def __init__(self):
         self.__price = Price()
 
     def calculate_price_x_days(self, group, days):
+        '''reiknar út verðin á x mörgum dögum og skilar útkomunni'''
         price_w_tax = self.__price.get_price_one_day(group)
         price_all_period = price_w_tax * int(days)
         return price_all_period
     
     def calculate_price_x_days_w_insurance(self,group,days):
+        '''Reiknar út verðin á x mörgum dögum með tryggingu og skilar útkomunni'''
         price_all_period = self.calculate_price_x_days(group,days)
         return price_all_period + self.__price.INSURANCE
 

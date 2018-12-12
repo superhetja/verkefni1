@@ -25,7 +25,7 @@ class OrderUi(Ui):
         date1 = self.__service.get_today()
         # date1 = self.get_date(self.BOOKINGDATEPROMPT,)
         # date1 = self.__service.get_datetime(date1)
-        date2 = self.get_date(self.RETURNDATEPROMPT)
+        date2 = self.get_date(self.RETURNDATEPROMPT, date1)
         date2 = self.__service.get_datetime(date2)
         time_period = self.__service.get_time_period(date1,date2)
         print()
@@ -58,8 +58,8 @@ class OrderUi(Ui):
         price = Price.price_dict[str(group)][Price.PRICE]
         total_price = price*period
         print('Price of order:')
-        print('Price without tax:\t{:.0f}\tPrice with tax:\t{:.0f}'.format(total_price,total_price*tax))
-        print('Insurance: \t\t{:.0f}\tPayment: \t{:.0f}'.format(insurance,(total_price*tax)+insurance)) 
+        print('Price without tax:\t{:,d.0f}\tPrice with tax:\t{:,d.0f}'.format(total_price,total_price*tax))
+        print('Insurance: \t\t{:,d.0f}\tPayment: \t{:,d.0f}'.format(insurance,(total_price*tax)+insurance)) 
 
     def get_car(self):
         '''Skilar bíl sem viskiptavinur velur'''

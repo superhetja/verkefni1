@@ -14,6 +14,7 @@ class ShowOrder(Ui):
 
     def show_order_main(self):
         '''Aðal fallið'''
+        self.clear_screen()
         self.print_menu()
         action = self.get_number_between(1,2)
         if action == '1':

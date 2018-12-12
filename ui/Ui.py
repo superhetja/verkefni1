@@ -66,16 +66,19 @@ class Ui:
         '''les inn lengd af numerum'''
         while True:
             num = input(prompt)
+            if '-' in num:
+                num = num.split('-')
+                num = join
             errorprompt = self.__check_input.is_valid_number_length(num,length)
             if errorprompt == None:
                 return num
             print(errorprompt)
 
-    def get_date(self, prompt): #Vantar að villumeðhöndla
+    def get_date(self, prompt, smaller_date): #Vantar að villumeðhöndla
         '''les dagsettninguna'''
         while True:
             date = input(prompt)
-            errorprompt = self.__check_input.is_valid_date(date)
+            errorprompt = self.__check_input.is_valid_date(date, smaller_date)
             if errorprompt == None:
                 return date
             print(errorprompt)
