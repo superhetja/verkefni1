@@ -15,16 +15,11 @@ class ShowCustomer(Ui):
         self.__color = Color()
         self.__check_input = CheckInput()
 
-    def print_menu(self):
-        '''prentar ut valmyndina'''
-        print(Color.BOLD+'Search customer'+Color.END)
-        print('1. Search customer')
-        print('2. View all customers')
-
-
     def search_customer(self):
         '''leitar ad vidskiptavini med tvi ad setja inn nafnid'''
-        search = input('Input search: ').title()
+        self.clear_screen()
+        print(Color.BOLD+'Search customer'+Color.END)
+        search = input('Input search: ').lower()
         customers = self.__service.get_matches(search)
         self.print_list(customers)
         if len(customers) == 0:
@@ -34,6 +29,8 @@ class ShowCustomer(Ui):
 
     def print_all_customers(self):
         '''prentar ut alla vidskiptavini'''
+        self.clear_screen()
+        print(Color.BOLD + 'Yfirlit yfir viðskiptavini' + Color.END)
         customers = self.__service.get_full_content()
         self.print_list(customers)
         self.choose_customer(customers)

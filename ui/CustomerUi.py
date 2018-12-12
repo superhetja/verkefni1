@@ -14,6 +14,7 @@ class CustomerUi(Ui):
     def customer_main(self):
         '''synir main fallid'''
         print(self.__header)
+        self.clear_screen()
         print(Color.BOLD + "Register customer" + Color.END)
         self.new_customer()
 
