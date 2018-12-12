@@ -1,7 +1,7 @@
 '''keyrir pretna bíla, prenta, lausa bíla, pretna bókaða bíla'''
-#from ui.ShowCarsUi import ShowCars
-#a = ShowCars()
-#a.show_cars_menu()
+# from ui.ShowCarsUi import ShowCars
+# a = ShowCars()
+# a.show_cars_menu()
 
 '''keyrir bæta við viskiptavin'''
 # from ui.CustomerUi import CustomerUi
@@ -33,6 +33,6 @@
 # print(b)
 
 
-from ui.PriceListUi import ShowPrice
-a = ShowPrice()
-a.show_price_list()
+# from ui.PriceListUi import ShowPrice
+# a = ShowPrice()
+# a.show_price_list()

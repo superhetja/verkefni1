@@ -66,9 +66,8 @@ class Ui:
         '''les inn lengd af numerum'''
         while True:
             num = input(prompt)
-            if '-' in num:
-                num = num.split('-')
-                num = join
+            while '-' in num:
+                num = num.replace('-','')
             errorprompt = self.__check_input.is_valid_number_length(num,length)
             if errorprompt == None:
                 return num
