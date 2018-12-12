@@ -83,7 +83,7 @@ class ShowCustomer(Ui):
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
-        print('Change complete.')
+        print('Change complete')
         self.get_more()
 
          

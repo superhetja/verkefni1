@@ -19,12 +19,12 @@ class Order:
 
     def __str__(self):
         '''Prentar út upplýsingar um tíman, bílin, trygginguna og fl.'''
-        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {} \n\tCustomer: {} \t\t\tPayment: {} \n\tCard number: {} \t\tStatus: {}".format(self.get_printable_date(self.__date1), self.get_printable_date(self.__date2), 
-        self.__car, self.__extra_insurance,self.__price, self.__customer, self.__payment, self.__card_number, self.get_status())        
+        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {:,d} kr \n\tCustomer ssn: {} \t\tPayment: {} \n\tCard number: {} \tStatus: {}\n".format(self.print_date(self.__date1), self.print_date(self.__date2), 
+        self.__car, self.print_extra_insurance(),self.__price, self.print_ssn(), self.__payment, self.print_cardnum(), self.get_status())        
     
     def __repr__(self):
         '''Prentar út klasa instans'''
-        return "Order('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
+        return "Order('{}','{}','{}','{}',{},'{}','{}','{}',{})".format(self.__date1,
         self.__date2,self.__group,self.__car,self.__extra_insurance,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
@@ -55,9 +55,27 @@ class Order:
         time_period = (date2 - date1).days
         return time_period
 
-    def get_printable_date(self, date):
+    def print_date(self, date):
+        '''Gerir dagsetningu prentanlegri'''
         year, month, day = date.split('-')
         return '{}.{}.{}'.format(day, month, year)
+
+    def print_extra_insurance(self):
+        ''' Gerir vidbotatryggingu prentanlega'''
+        if self.__extra_insurance == True:
+            return 'Yes'
+        else:
+            return 'No'
+    
+    def print_ssn(self):
+        '''Gerir kennitöluprentanlegri'''
+        ssn = self.__customer[:6]+'-'+self.__customer[6:]
+        return ssn
+
+    def print_cardnum(self):
+        ''' gerir kortanumer prentanlegra'''
+        cardnum = self.__card_number[:4]+'-'+self.__card_number[4:8]+'-'+self.__card_number[8:12]+'-'+self.__card_number[12:16]
+        return cardnum
 
     def get_price_per_day(self, group):
         '''Skilar greiðslu á hvað kostar að leigja bíl í einn dag'''
@@ -94,4 +112,3 @@ class Order:
     def file_delivery(self):
         '''Prentar út ef það er búið að skila bílnum '''
         self.__returned = True
-        self.__status = 'Delivered'
