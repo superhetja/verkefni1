@@ -3,6 +3,7 @@ from models.Car import Car
 from services.CheckInputService import CheckInput
 from models.Clear import Clear
 from ui.Ui import Ui
+ 
 
 class AddCarUi(Ui):
     def __init__(self):
@@ -13,6 +14,7 @@ class AddCarUi(Ui):
         self.__input_ui=Ui()
 
     def add_car_menu(self):
+        '''prentar ut addcar menu '''
         self.__clear.clear_screen()
         self.car_group_menu()
         group=self.__input_ui.get_number_between(1,6)
@@ -42,6 +44,7 @@ class AddCarUi(Ui):
             return 'Manual'
 
     def get_more(self):
+        '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])
         if letter == 'j':
             self.add_car_menu()
@@ -50,6 +53,7 @@ class AddCarUi(Ui):
 
 
     def car_group_menu(self):
+        '''menu fyrir bilategurndir'''
         print('Car groups')
         print('1. Standar')
         print('2. Luxury')

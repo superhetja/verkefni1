@@ -13,6 +13,7 @@ class ShowPrice(Ui):
         
  
     def show_price_list(self):
+        '''Sprentar ut verdlista med og an tryggingu fyrir 1 dag '''
         #self.__clear.clear_screen()
         print('Price without insurance for 1 day')
         print('Price for Standard car: \t{:.0f}'.format(self.__price.get_price_one_day('1')))
@@ -33,11 +34,13 @@ class ShowPrice(Ui):
         self.get_x_days()
 
     def get_x_days(self):
+        '''spyr hversu marga daga vill vidkomandi leigja bilinn '''
         days = self.get_number('How many days: ')
         self.show_price_list_x_days(days)
 
 
     def show_price_list_x_days(self,days):
+        '''Sprentar ut verdlista med og an tryggingu fyrir x marga daga '''
         print('Price without insurance for {} days'.format(days))
         print('Price for Standard car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('1',days)))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('2',days)))
@@ -57,6 +60,7 @@ class ShowPrice(Ui):
         self.get_more()
 
     def get_more(self):
+        '''Spyr notenda um meira, hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
             self.get_x_days()
