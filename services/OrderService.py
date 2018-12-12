@@ -5,30 +5,40 @@ from models.Car import Car
 from services.Service import Service
 from datetime import date
 from models.Price import Price
+from services.CarService import CarService
 
 
 class OrderService(Service):
-    REPO = OrderRepository()
-
+    #REPO = OrderRepository()
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
         self.__order_repo = OrderRepository()
+        self.__car_service = CarService()
 
-    def add_order(self, order): 
+    def add_order(self, order):
+        '''Tekur inn pöntun og baetir henni við orders.txt'''
         carnumber = order.get_car()
         self.book_car(carnumber)
         self.__order_repo.add_content(order)
 
     def book_car(self, carnumber):
+        ''''''
         cars = self.__car_repo.get_content()
         for car in cars:
             if car.get_carnumber() == carnumber:
                 car.book_car()
-                break
                 self.__car_repo.overwrite_file(cars)
-            else:
-                s = input('fannst ekki')
+                break
+
+    def return_car(self, order):
+        carnumber = order.get_car()
+        cars = self.__car_repo.get_content()
+        for car in cars:
+            if car.get_carnumber() == carnumber:
+                car.return_car()
+                self.__car_repo.overwrite_file(cars)
+                break
 
     def get_datetime(self,day):
         day, month, year = day.split('.')
@@ -54,14 +64,46 @@ class OrderService(Service):
         else:
             return Price.INSURANCE
 
-    # def get_orders(self):
-    #     return self.__repo.get_content()
+    def sort_cars(self):
+        '''Tekur alla lausa bíla og flokkar þá eftir hvaða flokki þeir tilheyra'''
+        available_cars = self.__car_service.get_available_cars()
+        car_list = [[],[],[],[],[],[],[]]
+        for car in available_cars:
+            group = car.get_group()
+            car_list[int(group)-1].append(car)
+        return car_list, available_cars
 
-    # def get_matches(self, search):
-    #     orders_that_match = []
-    #     orders = self.get_orders()
-    #     for order in orders:
-    #         if search in order.__repr__():
-    #             orders_that_match.append(order)
-    #         return order
+    def get_cars_in_group(self, group):
+        sorted_list, available_cars = self.sort_cars()
+        if group == '7':
+            return available_cars
+        else:
+            return sorted_list[int(group)-1]
+
+    def file_delivery(self, order):
+        self.return_car(order)
+        orders = self.get_full_content()
+        orders.remove(order)
+        order.file_delivery()
+        orders.append(order)
+        self.__order_repo.overwrite_file(orders)
+
+    def file_delivery_matches(self, search):
+        matches = []
+        full_list = self.file_delivery_full_content()
+        for instance in full_list:
+            if (search in instance.__repr__()):
+                matches.append(instance)
+        return matches
+
+    def file_delivery_full_content(self):
+        full_list = self.get_full_content()
+        not_returned_orders = []
+        for instance in full_list:
+            if instance.get_returned() == 'False':
+                not_returned_orders.append(instance)
+        return not_returned_orders
+        
+        
+
         

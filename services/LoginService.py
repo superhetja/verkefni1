@@ -6,6 +6,7 @@ class LoginService(object):
         self.__login_repo = LoginRepository()
 
     def check_username(self, username):
+        '''VEIT EKKI ALVEG HVAÐ ER AÐ GERAST'''
         if self.is_valid(username):
             password = self.__login_repo.get_password(username)
         else:
