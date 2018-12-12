@@ -17,6 +17,7 @@ class FileDelivery(Ui):
     
     def file_delivery_main(self):
         '''Aðal fall! Kallar á menu og bidur notanda um leid'''
+        self.clear_screen()
         self.file_delivery_menu()
         action = self.get_number_between(1,2)
         if action == '1':
