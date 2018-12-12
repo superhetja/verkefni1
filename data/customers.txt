@@ -9,12 +9,6 @@ Customer('Jona Gudfinnsdottir','2304842949','jonag@gmail.com','1234567')
 Customer('Jon Petur Jonsson','2305892829','jonnip@ru.is','5812345')
 Customer('Gunna Sól Jónsdóttir','1106904591','gunnatunna@hotmail.com','6592214')
 Customer('Jónína Berglind Jónsdóttir','2208992929','jolla@gmail.com','6748923')
-<<<<<<< HEAD
 Customer('Helga','0903042342','helga@gmail.com','6174807')
-=======
 Customer('Þordis Hannesdóttir','2608892369','trolla@gmail.com','6616723')
-<<<<<<< HEAD
 Customer('Haraldur Jonsson','4505049382','hallijon@gmail.com','8976546')
-=======
->>>>>>> b1e88bdaec8ca8bc7fd4ac30286d771017e813b8
->>>>>>> 10ea2d236b1231c42ede452edab6bccfa5eb22c8
