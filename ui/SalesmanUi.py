@@ -58,7 +58,7 @@ class Salesman(Ui):
             elif action=='3':
                 self.__filedelivery.file_delivery_main() #Komið
             elif action=='4':
-                self.__showprice.show_price_list()
+                self.__showprice.show_price_list() #Komið
             elif action =='5':
                 self.__showcar.show_cars_menu()
             elif action =='6':

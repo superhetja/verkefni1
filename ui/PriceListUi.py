@@ -13,7 +13,7 @@ class ShowPrice(Ui):
         
  
     def show_price_list(self):
-        '''Main     prentar ut 1 dag'''
+        '''Main prentar ut 1 dag'''
         #self.__clear.clear_screen()
         print('Price without insurance for 1 day')
         print('Price for Standard car: \t{:.0f}'.format(self.__price.get_price_one_day('1')))
