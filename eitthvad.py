@@ -1,4 +1,4 @@
-a = '0234561234'
-while '-' in a:
-    a = a.replace('-', '')
-print(a)
+num = '0403962179'
+while '-' in num:
+    num = num.replace('-','')
+print(int(num))
