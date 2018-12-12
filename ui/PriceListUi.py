@@ -36,8 +36,8 @@ class ShowPrice(Ui):
     def menu(self):
         '''spyr hversu marga daga vill vidkomandi leigja bilinn '''
         print()
-        print('1. Calculate based on days.')
-        print('2. Back to Main Menu.')
+        print('1. Calculate based on days')
+        print('2. Back to Main Menu')
         action = self.get_number_between(1,2)
         if action == '1':
             self.show_price_list_x_days()
