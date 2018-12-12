@@ -18,7 +18,8 @@ class Order:
         self.__status = self.get_status(returned)
 
     def __str__(self):
-        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {} \n\tCustomer: {} \t\t\tPayment: {} \n\tCard number: {} \t\tStatus: {}".format(self.__date1, self.__date2, self.__car, self.__extra_insurance,self.__price, self.__customer, self.__payment, self.__card_number, self.__status)
+        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {} \n\tCustomer: {} \t\t\tPayment: {} \n\tCard number: {} \t\tStatus: {}".format(self.get_printable_date(date1), self.get_printable_date(date2), 
+        self.__car, self.__extra_insurance,self.__price, self.__customer, self.__payment, self.__card_number, self.__status)
         
     def __repr__(self):
         return "Order('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
@@ -49,6 +50,10 @@ class Order:
         date2 = date(int(year2), int(month2), int(day2))
         time_period = (date2 - date1).days
         return time_period
+
+    def get_printable_date(self, date):
+        year, month, day = date.split('-')
+        return '{}-{}-{}'.format(day, month, year)
 
     def get_price_per_day(self, group):
         price_per_day = Price.price_dict[str(group)][Price.PRICE]
