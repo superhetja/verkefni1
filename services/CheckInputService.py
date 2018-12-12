@@ -20,7 +20,7 @@ class CheckInput:
         try:
             num = int(num)
             if num > higher or num < lower:
-                errorprompt = 'Incorrect input.'
+                errorprompt = 'Input out of range.'
                 raise ValueError
             return None
         except ValueError:

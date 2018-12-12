@@ -12,7 +12,7 @@ Car('3','Mini','Countryman cooper se all4 plug in','BAC18','5','Automatic','5',F
 Car('4','BMW','X5 XDRIVE30D','AGA77','5','Automatic','5',False)
 Car('5','Range rover','Evoque HSR Dynamic','SEE27','5','Automatic','5',False)
 Car('6','Ford','Transit','TTT66','3','Manual','5',False)
-Car('5','Ford','F150 Super Crew leður','HJH77','5','Automatic','5',True)
+Car('5','Ford','F150 Super Crew leður','HJH77','5','Automatic','5',False)
 Car('2','BMW','3 320D','FFF55','5','Automatic','5',False)
 Car('2','Ford','Mondeo Titanium','WEW88','5','Automatic','5',False)
 Car('4','Subaru','Forester Premium','GYJ89','5','Automatic','5',False)

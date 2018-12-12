@@ -2,6 +2,7 @@ from ui.Ui import Ui
 from services.OrderService import OrderService
 from models.Color import Color
 
+#Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class FileDelivery(Ui):
     
     def __init__(self):
@@ -27,7 +28,7 @@ class FileDelivery(Ui):
     def search_order(self):
         '''Biður um leitarstreng og prentar ut allar pantanir sem passa við þann streng'''
         search = input('Input search: ')
-        orders = self.__service.get_matches(search)
+        orders = self.__service.file_delivery_matches(search)
         self.print_list(orders)
         if len(orders) == 0:
             self.search_order()
@@ -37,7 +38,7 @@ class FileDelivery(Ui):
 
     def print_all_orders(self):
         '''Prentar ut allar pantanir'''
-        orders = self.__service.get_full_content()
+        orders = self.__service.file_delivery_full_content()
         self.print_list(orders)
         if len(orders) == 0:
             self.get_more()

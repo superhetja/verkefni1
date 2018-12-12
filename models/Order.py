@@ -26,8 +26,8 @@ class Order:
         self.__returned)
 
     def get_status(self, returned):
-        if returned:
-            return 'Returned'
+        if returned == True:
+            return 'Delivered'
         else:
             return 'In rent'    #veit ekki með þetta orðalag
 
@@ -77,6 +77,9 @@ class Order:
 
     def get_extra_insurance(self):
         return self.__extra_insurance
+
+    def get_returned(self):
+        return self.__returned
 
     def file_delivery(self):
         self.__returned = True

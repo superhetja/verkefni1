@@ -86,6 +86,23 @@ class OrderService(Service):
         order.file_delivery()
         orders.append(order)
         self.__order_repo.overwrite_file(orders)
+
+    def file_delivery_matches(self, search):
+        matches = []
+        full_list = self.file_delivery_full_content()
+        for instance in full_list:
+            if (search in instance.__repr__()):
+                matches.append(instance)
+        return matches
+
+    def file_delivery_full_content(self):
+        full_list = self.get_full_content()
+        not_returned_orders = []
+        for instance in full_list:
+            if instance.get_returned() == 'False':
+                not_returned_orders.append(instance)
+        return not_returned_orders
+        
         
 
         
