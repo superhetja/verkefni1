@@ -72,7 +72,7 @@ class OrderUi(Ui):
         self.print_list(cars_in_group)
         choice = self.get_number_between(1,len(cars_in_group))
         car = cars_in_group[int(choice)-1]
-        print('Choosen car:', car)
+        print('Choosen car:\n', car)
         return car
 
     def get_customer(self):
