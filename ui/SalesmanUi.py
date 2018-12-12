@@ -69,4 +69,4 @@ class Salesman(Ui):
             elif action == '8':
                 self.__showcustomer.search_customer()
             elif action =='9':
-                self.__showcustomer.print_all_customers()
+                self.__showcustomer.print_all_customers() #Komið
