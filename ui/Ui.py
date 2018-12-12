@@ -110,7 +110,7 @@ class Ui:
     def get_carnum(self):
         '''les inn bilnumer a bil'''
         while True:
-            carnum = input(self.CARNUMPROMPT)
+            carnum = input(self.CARNUMPROMPT).upper()
             errorprompt = self.__check_input.is_carnum(carnum)
             if errorprompt == None:
                 return carnum
