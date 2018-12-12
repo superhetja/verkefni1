@@ -1,6 +1,5 @@
 from services.CarService import CarService
 from services.CheckInputService import CheckInput
-from models.Clear import Clear
 from ui.Ui import Ui
 from ui.HeaderUi import Header
 from models.Color import Color
@@ -10,9 +9,7 @@ class ShowCars(Ui):
         Ui.__init__(self)
         self.__service = CarService()
         self.__check_input = CheckInput()
-        self.__clear = Clear()
         self.__header = Header()
-        #self.__input_ui=Ui()
 
     def print_menu(self):
         '''prentar ut valmyndina'''

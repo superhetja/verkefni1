@@ -1,6 +1,5 @@
 from services.CarService import CarService
 from ui.HeaderUi import Header
-from models.Clear import Clear
 from models.Color import Color
 from ui.Ui import Ui
 from ui.OrderUi import OrderUi
@@ -25,7 +24,6 @@ class Salesman(Ui):
         self.__showorder = ShowOrder()
         self.__filedelivery = FileDelivery()
         self.__showprice = ShowPrice()
-        #self.__input_ui = Ui()
 
     def main_menu(self):
         '''prentar ut valmynd og hvada numer gerir hvad '''
@@ -54,22 +52,22 @@ class Salesman(Ui):
 
             action = self.get_number_between(1,10)
             if action=='1':
-                self.__order.set_order() #Komið
+                self.__order.set_order()
             elif action=='2':
-                self.__showorder.show_order_main() #Komið
+                self.__showorder.show_order_main()
             elif action=='3':
                 self.__showorder.print_all_orders()
             elif action == '4':
-                self.__filedelivery.file_delivery_main() #Komið
+                self.__filedelivery.file_delivery_main()
             elif action=='5':
-                self.__showprice.show_price_list() #Komið
+                self.__showprice.show_price_list()
             elif action =='6':
                 self.__showcar.show_cars_main()
             elif action =='7':
                 self.__addcar.add_car_menu()
             elif action == '8':
-                self.__customer.customer_main() #Komið
+                self.__customer.customer_main()
             elif action == '9':
-                self.__showcustomer.search_customer() #Komið
+                self.__showcustomer.search_customer()
             elif action =='10':
-                self.__showcustomer.print_all_customers() #Komið
+                self.__showcustomer.print_all_customers()

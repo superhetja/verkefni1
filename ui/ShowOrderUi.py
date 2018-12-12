@@ -4,7 +4,6 @@ from ui.Ui import Ui
 from services.OrderService import OrderService
 from ui.HeaderUi import Header
 
-#Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class ShowOrder(Ui):
     def __init__(self): 
         Ui.__init__(self)
@@ -107,5 +106,3 @@ class ShowOrder(Ui):
             self.show_order_main()
         else:
             pass
-    # def get_more(self):
-    #     pass
