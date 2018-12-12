@@ -1,6 +1,5 @@
 from services.CarService import CarService
 from ui.HeaderUi import Header
-from models.Clear import Clear
 from models.Color import Color
 from ui.Ui import Ui
 from ui.OrderUi import OrderUi
@@ -25,7 +24,6 @@ class Salesman(Ui):
         self.__showorder = ShowOrder()
         self.__filedelivery = FileDelivery()
         self.__showprice = ShowPrice()
-        #self.__input_ui = Ui()
 
     def main_menu(self):
         '''prentar ut valmynd og hvada numer gerir hvad '''

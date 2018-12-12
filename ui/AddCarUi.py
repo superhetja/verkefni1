@@ -1,7 +1,6 @@
 from services.CarService import CarService
 from models.Car import Car
 from services.CheckInputService import CheckInput
-from models.Clear import Clear
 from ui.Ui import Ui
 
 
@@ -22,7 +21,7 @@ class AddCarUi(Ui):
         subbrand = input('Subbrand: ').capitalize()
         carnumber = self.__input_ui.get_carnum()
         seats=self.__input_ui.get_number_between(2,7,'Number of seats: ')
-        transmission=self.get_transmission
+        transmission=self.get_transmission()
         doors=self.__input_ui.get_number_between(3,5,'Number of doors: ')
 
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
