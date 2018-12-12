@@ -19,7 +19,7 @@ class Service:
         matches = []
         full_list = self.get_full_content()
         for instance in full_list:
-            if search in instance.__repr__():
+            if search in instance.__repr__().lower():
                 matches.append(instance)
         return matches
 
