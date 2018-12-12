@@ -24,7 +24,7 @@ class ShowCustomer(Ui):
 
     def search_customer(self):
         '''leitar ad vidskiptavini med tvi ad setja inn nafnid'''
-        search = input('Input search: ').title()
+        search = input('Input search: ')
         customers = self.__service.get_matches(search)
         self.print_list(customers)
         if len(customers) == 0:
