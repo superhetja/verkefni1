@@ -84,5 +84,5 @@ class ShowCustomer(Ui):
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
             self.search_customer()
-        else:
+        else: #Skipun að fara til baka um eina valmynd
             pass
