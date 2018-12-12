@@ -4,14 +4,12 @@ from models.Order import Order
 from ui.HeaderUi import Header
 from services.OrderService import OrderService
 from ui.Ui import Ui
-#from services.CarService import CarService
 from services.CustomerService import CustomerService
 from models.Customer import Customer
 from ui.CustomerUi import CustomerUi
 from models.Car import Car
 from models.Price import Price
 
-#Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class OrderUi(Ui):
     def __init__(self):
         Ui.__init__(self)
@@ -24,8 +22,6 @@ class OrderUi(Ui):
         '''bokar bil i dag'''
         self.clear_screen()
         date1 = self.__service.get_today()
-        # date1 = self.get_date(self.BOOKINGDATEPROMPT,)
-        # date1 = self.__service.get_datetime(date1)
         date2 = self.get_date(self.RETURNDATEPROMPT, date1)
         date2 = self.__service.get_datetime(date2)
         time_period = self.__service.get_time_period(date1,date2)
@@ -44,7 +40,6 @@ class OrderUi(Ui):
         payment = self.get_payment()
         cardnumber = self.get_number_length(self.CARDPROMPT, 16)
         new_order = Order(str(date1), str(date2), group, carnum, extra_insurance, customer, payment, cardnumber)
-       # self.print_order(new_order)
         self.__service.add_order(new_order)
         print()
         print("Rent booked!")
@@ -127,14 +122,3 @@ class OrderUi(Ui):
             self.set_order()
         else:
             pass
-
-    
-
-    # #Búa bara til str fall í Order til að prenta út order
-    # def print_order(self, new_order):
-    #     print('Tímabil: {} - {}'.format(new_order.get_date1, new_order.get_date2))
-    #     print('Bíll: {}'.format(new_order.get_car))
-    #     #print('Kostanður: {}'.format(self.__order.get_cost()))
-    #     print('Viðskiptavinur: {}'.format(new_order.get_customer()))
-    #     print('Greiðslumáti: {}'.format(new_order.get_payment()))
-    #     #print('Heildarkostnaður: {}'.format(new_order.num_of_days * 'PRICE')

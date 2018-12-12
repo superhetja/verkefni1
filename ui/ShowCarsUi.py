@@ -10,7 +10,6 @@ class ShowCars(Ui):
         self.__service = CarService()
         self.__check_input = CheckInput()
         self.__header = Header()
-        #self.__input_ui=Ui()
 
     def print_menu(self):
         '''prentar ut valmyndina'''

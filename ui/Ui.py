@@ -1,6 +1,7 @@
 from services.CheckInputService import CheckInput
 from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
+from models.Color import Color
 
 class Ui:
     NAMEPROMPT = 'Name: '
@@ -94,7 +95,7 @@ class Ui:
     def print_list(self,a_list):
         count = 1
         if len(a_list) == 0:
-            print('No results found.')
+            print(Color.RED + 'No results found.' + Color.END)
         else: 
             for i in a_list:
                 print(str(count)+'.',i)
@@ -108,4 +109,3 @@ class Ui:
             if errorprompt == None:
                 return carnum
             print(errorprompt)
-

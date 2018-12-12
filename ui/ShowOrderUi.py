@@ -4,7 +4,6 @@ from ui.Ui import Ui
 from services.OrderService import OrderService
 from ui.HeaderUi import Header
 
-#Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class ShowOrder(Ui):
     def __init__(self): 
         Ui.__init__(self)
@@ -12,24 +11,10 @@ class ShowOrder(Ui):
         self.__service = OrderService() 
         self.__header = Header()
 
-    def show_order_main(self):
-        '''Aðal fallið'''
-        self.clear_screen()
-        self.print_menu()
-        action = self.get_number_between(1,2)
-        if action == '1':
-            self.search_order()
-        else:
-            self.print_all_orders()
-
-    def print_menu(self):
-        '''Pretnar ut show order main_menu'''
-        print(Color.BOLD+'Search order'+Color.END)
-        print('1. Search order')
-        print('2. View all orders')
-
     def search_order(self):
         '''Biður um leitarstreng og prentar ut allar pantanir sem passa við þann streng'''
+        self.clear_screen()
+        print(Color.BOLD+'Search order'+Color.END)
         search = input('Input search: ')
         orders = self.__service.get_matches(search)
         self.print_list(orders)
@@ -40,6 +25,8 @@ class ShowOrder(Ui):
 
     def print_all_orders(self):
         '''Prentar ut allar pantanir'''
+        self.clear_screen()
+        print(Color.BOLD+'All orders'+Color.END)
         orders = self.__service.get_full_content()
         self.print_list(orders)
         if len(orders) == 0:
@@ -119,5 +106,3 @@ class ShowOrder(Ui):
             self.show_order_main()
         else:
             pass
-    # def get_more(self):
-    #     pass
