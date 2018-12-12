@@ -31,6 +31,7 @@ class Salesman(Ui):
         '''prentar ut valmynd og hvada numer gerir hvad '''
         action = '1'
         while action != '10':
+            self.clear_screen()
             print(self.__header)
                 
             print(Color.BOLD + "Rental"+ Color.END)            
@@ -60,7 +61,7 @@ class Salesman(Ui):
             elif action=='4':
                 self.__showprice.show_price_list() #Komið
             elif action =='5':
-                self.__showcar.show_cars_menu()
+                self.__showcar.show_cars_main()
             elif action =='6':
                 self.__addcar.add_car_menu()
             elif action == '7':
@@ -68,4 +69,4 @@ class Salesman(Ui):
             elif action == '8':
                 self.__showcustomer.search_customer()
             elif action =='9':
-                self.__showcustomer.print_all_customers()
+                self.__showcustomer.print_all_customers() #Komið

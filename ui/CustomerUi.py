@@ -14,12 +14,12 @@ class CustomerUi(Ui):
     def customer_main(self):
         '''synir main fallid'''
         print(self.__header)
+        print(Color.BOLD + "Register customer" + Color.END)
         self.new_customer()
 
     def new_customer(self):
         '''baetir vid nyjum vidskiptavini'''
-        print(Color.BOLD + "Register customer" + Color.END)
-        print("Enter custumer information :")
+        print("Enter custumer information")
         name = self.get_string(self.NAMEPROMPT)
         ssn = self.get_number_length(self.SSNPROMPT, 10)
         email = self.get_email()
