@@ -74,7 +74,7 @@ class ShowOrder(Ui):
     def change_order(self, order):
         '''Breytir pontun eftir thvi hvad vidskiptavinur velur'''
         print()
-        print('What do you want to change?')
+        print(Color.BOLD + 'What do you want to change?' + Color.END)
         print('1. Pick up date')
         print('2. Return date')
         print('3. Payment method')
