@@ -13,6 +13,7 @@ class ShowPrice(Ui):
         
  
     def show_price_list(self):
+        '''Main     prentar ut 1 dag'''
         #self.__clear.clear_screen()
         print('Price without insurance for 1 day')
         print('Price for Standard car: \t{:.0f}'.format(self.__price.get_price_one_day('1')))
@@ -30,14 +31,22 @@ class ShowPrice(Ui):
         print('Price for Jeep: \t\t{}'.format(self.__price.get_price_one_day_w_insurance('5')))
         print('Price for Van \t\t\t{}'.format(self.__price.get_price_one_day_w_insurance('6')))
         
-        self.get_x_days()
+        self.menu()
 
-    def get_x_days(self):
+    def menu(self):
+        print()
+        print('1. Calculate based on days.')
+        print('2. Back to Main Menu.')
+        action = self.get_number_between(1,2)
+        if action == '1':
+            self.show_price_list_x_days()
+        else:
+            pass
+
+
+    def show_price_list_x_days(self):
         days = self.get_number('How many days: ')
-        self.show_price_list_x_days(days)
-
-
-    def show_price_list_x_days(self,days):
+        ''' Pretnar ut utreikinga ut fra notanda inputi '''
         print('Price without insurance for {} days'.format(days))
         print('Price for Standard car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('1',days)))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('2',days)))
@@ -45,7 +54,7 @@ class ShowPrice(Ui):
         print('Price for SUV: \t\t\t{:.0f}'.format(self.__service.calculate_price_x_days('4',days)))
         print('Price for Jeep: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('5',days)))
         print('Price for Van: \t\t\t{:.0f}'.format(self.__service.calculate_price_x_days('6',days)))
-
+        print()
         print('Price with insurance for {} days'.format(days))
         print('Price for Small car: {:.0f}'.format(self.__service.calculate_price_x_days_w_insurance('1',days)))
         print('Price for Luxury car: {:.0f}'.format(self.__service.calculate_price_x_days_w_insurance('2',days)))
@@ -54,14 +63,8 @@ class ShowPrice(Ui):
         print('Price for Jeep: {:.0f}'.format(self.__service.calculate_price_x_days_w_insurance('5',days)))
         print('Price for van {:.0f}'.format(self.__service.calculate_price_x_days_w_insurance('6',days)))
         
-        self.get_more()
-
-    def get_more(self):
-        letter = self.get_letter(self.MOREPROMPT,['y','n'])
-        if letter == 'y':
-            self.get_x_days()
-        else:
-            pass
+        self.menu()
+        
 
 
         
