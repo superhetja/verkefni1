@@ -102,8 +102,4 @@ class OrderService(Service):
         for instance in full_list:
             if instance.get_returned() == 'False':
                 not_returned_orders.append(instance)
-        return not_returned_orders
-        
-        
-
-        
+        return not_returned_orders      
