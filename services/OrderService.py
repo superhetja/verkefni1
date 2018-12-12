@@ -9,7 +9,7 @@ from services.CarService import CarService
 
 
 class OrderService(Service):
-    #REPO = OrderRepository()
+    REPO = OrderRepository()
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
