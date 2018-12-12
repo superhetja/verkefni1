@@ -24,7 +24,7 @@ class ShowCustomer(Ui):
 
     def search_customer(self):
         '''leitar ad vidskiptavini med tvi ad setja inn nafnid'''
-        search = input('Input search: ')
+        search = input('Input search: ').title()
         customers = self.__service.get_matches(search)
         self.print_list(customers)
         if len(customers) == 0:
@@ -32,13 +32,11 @@ class ShowCustomer(Ui):
         else:
             self.choose_customer(customers)
 
-
     def print_all_customers(self):
         '''prentar ut alla vidskiptavini'''
         customers = self.__service.get_full_content()
         self.print_list(customers)
         self.choose_customer(customers)
-
 
     def choose_customer(self, a_list):
         '''velja vidskiptavin og moguleikar um ad velja fleira'''
@@ -86,7 +84,6 @@ class ShowCustomer(Ui):
         print('Change complete')
         self.get_more()
 
-         
     def get_more(self):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
