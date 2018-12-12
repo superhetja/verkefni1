@@ -13,6 +13,7 @@ class Repository:
    
 
     def add_content(self, content):
+        '''bætir vid innihaldid i skra'''
         with open(self.FILELOCATION, 'a+') as aFile:
             aFile.write(content.__repr__() + '\n')
         a_list = self.__repo_list
@@ -21,6 +22,7 @@ class Repository:
    #   self.__repo_list.append(customer)
 
     def read_file(self):
+        '''les inn file-a'''
         content = []
         with open(self.FILELOCATION) as aFile:
             for line in aFile.readlines():
@@ -32,6 +34,7 @@ class Repository:
         return self.__repo_list
  
     def overwrite_file(self,new_content):
+        '''yfirskrifar file-a'''
    #   with open('data/customers.txt,'w'): pass
         with open(self.FILELOCATION, 'w') as aFile:
             for instance in new_content:
