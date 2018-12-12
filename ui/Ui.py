@@ -18,6 +18,7 @@ class Ui:
         self.__check_input = CheckInput()
 
     def get_number(self,prompt):
+        '''les inn númer'''
         while True:
             num = input(prompt)
             errorprompt = self.__check_input.is_valid_number(num)
@@ -34,6 +35,7 @@ class Ui:
             print(errorprompt)
 
     def get_email(self):
+        '''les inn email'''
         while True:
             email = input(self.EMAILPROMPT)
             errorprompt = self.__check_input.is_valid_email(email)

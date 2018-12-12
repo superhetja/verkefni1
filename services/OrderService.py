@@ -9,20 +9,21 @@ from services.CarService import CarService
 
 
 class OrderService(Service):
-    REPO = OrderRepository()
-
+    #REPO = OrderRepository()
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
         self.__order_repo = OrderRepository()
         self.__car_service = CarService()
 
-    def add_order(self, order): 
+    def add_order(self, order):
+        '''Tekur inn pöntun og baetir henni við orders.txt'''
         carnumber = order.get_car()
         self.book_car(carnumber)
         self.__order_repo.add_content(order)
 
     def book_car(self, carnumber):
+        ''''''
         cars = self.__car_repo.get_content()
         for car in cars:
             if car.get_carnumber() == carnumber:

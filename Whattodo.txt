@@ -25,3 +25,8 @@ ui:
 
 
 
+-checkInputService (eh sem þarf að tjekka á)
+-carService(komið)
+-customerService(komið)
+-EmployeeService(Geyma)
+-LoginService(eh sem þarf að tjekka á)
