@@ -13,6 +13,7 @@ class Repository:
    
 
     def add_content(self, content):
+        '''bætir vid innihaldid i skra'''
         with open(self.FILELOCATION, 'a+') as aFile:
             aFile.write(content.__repr__() + '\n')
         a_list = self.__repo_list
