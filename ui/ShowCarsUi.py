@@ -53,6 +53,6 @@ class ShowCars(Ui):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
-            self.show_cars_menu()
+            self.show_cars_main()
         else: #Skipun að fara til baka um eina valmynd
             pass

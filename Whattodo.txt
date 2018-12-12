@@ -30,3 +30,6 @@ ui:
 -customerService(komið)
 -EmployeeService(Geyma)
 -LoginService(eh sem þarf að tjekka á)
+
+
+Prentar ekki ut nýjar order....???

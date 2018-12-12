@@ -19,7 +19,7 @@ class AddCarUi(Ui):
         subbrand = input('Subbrand: ').capitalize()
         carnumber = self.__input_ui.get_carnum()
         seats=self.__input_ui.get_number_between(2,7,'Number of seats: ')
-        transmission=self.get_transmission
+        transmission=self.get_transmission()
         doors=self.__input_ui.get_number_between(3,5,'Number of doors: ')
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
