@@ -6,4 +6,4 @@ class Header:
         pass
     
     def __str__(self):
-        return Color.BOLD + 'Car Rental ehf.' + Color.END
+        return Color.BOLD + 'Car Rental ehf' + Color.END

@@ -12,11 +12,11 @@ class CheckInput:
 
     def is_valid_number_between(self, num, lower, higher):
         '''Tekur inn breytu og bil og segir til um hvort breytan se heiltala og se a bilinu'''
-        errorprompt = 'Incorrect input\nEnter numbers only.'
+        errorprompt = 'Incorrect input\nEnter numbers only'
         try:
             num = int(num)
             if num > higher or num < lower:
-                errorprompt = 'Input out of range.'
+                errorprompt = 'Input out of range'
                 raise ValueError
             return None
         except ValueError:
@@ -24,7 +24,7 @@ class CheckInput:
             
     def is_valid_email(self, email):
         '''Tekur inn netfang og athugar hvort thad se gilt'''
-        errorprompt = 'Incorrect email\nEnter a valid email address.'
+        errorprompt = 'Incorrect email\nEnter a valid email address'
         try:
             atsymbol = email.index('@')
             email.index('.', atsymbol)
@@ -34,7 +34,7 @@ class CheckInput:
 
     def is_valid_number(self,num):
         '''Tekur inn breytu og athugar hvort ad hun se heiltala'''
-        errorprompt = 'Incorrect input\nEnter numbers only.'
+        errorprompt = 'Incorrect input\nEnter numbers only'
         try:
             int(num)
             return None
@@ -50,7 +50,7 @@ class CheckInput:
 
     def is_string(self, string):
         '''Tekur inn streng og athugar hvort ad allt i strengnum se stafur'''
-        errorprompt = 'Incorrect input\nEnter letters only.'
+        errorprompt = 'Incorrect input\nEnter letters only'
         string = string.split()
         for i in string:
             if i.isalpha() == False:
@@ -59,7 +59,7 @@ class CheckInput:
 
     def is_valid_number_length(self, num, length):
         '''Tekur inn breytu og lengd a streng og athugar hvort að breytan se heiltala og se rett legnd'''
-        errorprompt = 'Incorrect input\nEnter numbers only.'
+        errorprompt = 'Incorrect input\nEnter numbers only'
         try:
             num = int(num)
             if len(str(num)) != length:
