@@ -73,22 +73,13 @@ class Ui:
                 return num
             print(errorprompt)
 
-    def get_date(self, prompt, smaller_date): #Vantar að villumeðhöndla
+    def get_date(self, prompt, smaller_date=''): #Vantar að villumeðhöndla
         '''les dagsettninguna'''
         while True:
             date = input(prompt)
             errorprompt = self.__check_input.is_valid_date(date, smaller_date)
             if errorprompt == None:
                 return date
-            print(errorprompt)
-
-    def get_admin(self, prompt):
-        '''les admin, yfirmadur/starfsmadur'''
-        while True:
-            admin = input(prompt).capitalize()
-            errorprompt = self.__check_input.is_valid_between_two_letters('y', 'n', admin)
-            if errorprompt == None:
-                return admin
             print(errorprompt)
 
     def clear_screen(self):

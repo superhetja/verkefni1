@@ -91,6 +91,7 @@ class ShowOrder(Ui):
         cardnum = order.get_card_number()
         if action == '1':
             date1 = self.get_date(self.BOOKINGDATEPROMPT)
+            date1 = self.__service.get_datetime(date1)
         elif action == '2':
             date2 = self.get_date(self.RETURNDATEPROMPT)
             date2 = self.__service.get_datetime(date2)

@@ -34,9 +34,9 @@ class Salesman(Ui):
             self.clear_screen()
             print(self.__header)
                 
-            print(Color.BOLD + "Rental"+ Color.END)            
-            print("1. Register new rental")
-            print("2. Search rental")
+            print(Color.BOLD + "Order"+ Color.END)            
+            print("1. Register new order")
+            print("2. Search order")
             print("3. File delivery")
             print("4. View Price list")
 
