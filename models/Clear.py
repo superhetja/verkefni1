@@ -1,7 +1,7 @@
 from platform import system as system_name # Returns the system/OS name
 from os import system as system_call       # Execute a shell command
 class Clear:
-    """Clearar skjáinn eftir hverja aðgerð"""
+    '''Clearar skjáinn eftir hverja aðgerð'''
     def __init__(self):
         pass
 
