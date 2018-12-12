@@ -14,6 +14,7 @@ class CreateEmployee(Ui):
         #self.__input = InputUi()
         
     def create_empoyee(self):
+        '''Byr til nyjan starfstmann '''
         self.__clear.clear_screen()
         print(self.__header)
         print(Color.BOLD + 'Regester employee'+ Color.END)

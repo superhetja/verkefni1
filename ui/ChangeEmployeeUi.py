@@ -5,6 +5,7 @@ from models.Clear import Clear
 from ui.Ui import Ui
 from models.Color import Color
 
+
 class ChangeEmployeeUi:
     def __init__(self):
         Ui.__init__(self)
@@ -14,6 +15,7 @@ class ChangeEmployeeUi:
         #self.__input = InputUi()
 
     def change_employee(self, employee):
+        '''synir hvad hvert numer gerir '''
         action = self.main_menu()
         if action == '1':
             name = self.get_string(self.NAMEPROMPT)
@@ -28,6 +30,7 @@ class ChangeEmployeeUi:
         self.__service.add_employee(changedEmployee)
 
     def main_menu(self):
+        '''prentar main menu'''
         print(Color.BOLD + 'Employee'+ Color.END)
         print('1. Change name')
         print('2. Change email')

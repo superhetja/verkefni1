@@ -12,10 +12,12 @@ class CustomerUi(Ui):
         #self.__input = Ui()
 
     def customer_main(self):
+        '''synir main fallid'''
         print(self.__header)
         self.new_customer()
 
     def new_customer(self):
+        '''baetir vid nyjum vidskiptavini'''
         print(Color.BOLD + "Register customer" + Color.END)
         print("Enter custumer information :")
         name = self.get_string(self.NAMEPROMPT)

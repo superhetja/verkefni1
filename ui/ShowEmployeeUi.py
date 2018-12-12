@@ -17,6 +17,7 @@ class ShowEmployee(Ui):
         self.__check_input = CheckInput()
 
     def print_menu(self):
+        '''valmynd fyrir showemployee'''
         print(Color.BOLD+'Search employee'+Color.END)
         print('1. Search employee')
         print('2. View all employees')
@@ -35,6 +36,7 @@ class ShowEmployee(Ui):
 
 
     def search_employee(self):
+        '''leita upp vidskiptavin'''
         search = input('Input search: ')
         employee = self.__employee_service.get_matches(search)
         self.print_list(employee)
@@ -44,6 +46,7 @@ class ShowEmployee(Ui):
             self.choice_employeer(employee)
 
     def print_all_employees(self):
+        '''prenta alla vidskiptavini'''
         employee = self.__employee_service.get_full_centent()
         self.print_lisr(employee)
         if len(employee) == 0:
@@ -59,6 +62,7 @@ class ShowEmployee(Ui):
     #         pass
 
     def choose_employee(self, a_list):
+        '''velja vidskiptavin'''
         choice = self.get_number_between(1,len(a_list)+1)
         chosen_employee = a_list[int(choice)-1]
         print(chosen_employee)
@@ -79,6 +83,7 @@ class ShowEmployee(Ui):
             pass
     
     def __change_employee(self, employee):
+        '''breyta vidskiptavin'''
         print('What do you want to change?')
         print('1. Name')
         print('2. Ssn')

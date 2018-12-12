@@ -26,6 +26,7 @@ class Salesman(Ui):
         #self.__input_ui = Ui()
 
     def main_menu(self):
+        '''prentar ut valmynd og hvada numer gerir hvad '''
         action = '1'
         while action != '10':
             print(self.__header)

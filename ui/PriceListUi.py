@@ -34,6 +34,7 @@ class ShowPrice(Ui):
         self.menu()
 
     def menu(self):
+        '''spyr hversu marga daga vill vidkomandi leigja bilinn '''
         print()
         print('1. Calculate based on days.')
         print('2. Back to Main Menu.')
@@ -47,6 +48,7 @@ class ShowPrice(Ui):
     def show_price_list_x_days(self):
         days = self.get_number('How many days: ')
         ''' Pretnar ut utreikinga ut fra notanda inputi '''
+        '''Sprentar ut verdlista med og an tryggingu fyrir x marga daga '''
         print('Price without insurance for {} days'.format(days))
         print('Price for Standard car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('1',days)))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('2',days)))
