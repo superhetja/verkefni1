@@ -46,12 +46,20 @@ class Car:
         return price
         
     def __str__(self):
-        return "{} {:20} License plate: {}, \n\tPrice: {}kr, \t\t\tNumber of doors: {}, \n\tNumber of seats: {}, \t\t\tTransmition: {}, \n\tRental: {}\n".format(self.__brand, self.__subbrand, self.__carnumber, self.__price, self.__doors, self.__seats, self.__transmission,self.__booked)
+        return "{:40} \tLicense plate: {} \n\tPrice: {:,d} kr{:12} \t\tNumber of doors: {} \n\tNumber of seats: {:14} \tTransmition: {} \n\tStatus: {}\n".format(self.__brand+' '+self.__subbrand,
+        self.__carnumber, self.__price, '',self.__doors, self.__seats, self.__transmission,self.print_status())
     
     def __repr__(self):
         """Prentar"""
         return "Car('{}','{}','{}','{}','{}','{}','{}',{})".format(self.__group,self.__brand,self.__subbrand,self.__carnumber,self.__seats,self.__transmission,self.__doors,self.__booked)
     
+    def print_status(self):
+        '''Returnar true eða false'''
+        if self.__booked == True:
+            return 'Not available'
+        else:
+            return 'Available'
+
     def get_price(self):
         self.set_price()
         return self.__price
