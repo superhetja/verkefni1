@@ -27,6 +27,7 @@ class Ui:
             print(errorprompt)
 
     def get_number_between(self, lower, higher,prompt='> '):
+        '''les inn lista af tolum a akvednu bili'''
         while True:
             num = input(prompt)
             errorprompt = self.__check_input.is_valid_number_between(num,lower,higher)
@@ -53,6 +54,7 @@ class Ui:
             print(errorprompt)
 
     def get_string(self, prompt):
+        '''les inn streng'''
         while True:
             string = input(prompt)
             errorprompt = self.__check_input.is_string(string)
@@ -61,6 +63,7 @@ class Ui:
             print(errorprompt)
 
     def get_number_length(self,prompt,length):
+        '''les inn lengd af numerum'''
         while True:
             num = input(prompt)
             errorprompt = self.__check_input.is_valid_number_length(num,length)
@@ -69,6 +72,7 @@ class Ui:
             print(errorprompt)
 
     def get_date(self, prompt): #Vantar að villumeðhöndla
+        '''les dagsettninguna'''
         while True:
             date = input(prompt)
             errorprompt = self.__check_input.is_valid_date(date)
@@ -77,6 +81,7 @@ class Ui:
             print(errorprompt)
 
     def get_admin(self, prompt):
+        '''les admin, yfirmadur/starfsmadur'''
         while True:
             admin = input(prompt).capitalize()
             errorprompt = self.__check_input.is_valid_between_two_letters('y', 'n', admin)
@@ -103,6 +108,7 @@ class Ui:
                 count += 1
          
     def get_carnum(self):
+        '''les inn bilnumer a bil'''
         while True:
             carnum = input(self.CARNUMPROMPT)
             errorprompt = self.__check_input.is_carnum(carnum)
