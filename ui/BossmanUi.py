@@ -24,7 +24,9 @@ class Bossman(Ui):
         self.__addcar = AddCarUi()
         self.__employee = CreateEmployee()
 
+
     def main_menu(self):
+        '''prentar aðalfallið'''
         print(self.__header)
         print((Color.BOLD + "Rental"+ Color.END))
         print("1. Register new order")
@@ -49,6 +51,7 @@ class Bossman(Ui):
         #print("13. Birta starfsmann")
 
     def action_choice(self):
+        '''synir hvað hvert numer gerir við numeraval  '''
         action = self.get_number_between(1,8)
         if action=='1':
             self.__order.set_order()

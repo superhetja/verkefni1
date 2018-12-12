@@ -6,10 +6,10 @@ from ui.HeaderUi import Header
 
 #Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class ShowOrder(Ui):
-    def __init__(self):
+    def __init__(self): 
         Ui.__init__(self)
         self.__color = Color()
-        self.__service = OrderService()
+        self.__service = OrderService() 
         self.__header = Header()
 
     def show_order_main(self):

@@ -6,6 +6,7 @@ class Login:
         self.__login_service = LoginService()
 
     def login_menu(self):
+        '''Synir innskraningar menu'''
         while True:
             while True:
                 username = input('Username: ')

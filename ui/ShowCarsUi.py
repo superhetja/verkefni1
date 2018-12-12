@@ -15,6 +15,7 @@ class ShowCars:
         #self.__input_ui=Ui()
 
     def print_menu(self):
+        '''prentar ut valmyndina'''
         print(Color.BOLD + 'Car menu' + Color.END)
         print('1. Print all cars')
         print('2. Print available cars')
@@ -34,24 +35,28 @@ class ShowCars:
             self.print_unavailable_cars()
 
     def print_all_cars(self):
+        '''prentar ut alla bilana'''
         cars = self.__service.get_full_content()
         for car in cars: 
             print(car)
         self.get_more()
 
     def print_available_cars(self):
+        '''prentar ut lausa bila'''
         cars = self.__service.get_available_cars()
         for car in cars:
             print(car)
         self.get_more()
 
     def print_unavailable_cars(self):
+        '''prentar ut bila sem eru i utleigu'''
         cars = self.__service.get_booked_cars()
         for car in cars:
             print(car)
         self.get_more()
 
     def get_more(self):
+        '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['j','n'])
         if letter == 'j':
             self.show_cars_menu()
