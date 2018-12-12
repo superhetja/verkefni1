@@ -10,6 +10,7 @@ from ui.CustomerUi import CustomerUi
 from ui.AddCarUi import AddCarUi
 from ui.ShowOrderUi import ShowOrder
 from ui.FileDeliveryUi import FileDelivery
+from ui.PriceListUi import ShowPrice
 
 class Salesman(Ui):  
     def __init__(self):
@@ -23,6 +24,7 @@ class Salesman(Ui):
         self.__addcar = AddCarUi()
         self.__showorder = ShowOrder()
         self.__filedelivery = FileDelivery()
+        self.__showprice = ShowPrice()
         #self.__input_ui = Ui()
 
     def main_menu(self):
@@ -56,7 +58,7 @@ class Salesman(Ui):
             elif action=='3':
                 self.__filedelivery.file_delivery_main() #Komið
             elif action=='4':
-                pass
+                self.__showprice.show_price_list() #Komið
             elif action =='5':
                 self.__showcar.show_cars_menu()
             elif action =='6':
