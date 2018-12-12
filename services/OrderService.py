@@ -23,7 +23,7 @@ class OrderService(Service):
         self.__order_repo.add_content(order)
 
     def book_car(self, carnumber):
-        ''''''
+        '''Leita að ákveðnu bílnúmeri og skilar inn upplýsingum um hann ef hann er í kerfninu'''
         cars = self.__car_repo.get_content()
         for car in cars:
             if car.get_carnumber() == carnumber:
@@ -32,6 +32,7 @@ class OrderService(Service):
                 break
 
     def return_car(self, order):
+        '''Skilar inn bílnum ef hann finnst í kerfinu'''
         carnumber = order.get_car()
         cars = self.__car_repo.get_content()
         for car in cars:
@@ -41,6 +42,7 @@ class OrderService(Service):
                 break
 
     def get_datetime(self,day):
+        '''Skilar inn dagsetningu'''
         day, month, year = day.split('.')
         day = date(int(year), int(month), int(day))
         return day
@@ -53,12 +55,14 @@ class OrderService(Service):
         return date.today()
 
     def get_extra_insurance(self, choice):
+        '''Skilar extra tryggingu ef það er kosið y'''
         if choice == 'y':
             return True
         else:
             return False
 
     def get_total_insurance(self, extra_insurance):
+        '''Skilar inn samlagningu á extra tryggingu og tryggingu'''
         if extra_insurance:
             return Price.EXTRAINSURANCE + Price.INSURANCE
         else:
@@ -81,6 +85,7 @@ class OrderService(Service):
             return sorted_list[int(group)-1]
 
     def file_delivery(self, order):
+        '''Skilar bílnum og merkir pöntunina sem er skiluð'''
         self.return_car(order)
         orders = self.get_full_content()
         orders.remove(order)
@@ -89,6 +94,7 @@ class OrderService(Service):
         self.__order_repo.overwrite_file(orders)
 
     def file_delivery_matches(self, search):
+        '''Leitar í full_list og skilar því ef það er í listanum'''
         matches = []
         full_list = self.file_delivery_full_content()
         for instance in full_list:
@@ -97,6 +103,7 @@ class OrderService(Service):
         return matches
 
     def file_delivery_full_content(self):
+        '''Skilar pöntun sem er ekki búin að afhenda til baka'''
         full_list = self.get_full_content()
         not_returned_orders = []
         for instance in full_list:
