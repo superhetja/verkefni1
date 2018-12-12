@@ -61,7 +61,7 @@ class CheckInput:
         '''Tekur inn breytu og lengd a streng og athugar hvort að breytan se heiltala og se rett legnd'''
         errorprompt = Color.RED+'Incorrect input\nEnter numbers only'+Color.END
         try:
-            num = int(num)
+            int(num)
             if len(str(num)) != length:
                 errorprompt = Color.RED+'Incorrect number of digits'+Color.END
                 raise ValueError

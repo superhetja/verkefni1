@@ -43,13 +43,13 @@ class OrderService(Service):
 
     def get_datetime(self,day):
         '''Skilar inn dagsetningu'''
-        if '.' in date:
+        if '.' in day:
             seperator = '.'
-        elif '/' in date:
+        elif '/' in day:
             seperator = '/' 
-        elif '-' in date:
+        elif '-' in day:
             seperator = '-'
-        day,month,year = date.split(seperator)
+        day,month,year = day.split(seperator)
         day = date(int(year), int(month), int(day))
         return day
 
