@@ -37,28 +37,25 @@ class ShowCars(Ui):
     def print_all_cars(self):
         '''prentar ut alla bilana'''
         cars = self.__service.get_full_content()
-        for car in cars: 
-            print(car)
+        self.print_list(cars)
         self.get_more()
 
     def print_available_cars(self):
         '''prentar ut lausa bila'''
         cars = self.__service.get_available_cars()
-        for car in cars:
-            print(car)
+        self.print_list(cars)
         self.get_more()
 
     def print_unavailable_cars(self):
         '''prentar ut bila sem eru i utleigu'''
         cars = self.__service.get_booked_cars()
-        for car in cars:
-            print(car)
+        self.print_list(cars)
         self.get_more()
 
     def get_more(self):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
-        letter = self.get_letter(self.MOREPROMPT,['j','n'])
-        if letter == 'j':
+        letter = self.get_letter(self.MOREPROMPT,['y','n'])
+        if letter == 'y':
             self.show_cars_menu()
         else: #Skipun að fara til baka um eina valmynd
             pass
