@@ -17,7 +17,7 @@ class Order:
         self.__group = group
         self.__price = self.calculate_price(group)
         self.__group_name = self.get_group_name(group)
-        self.__status = self.get_status(returned)
+        self.__status = self.get_status()
 
     def __str__(self):
         """Prentar út upplýsingar um tíman, bílin, trygginguna og fl."""
@@ -29,8 +29,8 @@ class Order:
         self.__date2,self.__group,self.__car,self.__extra_insurance,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
-    def get_status(self, returned):
-        if returned == True:
+    def get_status(self):
+        if self.__returned == True:
             return 'Delivered'
         else:
             return 'In rent'    #veit ekki með þetta orðalag
