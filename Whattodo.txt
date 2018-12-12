@@ -25,7 +25,7 @@ ui:
 
 
 
--checkInputService (eh sem þarf að tjekka á)
+-checkInputService (komið)
 -carService(komið)
 -customerService(komið)
 -EmployeeService(Geyma)

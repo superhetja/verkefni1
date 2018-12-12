@@ -9,7 +9,7 @@ from services.CarService import CarService
 
 
 class OrderService(Service):
-    #REPO = OrderRepository()
+    REPO = OrderRepository()
     def __init__(self):
         Service.__init__(self)
         self.__car_repo = CarRepository()
@@ -102,8 +102,4 @@ class OrderService(Service):
         for instance in full_list:
             if instance.get_returned() == 'False':
                 not_returned_orders.append(instance)
-        return not_returned_orders
-        
-        
-
-        
+        return not_returned_orders      

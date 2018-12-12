@@ -16,20 +16,20 @@ class Order:
         self.__group = group
         self.__price = self.calculate_price(group)
         self.__group_name = self.get_group_name(group)
-        self.__status = self.get_status(returned)
 
     def __str__(self):
         '''Prentar út upplýsingar um tíman, bílin, trygginguna og fl.'''
-        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {} \n\tCustomer: {} \t\t\tPayment: {} \n\tCard number: {} \t\tStatus: {}".format(self.__date1, self.__date2, self.__car, self.__extra_insurance,self.__price, self.__customer, self.__payment, self.__card_number, self.__status)
-        
+        return "Time period: {} - {} \tCar: {}\n\tExtra Insurance: {} \t\t\tPrice: {} \n\tCustomer: {} \t\t\tPayment: {} \n\tCard number: {} \t\tStatus: {}".format(self.get_printable_date(self.__date1), self.get_printable_date(self.__date2), 
+        self.__car, self.__extra_insurance,self.__price, self.__customer, self.__payment, self.__card_number, self.get_status())        
+    
     def __repr__(self):
         '''Prentar út klasa instans'''
         return "Order('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(self.__date1,
         self.__date2,self.__group,self.__car,self.__extra_insurance,self.__customer,self.__payment,self.__card_number,
         self.__returned)
 
-    def get_status(self, returned):
-        if returned == True:
+    def get_status(self):
+        if self.__returned == True:
             return 'Delivered'
         else:
             return 'In rent'    #veit ekki með þetta orðalag
@@ -54,6 +54,10 @@ class Order:
         date2 = date(int(year2), int(month2), int(day2))
         time_period = (date2 - date1).days
         return time_period
+
+    def get_printable_date(self, date):
+        year, month, day = date.split('-')
+        return '{}.{}.{}'.format(day, month, year)
 
     def get_price_per_day(self, group):
         '''Skilar greiðslu á hvað kostar að leigja bíl í einn dag'''
