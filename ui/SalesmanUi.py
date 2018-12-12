@@ -30,26 +30,27 @@ class Salesman(Ui):
     def main_menu(self):
         '''prentar ut valmynd og hvada numer gerir hvad '''
         action = '1'
-        while action != '10':
+        while action != '11':
             self.clear_screen()
             print(self.__header)
                 
             print(Color.BOLD + "Order"+ Color.END)            
             print("1. Register new order")
             print("2. Search order")
-            print("3. File delivery")
-            print("4. View Price list")
+            print("3. View orders")
+            print("4. File delivery")
+            print("5. View price list")
 
             print(Color.BOLD + "Cars"+ Color.END)
-            print("5. View Cars")
-            print('6. Register new car')
+            print("6. View cars")
+            print('7. Register new car')
 
             print(Color.BOLD + "Customer"+ Color.END)
-            print("7. Register new Customer")
-            print("8. Search Customer")
-            print("9. View Customers")
+            print("8. Register new customer")
+            print("9. Search customer")
+            print("10. View customers")
             print()
-            print('10. Quit')
+            print('11. Quit')
 
             action = self.get_number_between(1,10)
             if action=='1':
@@ -57,16 +58,18 @@ class Salesman(Ui):
             elif action=='2':
                 self.__showorder.show_order_main() #Komið
             elif action=='3':
+                self.__showorder.print_all_orders()
+            elif action == '4':
                 self.__filedelivery.file_delivery_main() #Komið
-            elif action=='4':
+            elif action=='5':
                 self.__showprice.show_price_list() #Komið
-            elif action =='5':
-                self.__showcar.show_cars_main()
             elif action =='6':
+                self.__showcar.show_cars_main()
+            elif action =='7':
                 self.__addcar.add_car_menu()
-            elif action == '7':
-                self.__customer.customer_main() #Komið
             elif action == '8':
+                self.__customer.customer_main() #Komið
+            elif action == '9':
                 self.__showcustomer.search_customer() #Komið
-            elif action =='9':
+            elif action =='10':
                 self.__showcustomer.print_all_customers() #Komið

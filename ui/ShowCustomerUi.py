@@ -30,7 +30,7 @@ class ShowCustomer(Ui):
     def print_all_customers(self):
         '''prentar ut alla vidskiptavini'''
         self.clear_screen()
-        print(Color.BOLD + 'Yfirlit yfir viðskiptavini' + Color.END)
+        print(Color.BOLD + 'All customers' + Color.END)
         customers = self.__service.get_full_content()
         self.print_list(customers)
         self.choose_customer(customers)
