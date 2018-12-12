@@ -58,8 +58,8 @@ class OrderUi(Ui):
         price = Price.price_dict[str(group)][Price.PRICE]
         total_price = price*period
         print('Price of order:')
-        print('Price without tax:\t{:,.0f}\tPrice with tax:\t{:,.0f}'.format(total_price,total_price*tax))
-        print('Insurance: \t\t{:,.0f}\tPayment: \t{:,.0f}'.format(insurance,(total_price*tax)+insurance)) 
+        print('Price without tax:\t{:,.0f} kr\t\tPrice with tax:\t{:,.0f} kr'.format(total_price,total_price*tax))
+        print('Insurance: \t\t{:,.0f} kr\t\tPayment: \t{:,.0f} kr'.format(insurance,(total_price*tax)+insurance)) 
 
     def get_car(self):
         '''Skilar bíl sem viskiptavinur velur'''
