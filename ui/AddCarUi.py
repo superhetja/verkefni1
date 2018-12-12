@@ -10,12 +10,11 @@ class AddCarUi(Ui):
         Ui.__init__(self)
         self.__car = CarService()
         self.__check_input = CheckInput()
-        self.__clear = Clear()
         self.__input_ui=Ui()
 
     def add_car_menu(self):
         '''prentar ut addcar menu '''
-        self.__clear.clear_screen()
+        self.clear_screen()
         self.car_group_menu()
         group=self.__input_ui.get_number_between(1,6)
 

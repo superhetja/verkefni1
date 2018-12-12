@@ -22,6 +22,7 @@ class OrderUi(Ui):
 
     def set_order(self):
         '''bokar bil i dag'''
+        self.clear_screen()
         date1 = self.__service.get_today()
         # date1 = self.get_date(self.BOOKINGDATEPROMPT,)
         # date1 = self.__service.get_datetime(date1)
