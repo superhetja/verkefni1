@@ -6,7 +6,7 @@ from ui.Ui import Ui
 from models.Color import Color
 
 
-class ChangeEmployeeUi:
+class ChangeEmployeeUi(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__header = Header()
