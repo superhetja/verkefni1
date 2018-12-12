@@ -65,7 +65,7 @@ class Salesman(Ui):
             elif action =='6':
                 self.__addcar.add_car_menu()
             elif action == '7':
-                self.__customer.customer_main()
+                self.__customer.customer_main() #Komið
             elif action == '8':
                 self.__showcustomer.search_customer() #Komið
             elif action =='9':
