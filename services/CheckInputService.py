@@ -69,7 +69,7 @@ class CheckInput:
         except ValueError:
             return errorprompt
 
-    def is_valid_date(self, date):
+    def is_valid_date(self, date,smaller_date):
         '''Tekur inn dagsetningu og athugar hvort ad hun se gild'''
         errorprompt = 'Invalid date'
         try:
@@ -80,7 +80,10 @@ class CheckInput:
             elif '-' in date:
                 seperator = '-'
             day,month,year = date.split(seperator)
-            datetime.datetime(int(year),int(month),int(day))
+            date = datetime.date(int(year),int(month),int(day))
+            if date < smaller_date:
+                errorprompt = 'Return date must be at least one day after booking date'
+                raise ValueError
             return None
         except ValueError:
             return(errorprompt)

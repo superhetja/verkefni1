@@ -14,7 +14,7 @@ class ShowPrice(Ui):
  
     def show_price_list(self):
         '''Main prentar ut 1 dag'''
-        #self.__clear.clear_screen()
+        self.clear_screen()
         print('Price without insurance for 1 day')
         print('Price for Standard car: \t{:.0f}'.format(self.__price.get_price_one_day('1')))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__price.get_price_one_day('2')))
@@ -45,9 +45,9 @@ class ShowPrice(Ui):
             pass
 
     def show_price_list_x_days(self):
-        days = self.get_number('How many days: ')
-        ''' Pretnar ut utreikinga ut fra notanda inputi '''
         '''Sprentar ut verdlista med og an tryggingu fyrir x marga daga '''
+        days = self.get_number('How many days: ')
+        self.clear_screen()
         print('Price without insurance for {} days'.format(days))
         print('Price for Standard car: \t{:.0f}'.format(self.__service.calculate_price_x_days('1',days)))
         print('Price for Luxury car: \t\t{:.0f}'.format(self.__service.calculate_price_x_days('2',days)))
