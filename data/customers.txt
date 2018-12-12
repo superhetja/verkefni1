@@ -1,7 +1,6 @@
 Customer('Olafur Rúnarsson','2308852219','olismoli@gmail.com','8475618')
 Customer('Halldor Ingimundarsson','1010995649','dorihori@gmail.com','8552626')
 Customer('Finnbogi Finnbogason','2002772689','finnsi77@gmail.com','8492465')
-Customer('Þordis Hannesdóttir','2608892369','trolla@gmail.com','8696969')
 Customer('Solrun Hallgrimsdóttir','2802949439','sollabolla@hotmail.com','6611818')
 Customer('Margret Gudmundsdóttir','2309874929','maggaBest@gmail.com','6789234')
 Customer('Gudmundur Marteinsson','2805872939','gummi@kul.is','8541234')
@@ -10,4 +9,8 @@ Customer('Jona Gudfinnsdottir','2304842949','jonag@gmail.com','1234567')
 Customer('Jon Petur Jonsson','2305892829','jonnip@ru.is','5812345')
 Customer('Gunna Sól Jónsdóttir','1106904591','gunnatunna@hotmail.com','6592214')
 Customer('Jónína Berglind Jónsdóttir','2208992929','jolla@gmail.com','6748923')
+<<<<<<< HEAD
 Customer('Helga','0903042342','helga@gmail.com','6174807')
+=======
+Customer('Þordis Hannesdóttir','2608892369','trolla@gmail.com','6616723')
+>>>>>>> b1e88bdaec8ca8bc7fd4ac30286d771017e813b8
