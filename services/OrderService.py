@@ -22,8 +22,9 @@ class OrderService(Service):
         '''Tekur inn pöntun og baetir henni við orders.txt'''
         carnumber = order.get_car()
         self.book_car(carnumber)
-        self.__content_list.append(order)
+        #self.__content_list.append(order)
         self.__order_repo.add_content(order)
+        self.__content_list = self.get_list()
 
     def book_car(self, carnumber):
         '''Leita að ákveðnu bílnúmeri og skilar inn upplýsingum um hann ef hann er í kerfninu'''
@@ -34,9 +35,8 @@ class OrderService(Service):
                 self.__car_repo.overwrite_file(cars)
                 break
 
-    def return_car(self, order):
+    def return_car(self, carnumber):
         '''Skilar inn bílnum ef hann finnst í kerfinu'''
-        carnumber = order.get_car()
         cars = self.__car_service.get_full_content()
         for car in cars:
             if car.get_carnumber() == carnumber:
@@ -95,12 +95,15 @@ class OrderService(Service):
 
     def file_delivery(self, order):
         '''Skilar bílnum og merkir pöntunina sem er skiluð'''
-        self.return_car(order)
-        orders = self.__content_list
-        orders.remove(order)
-        order.file_delivery()
-        orders.append(order)
-        self.__order_repo.overwrite_file(orders)
+        carnum = order.get_car()
+        self.return_car(carnum)
+        carnum = order.get_car()
+        orders = self.get_full_content()
+        for order in orders:
+            if order.get_car() == carnum:
+                order.file_delivery()
+                self.__order_repo.overwrite_file(orders)
+        print('Virkar ekki')
 
     def file_delivery_matches(self, search):
         '''Leitar í lista og skilar því'''
@@ -113,10 +116,10 @@ class OrderService(Service):
 
     def file_delivery_full_content(self):
         '''Skilar pöntun'''
-        full_list = self.__content_list
+        full_list = self.get_full_content()
         not_returned_orders = []
         for instance in full_list:
-            if instance.get_returned() == 'False':
+            if instance.get_returned() == False:
                 not_returned_orders.append(instance)
         return not_returned_orders      
         

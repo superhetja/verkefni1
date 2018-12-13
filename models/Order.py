@@ -112,3 +112,7 @@ class Order:
     def file_delivery(self):
         '''Prentar út ef það er búið að skila bílnum '''
         self.__returned = True
+
+    def get_id(self):
+        '''Skilar id á pöntunini sem að er bílnúmerið'''
+        return self.__car
