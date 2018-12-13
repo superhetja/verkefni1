@@ -21,15 +21,10 @@ class CustomerUi(Ui):
     def new_customer(self):
         '''baetir vid nyjum vidskiptavini'''
         print("Enter custumer information")
-        name = 'Gunna Smaradottir'
-        ssn = '1212826569'
-        email = 'gunnasmara@siminn.is'
-        phonenr = '1234567'
-
-        # name = self.get_string(self.NAMEPROMPT)
-        # ssn = self.get_number_length(self.SSNPROMPT, 10)
-        # email = self.get_email()
-        # phonenr = self.get_number_length(self.PHONEPROMPT,7)
+        name = self.get_string(self.NAMEPROMPT)
+        ssn = self.get_number_length(self.SSNPROMPT, 10)
+        email = self.get_email()
+        phonenr = self.get_number_length(self.PHONEPROMPT,7)
         NewCustomer = Customer(name, ssn, email, phonenr)
         self.__service.add_content(NewCustomer)
         print('Customer registered')
