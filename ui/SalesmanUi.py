@@ -54,7 +54,7 @@ class Salesman(Ui):
             if action=='1':
                 self.__order.set_order()
             elif action=='2':
-                self.__showorder.show_order_main()
+                self.__showorder.search_order()
             elif action=='3':
                 self.__showorder.print_all_orders()
             elif action == '4':

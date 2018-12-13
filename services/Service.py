@@ -14,8 +14,8 @@ class Service:
         return the_list
 
     def add_content(self, content):
-        self.__content_list.append(content)
         self.__repo.add_content(content)
+        self.__content_list = self.get_list()
 
     def get_full_content(self):
         return self.__content_list
