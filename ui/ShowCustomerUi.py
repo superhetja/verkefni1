@@ -57,7 +57,7 @@ class ShowCustomer(Ui):
         action = self.get_number_between(1,4)
         if action == '1':
             self.__service.remove_instance(chosen_customer)
-            print('Customer deleted')
+            print(Color.GREEN + 'Customer deleted' + Color.END)
             self.get_more()
         elif action == '2':
             self.change_customer(chosen_customer)
@@ -88,7 +88,7 @@ class ShowCustomer(Ui):
             phonenr = self.get_number_length(self.PHONEPROMPT,7)
         new_customer= Customer(name,ssn,email,phonenr)
         self.__service.change_instance(customer, new_customer)
-        print('Change complete')
+        print(Color.GREEN + 'Change complete!' + Color.END)
         self.get_more()
 
     def get_more(self):

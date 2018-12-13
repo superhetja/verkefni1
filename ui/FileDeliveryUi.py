@@ -10,7 +10,7 @@ class FileDelivery(Ui):
 
     def file_delivery_menu(self):
         '''Prentar ut menu'''
-        print(Color.BOLD+'Find order'+Color.END)
+        print(Color.BOLD + 'Find order' + Color.END)
         print('1. Search order')
         print('2. View all orders')
     
@@ -63,7 +63,7 @@ class FileDelivery(Ui):
     
     def file_delivery(self, order):
         self.__service.file_delivery(order)
-        print('Delivery booked!')
+        print(Color.GREEN + 'Car Delivered!' + Color.END)
         self.get_more()
 
     def get_more(self):
