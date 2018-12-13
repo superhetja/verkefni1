@@ -14,7 +14,7 @@ class ShowCustomer(Ui):
         self.__check_input = CheckInput()
 
 
-    def search_customer_meun(self):
+    def search_customer_menu(self):
         self.clear_screen()
         print(Color.BOLD+'View customer'+Color.END)
         print('1. Search customer')
@@ -24,7 +24,7 @@ class ShowCustomer(Ui):
             self.search_customer()
         else:
             self.print_all_customers()
-            
+
     def search_customer(self):
         '''leitar ad vidskiptavini med tvi ad setja inn nafnid'''
         self.clear_screen()
@@ -62,7 +62,7 @@ class ShowCustomer(Ui):
         elif action == '2':
             self.change_customer(chosen_customer)
         elif action == '3':
-            self.search_customer()
+            self.search_customer_menu()
         else:
             pass
     
@@ -95,6 +95,6 @@ class ShowCustomer(Ui):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
-            self.search_customer()
+            self.search_customer_menu()
         else: #Skipun að fara til baka um eina valmynd
             pass
