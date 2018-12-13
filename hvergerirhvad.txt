@@ -1,0 +1,17 @@
+Sara: 
+1. Register new order 
+2. Search order
+
+María:
+3. View Orders
+4. File delivery
+
+Bryndís:
+5. View price list 
+6. View Cars
+7. Register new car
+
+Hófí:
+8. Register new costumer 
+9. Search costumer
+10.View costumer

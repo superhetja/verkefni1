@@ -6,3 +6,5 @@ import csv
 csv_reader = csv.reader(videos_files)
     csv.DictReader()
     csv.writer()
+
+- skrá nýja pöntun 
