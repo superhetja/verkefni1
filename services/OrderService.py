@@ -15,6 +15,7 @@ class OrderService(Service):
         self.__order_repo = OrderRepository()
         self.__car_repo = CarRepository()
         self.__car_service = CarService()
+        self.__content_list = self.get_list()
 
 
     def add_order(self, order):
@@ -26,7 +27,7 @@ class OrderService(Service):
 
     def book_car(self, carnumber):
         '''Leita að ákveðnu bílnúmeri og skilar inn upplýsingum um hann ef hann er í kerfninu'''
-        cars = self.__car_service.__content_list
+        cars = self.__car_service.get_full_content()
         for car in cars:
             if car.get_carnumber() == carnumber:
                 car.book_car()
@@ -36,7 +37,7 @@ class OrderService(Service):
     def return_car(self, order):
         '''Skilar inn bílnum ef hann finnst í kerfinu'''
         carnumber = order.get_car()
-        cars = self.__car_service.__content_list
+        cars = self.__car_service.get_full_content()
         for car in cars:
             if car.get_carnumber() == carnumber:
                 car.return_car()
