@@ -27,7 +27,7 @@ class Service:
     def get_matches(self, search):
         ''''Leitar instance í lista og skilar því sem það er að leita að'''
         matches = []
-        full_list = self.__content_list
+        full_list = self.get_full_content()
         for instance in full_list:
             if search in instance.__repr__().lower():
                 matches.append(instance)
@@ -42,7 +42,6 @@ class Service:
                 full_list.remove(item)
                 self.__repo.overwrite_file(full_list)
                 break
-        print('virkar ekki remove instance')
         
     
     def change_instance(self, to_remove, to_add):
@@ -50,9 +49,8 @@ class Service:
         remove_id = to_remove.get_id()
         full_list = self.get_full_content()
         for item in full_list:
-            if item.get_id == remove_id:
-                full_list.remove(to_remove)
+            if item.get_id() == remove_id:
+                full_list.remove(item)
                 full_list.append(to_add)
                 self.__repo.overwrite_file(full_list)
                 break
-        print('virkar ekki Change instance')

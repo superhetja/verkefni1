@@ -103,7 +103,7 @@ class OrderService(Service):
             if order.get_car() == carnum:
                 order.file_delivery()
                 self.__order_repo.overwrite_file(orders)
-        print('Virkar ekki')
+                break
 
     def file_delivery_matches(self, search):
         '''Leitar í lista og skilar því'''
