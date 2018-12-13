@@ -8,19 +8,18 @@ class AddCarUi(Ui):
     def __init__(self):
         Ui.__init__(self)
         self.__car = CarService()
-        self.__check_input = CheckInput()
 
     def add_car_menu(self):
         '''prentar ut addcar menu '''
         self.clear_screen()
         self.car_group_menu()
-        group = self.__input_ui.get_number_between(1,6)
+        group = self.get_number_between(1,6)
         brand = input('Brand: ').capitalize()
         subbrand = input('Subbrand: ').capitalize()
-        carnumber = self.__input_ui.get_carnum()
-        seats=self.__input_ui.get_number_between(2,7,'Number of seats: ')
+        carnumber = self.get_carnum()
+        seats=self.get_number_between(2,7,'Number of seats: ')
         transmission=self.get_transmission()
-        doors=self.__input_ui.get_number_between(3,5,'Number of doors: ')
+        doors=self.get_number_between(3,5,'Number of doors: ')
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
         print("Registration complete! ")
@@ -39,7 +38,7 @@ class AddCarUi(Ui):
 
     def get_more(self):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
-        letter = self.__input_ui.get_letter(self.__input_ui.MOREPROMPT,['j','n'])
+        letter = self.get_letter(self.MOREPROMPT,['j','n'])
         if letter == 'j':
             self.add_car_menu()
         else: #Skipun að fara til baka um eina valmynd
