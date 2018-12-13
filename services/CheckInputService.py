@@ -81,12 +81,13 @@ class CheckInput:
                 seperator = '-'
             day,month,year = date.split(seperator)
             date = datetime.date(int(year),int(month),int(day))
-            if date < smaller_date:
-                errorprompt = 'Return date must be at least one day after booking date'
-                raise ValueError
+            if smaller_date != '':
+                if date < smaller_date:
+                    errorprompt = 'Return date must be at least one day after booking date'
+                    raise ValueError
             return None
         except ValueError:
-            return(errorprompt)
+            return errorprompt
 
     def is_carnum(self, carnum):
         errorprompt = Color.RED+'Incorrect input'+Color.END

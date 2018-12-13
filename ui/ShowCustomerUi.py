@@ -2,10 +2,8 @@ from services.CustomerService import CustomerService
 from services.CheckInputService import CheckInput
 from models.Customer import Customer
 from ui.HeaderUi import Header
-#from models.Clear import Clear
 from models.Color import Color
 from ui.Ui import Ui
-
 
 class ShowCustomer(Ui):
     def __init__(self):
@@ -30,7 +28,7 @@ class ShowCustomer(Ui):
     def print_all_customers(self):
         '''prentar ut alla vidskiptavini'''
         self.clear_screen()
-        print(Color.BOLD + 'Yfirlit yfir viðskiptavini' + Color.END)
+        print(Color.BOLD + 'All customers' + Color.END)
         customers = self.__service.get_full_content()
         self.print_list(customers)
         self.choose_customer(customers)
@@ -86,5 +84,5 @@ class ShowCustomer(Ui):
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
             self.search_customer()
-        else:
+        else: #Skipun að fara til baka um eina valmynd
             pass

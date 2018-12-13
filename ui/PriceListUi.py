@@ -1,4 +1,3 @@
-#from models.Car import Car
 from models.Price import Price
 from ui.Ui import Ui
 from services.PriceListService import PriceListService
@@ -6,7 +5,6 @@ from services.PriceListService import PriceListService
  
 class ShowPrice(Ui):
     def __init__(self):
-        #Car.__init__(self)
         Ui.__init__(self)
         self.__service = PriceListService()
         self.__price = Price()

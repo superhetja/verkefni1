@@ -2,7 +2,6 @@ from services.EmployeeService import EmployeeService
 from services.CheckInputService import CheckInput
 from models.Customer import Customer
 from ui.HeaderUi import Header
-#from models.Clear import Clear
 from models.Color import Color
 from ui.Ui import Ui
 from services.Service import Service

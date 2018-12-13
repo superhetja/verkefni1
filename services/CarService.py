@@ -6,15 +6,7 @@ class CarService(Service):
     REPO = CarRepository()
 
     # def __init__(self):
-    #     self.__car_repo = CarRepository()
-
-    # def add_car(self, car):
-        #'''Tekur inn bil og sendir hann i repo fyrir bil sem ad baetir honum vid cars.txt'''
-    #     self.__car_repo.add_content(car)
-
-    # def get_cars(self):
-        #'''Fer inn i repo fyrir bil sem saekir alla bila i cars.txt og skilar theim'''
-    #     return self.__car_repo.get_content()
+    #     Service.__init__(self)
 
     def get_available_cars(self):
         '''Saekir alla bila sem eru ekki i leigu og skilar theim'''

@@ -2,7 +2,6 @@ from models.Employee import Employee
 from ui.HeaderUi import Header
 from services.EmployeeService import EmployeeService
 from models.Color import Color
-from models.Clear import Clear
 from ui.Ui import Ui
 
 class CreateEmployee(Ui):
@@ -11,7 +10,6 @@ class CreateEmployee(Ui):
         self.__header = Header()
         self.__service = EmployeeService()
         self.__clear = Clear()
-        #self.__input = InputUi()
         
     def create_empoyee(self):
         '''Byr til nyjan starfstmann '''
