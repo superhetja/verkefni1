@@ -16,6 +16,7 @@ class CustomerUi(Ui):
         self.clear_screen()
         print(Color.BOLD + "Register customer" + Color.END)
         self.new_customer()
+        self.get_more()
 
     def new_customer(self):
         '''baetir vid nyjum vidskiptavini'''
@@ -27,3 +28,11 @@ class CustomerUi(Ui):
         NewCustomer = Customer(name, ssn, email, phonenr)
         self.__service.add_content(NewCustomer)
         print(Color.GREEN + 'Customer registered' + Color.END)
+
+    def get_more(self):
+        '''Spyr notenda um meira hvort hann vilji halda afram'''
+        letter = self.get_letter(self.MOREPROMPT,['y','n'])
+        if letter == 'y':
+            self.customer_main()
+        else:
+            pass
