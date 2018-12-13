@@ -1,5 +1,8 @@
 from models.Customer import Customer
 from repositories.Repository import Repository
+from models.Car import Car
+from models.Customer import Customer
+from models.Order import Order
 #from repositories.CustomerRepository import CustomerRepository
 
 class Service:
@@ -18,6 +21,7 @@ class Service:
         self.__repo.add_content(content)
 
     def get_full_content(self):
+        self.__content_list = self.get_list()
         return self.__content_list
 
     def get_matches(self, search):
@@ -31,13 +35,24 @@ class Service:
 
     def remove_instance(self, instance):
         '''tekur út instance og yfirskrifar'''
-        full_list = self.__content_list
-        full_list.remove(instance)
-        self.__repo.overwrite_file(full_list)
+        instance_id = instance.get_id()
+        full_list = self.get_full_content()
+        for item in full_list:
+            if item.get_id() == instance_id:
+                full_list.remove(item)
+                self.__repo.overwrite_file(full_list)
+                break
+        print('virkar ekki remove instance')
+        
     
     def change_instance(self, to_remove, to_add):
         ''''Teku út instance og setur inn það sem var yfirskrifað'''
-        full_list = self.__content_list
-        full_list.remove(to_remove)
-        full_list.append(to_add)
-        self.__repo.overwrite_file(full_list)
+        remove_id = to_remove.get_id()
+        full_list = self.get_full_content()
+        for item in full_list:
+            if item.get_id == remove_id:
+                full_list.remove(to_remove)
+                full_list.append(to_add)
+                self.__repo.overwrite_file(full_list)
+                break
+        print('virkar ekki Change instance')
