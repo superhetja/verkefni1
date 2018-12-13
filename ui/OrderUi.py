@@ -84,13 +84,13 @@ class OrderUi(Ui):
                 if len(customers) != 0:
                     customber_num = self.get_number_between(1,len(customers))
                     customer = customers[int(customber_num)-1]
-                    print('Choosen customer:', customer)
+                    print('Choosen customer:\n', customer)
                     return customer.get_ssn()
         else:
             self.__new_customer.new_customer()
             customers = self.__customer_service.get_full_content()
             customer = customers[-1]
-            print('Choosen customer:', customer)
+            print('Choosen customer:\n', customer)
             return customer.get_ssn()
 
     def car_group_menu(self,cars,total_cars):
