@@ -13,6 +13,18 @@ class ShowCustomer(Ui):
         self.__color = Color()
         self.__check_input = CheckInput()
 
+
+    def search_customer_meun(self):
+        self.clear_screen()
+        print(Color.BOLD+'View customer'+Color.END)
+        print('1. Search customer')
+        print('2. View all customers')
+        action = self.get_number_between(1,2)
+        if action == '1':
+            self.search_customer()
+        else:
+            self.print_all_customers()
+            
     def search_customer(self):
         '''leitar ad vidskiptavini med tvi ad setja inn nafnid'''
         self.clear_screen()

@@ -16,3 +16,8 @@ Customer('Maria Bryndisardottir','0403962179','maejabydda@hotmail.com','7894567'
 Customer('Gudrun Jonsdottir','2905942394','guddababe@ru.is','1231234')
 Customer('Sigmundur Davidsson','2012703409','simmiforseti@island.is','7893406')
 Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
+Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
+Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
+Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
+Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
+Customer('Gunna Smaradottir','1212826569','gunnasmara@siminn.is','1234567')
