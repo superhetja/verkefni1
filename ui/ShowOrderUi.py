@@ -11,6 +11,16 @@ class ShowOrder(Ui):
         self.__service = OrderService() 
         self.__header = Header()
 
+    def main_menu(self):
+        self.clear_screen()
+        print(Color.BOLD + "Orders" + Color.END)
+        print('1. All orders\n2. Search order')
+        action = self.get_number_between(1, 2)
+        if action == 1:
+            self.print_all_orders()
+        else:
+            self.search_order()
+
     def search_order(self):
         '''Biður um leitarstreng og prentar ut allar pantanir sem passa við þann streng'''
         self.clear_screen()
@@ -103,6 +113,6 @@ class ShowOrder(Ui):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
-            self.search_order()
+            self.main_menu()
         else:
             pass
