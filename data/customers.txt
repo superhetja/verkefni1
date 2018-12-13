@@ -9,12 +9,9 @@ Customer('Þordis Hannesdóttir','2608892369','trolla@gmail.com','6616723')
 Customer('Haraldur Jonsson','4505049382','hallijon@gmail.com','8976546')
 Customer('Jónína Berglind Jónsdóttir','2208992929','jolla@gmail.com','6612618')
 Customer('Karl Petur Sindrason','1205842739','kalli@ruv.is','5672346')
-<<<<<<< HEAD
 Customer('Johanna Diego','2309012299','diego@gmail.com','7172698')
 Customer('Sara Eddadottir','2608913169','sara-osp@gmail.com','6615929')
 Customer('Gudmundur Marteinsson','2805872939','gummi@kul.is','8982345')
-=======
 Customer('Maria Bryndisardottir','0403962179','maejabydda@hotmail.com','7894567')
 Customer('Gudrun Jonsdottir','2905942394','guddababe@ru.is','1231234')
 Customer('Sigmundur Davidsson','2012703409','simmiforseti@island.is','7893406')
->>>>>>> ce57739e18192cc5f8718dc26cb48268f83c2ba4
