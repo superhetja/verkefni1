@@ -15,7 +15,7 @@ class ShowOrder(Ui):
         '''Biður um leitarstreng og prentar ut allar pantanir sem passa við þann streng'''
         self.clear_screen()
         print(Color.BOLD+'Search order'+Color.END)
-        search = input('Input search: ')
+        search = input('Input search: ').lower()
         orders = self.__service.get_matches(search)
         self.print_list(orders)
         if len(orders) == 0:
@@ -103,6 +103,6 @@ class ShowOrder(Ui):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
-            self.show_order_main()
+            self.search_order()
         else:
             pass
