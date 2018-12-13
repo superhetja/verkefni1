@@ -83,7 +83,7 @@ class CheckInput:
             date = datetime.date(int(year),int(month),int(day))
             if smaller_date != '':
                 if date < smaller_date:
-                    errorprompt = 'Return date must be at least one day after booking date'
+                    errorprompt = Color.RED+'Return date must be at least one day after booking date'+Color.END
                     raise ValueError
             return None
         except ValueError:
