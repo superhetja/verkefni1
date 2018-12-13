@@ -2,7 +2,6 @@ from ui.Ui import Ui
 from services.OrderService import OrderService
 from models.Color import Color
 
-#Búin að commenta, og allt komið, efþið breytið passa að það virki!!!
 class FileDelivery(Ui):
     
     def __init__(self):
@@ -34,7 +33,6 @@ class FileDelivery(Ui):
             self.search_order()
         else:
             self.choose_order(orders)
-
 
     def print_all_orders(self):
         '''Prentar ut allar pantanir'''

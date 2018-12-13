@@ -90,3 +90,6 @@ class Car:
     
     def return_car(self):
         self.__booked = False
+
+    def get_id(self):
+        return self.__carnumber

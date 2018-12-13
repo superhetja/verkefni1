@@ -8,6 +8,7 @@ class CarService(Service):
     # def __init__(self):
     #     Service.__init__(self)
 
+
     def get_available_cars(self):
         '''Saekir alla bila sem eru ekki i leigu og skilar theim'''
         available_cars = []
