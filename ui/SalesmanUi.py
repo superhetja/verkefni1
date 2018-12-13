@@ -50,7 +50,7 @@ class Salesman(Ui):
             print()
             print('11. Quit')
 
-            action = self.get_number_between(1,10)
+            action = self.get_number_between(1,11)
             if action=='1':
                 self.__order.set_order()
             elif action=='2':
