@@ -102,7 +102,7 @@ class OrderService(Service):
         self.__order_repo.overwrite_file(orders)
 
     def file_delivery_matches(self, search):
-        '''Leitar í full_list og skilar því ef það er í listanum'''
+        '''Leitar í lista og skilar því'''
         matches = []
         full_list = self.file_delivery_full_content()
         for instance in full_list:
@@ -111,7 +111,7 @@ class OrderService(Service):
         return matches
 
     def file_delivery_full_content(self):
-        '''Skilar pöntun sem er ekki búin að afhenda til baka'''
+        '''Skilar pöntun'''
         full_list = self.__content_list
         not_returned_orders = []
         for instance in full_list:

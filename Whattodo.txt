@@ -33,3 +33,11 @@ ui:
 
 
 Prentar ekki ut nýjar order....???
+
+*kemur vitlaust þegar maður ætlar að velja viðskiptavin
+*get ekki sett inn card number þegar það er borgað
+*Get ekki searchað order
+*Get ekki deletað order þegar eg vill breyta order
+*Get ekki continu eftir að hafa change order
+*Eftir að ýta á 4 þá get ég ekki ýtt á 1(search order) né 2(View all orders)
+*Register new car
