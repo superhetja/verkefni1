@@ -41,3 +41,6 @@ Prentar ekki ut nýjar order....???
 *Get ekki continu eftir að hafa change order
 *Eftir að ýta á 4 þá get ég ekki ýtt á 1(search order) né 2(View all orders)
 *Register new car
+
+
+
