@@ -1,13 +1,6 @@
 Bílaleiga ehf
 
 Breytingar sem að við gerðum á kerfinu
-<<<<<<< HEAD
- - Við bættum við á valmyndina möguleika á að sjá yfirlit yfir allar pantanir sem eru í kerfinu (3)
- - 
- - 
-
- 
-=======
     - Á valmyndina (fyrir sölumann)
         - Við bættum við möguleika á að sjá yfirlit yfir allar pantanir sem eru í kerfinu (3)
         - Við bættum við möguleika á að skrá nýjan bíl (7)
@@ -17,4 +10,3 @@ Breytingar sem að við gerðum á kerfinu
     flokkunum með, það sést einungis í yfirliti yfir verðið 
     - Svo þegar það kemur yfirlit yfri lausa bíla á valdri dagsetningu þá breyttum við hvernig að þeir prentast út
     - Þegar að flett er upp viðskiptavin þá tókum við út að geta séð síðustu leigur
->>>>>>> 74085f416bb5e9ecf0383fcb091fbef838254df3
