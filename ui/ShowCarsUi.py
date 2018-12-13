@@ -1,6 +1,5 @@
 from services.CarService import CarService
 from services.CheckInputService import CheckInput
-from models.Clear import Clear
 from ui.Ui import Ui
 from ui.HeaderUi import Header
 from models.Color import Color
@@ -10,9 +9,7 @@ class ShowCars(Ui):
         Ui.__init__(self)
         self.__service = CarService()
         self.__check_input = CheckInput()
-        self.__clear = Clear()
         self.__header = Header()
-        #self.__input_ui=Ui()
 
     def print_menu(self):
         '''prentar ut valmyndina'''
@@ -56,6 +53,6 @@ class ShowCars(Ui):
         '''Spyr notenda um meira hvort hann vilji halda afram'''
         letter = self.get_letter(self.MOREPROMPT,['y','n'])
         if letter == 'y':
-            self.show_cars_menu()
+            self.show_cars_main()
         else: #Skipun að fara til baka um eina valmynd
             pass

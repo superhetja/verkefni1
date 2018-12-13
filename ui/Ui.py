@@ -1,6 +1,7 @@
 from services.CheckInputService import CheckInput
 from platform import system as system_name # Returns the system/OS name
 from os import system as system_call 
+from models.Color import Color
 
 class Ui:
     NAMEPROMPT = 'Name: '
@@ -73,22 +74,13 @@ class Ui:
                 return num
             print(errorprompt)
 
-    def get_date(self, prompt, smaller_date): #Vantar að villumeðhöndla
+    def get_date(self, prompt, smaller_date=''): #Vantar að villumeðhöndla
         '''les dagsettninguna'''
         while True:
             date = input(prompt)
             errorprompt = self.__check_input.is_valid_date(date, smaller_date)
             if errorprompt == None:
                 return date
-            print(errorprompt)
-
-    def get_admin(self, prompt):
-        '''les admin, yfirmadur/starfsmadur'''
-        while True:
-            admin = input(prompt).capitalize()
-            errorprompt = self.__check_input.is_valid_between_two_letters('y', 'n', admin)
-            if errorprompt == None:
-                return admin
             print(errorprompt)
 
     def clear_screen(self):
@@ -103,7 +95,7 @@ class Ui:
     def print_list(self,a_list):
         count = 1
         if len(a_list) == 0:
-            print('No results found.')
+            print(Color.RED + 'No results found.' + Color.END)
         else: 
             for i in a_list:
                 print(str(count)+'.',i)
@@ -117,4 +109,3 @@ class Ui:
             if errorprompt == None:
                 return carnum
             print(errorprompt)
-

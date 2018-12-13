@@ -16,6 +16,3 @@ class Login:
             password = input('Password:')
             if password == password_from_file:
                 break
-
-
-
