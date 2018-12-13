@@ -11,7 +11,7 @@ class FileDelivery(Ui):
 
     def file_delivery_menu(self):
         '''Prentar ut menu'''
-        print(Color.BOLD+'Search order'+Color.END)
+        print(Color.BOLD+'Find order'+Color.END)
         print('1. Search order')
         print('2. View all orders')
     
@@ -25,7 +25,6 @@ class FileDelivery(Ui):
         else:
             self.print_all_orders()
             
-
     def search_order(self):
         '''Biður um leitarstreng og prentar ut allar pantanir sem passa við þann streng'''
         search = input('Input search: ')
