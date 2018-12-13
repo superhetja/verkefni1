@@ -16,7 +16,7 @@ class ShowOrder(Ui):
         print(Color.BOLD + "Orders" + Color.END)
         print('1. All orders\n2. Search order')
         action = self.get_number_between(1, 2)
-        if action == 1:
+        if action == '1':
             self.print_all_orders()
         else:
             self.search_order()
@@ -53,7 +53,7 @@ class ShowOrder(Ui):
         print('   ',chosen_order)
         print('1. Delete order')
         print('2. Change order')
-        print('3. Search another order')
+        print('3. Another order')
         print('4. Back to main menu')
         action = self.get_number_between(1,4)
         if action == '1':
@@ -64,7 +64,7 @@ class ShowOrder(Ui):
         elif action == '2':
             self.change_order(chosen_order)
         elif action == '3':
-            self.search_order()
+            self.main_menu()
         else:
             pass
 
