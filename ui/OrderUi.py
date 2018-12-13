@@ -1,4 +1,3 @@
-
 from models.Color import Color
 from models.Order import Order
 from ui.HeaderUi import Header
@@ -42,7 +41,7 @@ class OrderUi(Ui):
         new_order = Order(str(date1), str(date2), group, carnum, extra_insurance, customer, payment, cardnumber)
         self.__service.add_order(new_order)
         print()
-        print("Rent booked!")
+        print(Color.GREEN + "Order booked!" + Color.END)
         print()
         self.get_more()
     

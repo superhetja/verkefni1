@@ -59,7 +59,7 @@ class ShowOrder(Ui):
         if action == '1':
             self.__service.return_car(chosen_order)
             self.__service.remove_instance(chosen_order)
-            print('Order deleted')
+            print(Color.GREEN + 'Order deleted' + Color.END)
             self.get_more()
         elif action == '2':
             self.change_order(chosen_order)
@@ -106,7 +106,7 @@ class ShowOrder(Ui):
             self.get_more()
         new_order = Order(str(date1), str(date2), group, car, extra_insurance ,customer, payment, cardnum)
         self.__service.change_instance(order, new_order)
-        print('Change complete!')
+        print(Color.GREEN + 'Change complete!' + Color.END)
         self.get_more()
 
     def get_more(self):

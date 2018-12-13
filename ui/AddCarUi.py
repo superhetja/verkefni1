@@ -2,6 +2,7 @@ from services.CarService import CarService
 from models.Car import Car
 from services.CheckInputService import CheckInput
 from ui.Ui import Ui
+from models.Color import Color
 
 
 class AddCarUi(Ui):
@@ -22,7 +23,7 @@ class AddCarUi(Ui):
         doors=self.get_number_between(3,5,'Number of doors: ')
         new_car = Car(group, brand, subbrand, carnumber,seats, transmission, doors)
         self.__car.add_content(new_car)
-        print("Registration complete! ")
+        print(Color.GREEN + "Registration complete! " + Color.END)
         self.get_more()
 
     def get_transmission(self):
@@ -46,7 +47,7 @@ class AddCarUi(Ui):
 
     def car_group_menu(self):
         '''menu fyrir bilategurndir'''
-        print('Car groups')
+        print(Color.BOLD + 'Car groups' + Color.END)
         print('1. Standar')
         print('2. Luxury')
         print('3. Electric')
